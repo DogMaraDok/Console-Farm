@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\i\\Desktop\\game\\game\\game.csproj": {}
+    "C:\\Users\\i\\Source\\Repos\\DogMaraDok\\Console-Farm\\game\\game\\game.csproj": {}
   },
   "projects": {
-    "C:\\Users\\i\\Desktop\\game\\game\\game.csproj": {
+    "C:\\Users\\i\\Source\\Repos\\DogMaraDok\\Console-Farm\\game\\game\\game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\i\\Desktop\\game\\game\\game.csproj",
+        "projectUniqueName": "C:\\Users\\i\\Source\\Repos\\DogMaraDok\\Console-Farm\\game\\game\\game.csproj",
         "projectName": "game",
-        "projectPath": "C:\\Users\\i\\Desktop\\game\\game\\game.csproj",
+        "projectPath": "C:\\Users\\i\\Source\\Repos\\DogMaraDok\\Console-Farm\\game\\game\\game.csproj",
         "packagesPath": "C:\\Users\\i\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\i\\Desktop\\game\\game\\obj\\",
+        "outputPath": "C:\\Users\\i\\Source\\Repos\\DogMaraDok\\Console-Farm\\game\\game\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

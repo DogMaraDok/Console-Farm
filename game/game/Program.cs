@@ -6,7 +6,8 @@
         
         static void Main(string[] args)
         {
-            //ver 0.2 DeathClown was here
+            //ver 0.3 
+            //DeathClown was here
 
             Day day = new Day();
             Money money = new Money();
