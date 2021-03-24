@@ -82,9 +82,8 @@ namespace game
                 case "how write command":
                     Console.Clear();
                     Console.WriteLine("\tHow write command");
-                    Console.WriteLine("firstly, all commands are written in lowercase");
-                    Console.WriteLine("secondly, there is no space at the end");
-                    Console.WriteLine("third,\n...Stop... How u write this command?");
+                    Console.WriteLine("firstly, there is no space at the end");
+                    Console.WriteLine("secondly,\n...Stop... How u write this command?");
                     CommList();
                     break;
                 default:
