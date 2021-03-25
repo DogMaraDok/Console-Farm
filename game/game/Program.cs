@@ -6,7 +6,7 @@
         
         static void Main(string[] args)
         {
-            //ver 0.4.1
+            //ver 0.4.2
             //DeathClown was here
 
             Day day = new Day();

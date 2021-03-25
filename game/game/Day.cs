@@ -1,4 +1,5 @@
 ﻿using System;
+using static game.Death;
 
 namespace game
 {
@@ -34,6 +35,7 @@ namespace game
                 case "wait":
                     Console.Clear();
                     day++;
+                    Dead();
                     money.MoneyP(barn.allMoneyPerDay);
                     barn.allMoneyPerDay = 0;
                     DayList();
