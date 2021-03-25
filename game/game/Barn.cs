@@ -9,8 +9,8 @@ namespace game
         public int BarnSpace;
         public int barnLvfantom = Shop.barnLv;
         public int allMoneyPerDay = 0;
-        string[,] AnimalList = new string[50, 2];
-        int[] AnimalMoneyPerDay = new int[50];
+        string[,] AnimalList = new string[10000, 2];
+        int[] AnimalMoneyPerDay = new int[10000];
         public void Space()
         {
             BarnSpace = 5 * Shop.barnLv;

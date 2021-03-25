@@ -13,7 +13,7 @@
             Money money = new Money();
             Shop.barnLv = 1;
             Day.day = 1;
-            money.MoneyP(10);
+            money.MoneyP(1000);
             day.DayList();
             day.CommList();
         }

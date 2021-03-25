@@ -23,7 +23,7 @@ namespace game
         public void CommList()
         {
             string comm = Console.ReadLine();
-            comm.ToLower();
+            comm = comm.ToLower();
             switch (comm)
             {
                 case "hellp":
@@ -53,10 +53,32 @@ namespace game
                     Console.Clear();
                     Console.WriteLine("Enter name");
                     string Name = Console.ReadLine();
-                    Chicken.Chickin(Name);
+                    chickin.Chickin(Name);
                     barn.AddToBarn();
                     money.MoneyM(Animal.cost);
                     Console.WriteLine("U bought chicken");
+                    DayList();
+                    CommList();
+                    break;
+                case "buy cow":
+                    Console.Clear();
+                    Console.WriteLine("Enter name");
+                    string Name1 = Console.ReadLine();
+                    cow.Cow(Name1);
+                    barn.AddToBarn();
+                    money.MoneyM(Animal.cost);
+                    Console.WriteLine("U bought cow");
+                    DayList();
+                    CommList();
+                    break;
+                case "buy pig":
+                    Console.Clear();
+                    Console.WriteLine("Enter name");
+                    string Name2 = Console.ReadLine();
+                    pig.Pig(Name2);
+                    barn.AddToBarn();
+                    money.MoneyM(Animal.cost);
+                    Console.WriteLine("U bought pig");
                     DayList();
                     CommList();
                     break;
@@ -68,7 +90,7 @@ namespace game
                 case "buy barn lv":
                     money.MoneyM(barn.cost);
                     Shop.barnLv++;
-                    Console.WriteLine("U bought barn");
+                    Console.WriteLine("U bought barn lv");
                     CommList();
                     break;
                 case "money test 1":

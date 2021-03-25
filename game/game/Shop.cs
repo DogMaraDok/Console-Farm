@@ -10,9 +10,13 @@ namespace game
             Barn barn = new Barn();
             barn.cost *= barnLv;
             barn.barnLvfantom++;
-            Chicken.Chickin("s");
+            chickin.Chickin("s");
             Console.WriteLine("\tmy shop not ur");
-            Console.WriteLine("   " + Chicken.type + "\nMoney per bay " + Chicken.moneyPerDay + "\nCost " + Chicken.cost);
+            Console.WriteLine("   " + chickin.type + "\nMoney per day " + chickin.moneyPerDay + "\nCost " + chickin.cost);
+            cow.Cow("s");
+            Console.WriteLine("   " + cow.type + "\nMoney per day " + cow.moneyPerDay + "\nCost " + cow.cost);
+            pig.Pig("s");
+            Console.WriteLine("   " + pig.type + "\nMoney per day " + pig.moneyPerDay + "\nCost " + pig.cost);
             Console.WriteLine("   Barn Lv \n" + barnLv + " to " + barn.barnLvfantom + "\ncost " + barn.cost);
         }
     }
