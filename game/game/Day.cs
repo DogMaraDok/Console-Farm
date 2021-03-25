@@ -8,7 +8,7 @@ namespace game
         Money money = new Money();
         Barn barn = new Barn();
         Shop shop = new Shop();
-        Hellp hellp = new Hellp();
+        Help help = new Help();
 
         static public int day;
 
@@ -18,8 +18,8 @@ namespace game
             Console.WriteLine("Day:" + day);
             barn.AllMoneyPerDay();
             Console.WriteLine("Money:" + Money.money);
-            Console.WriteLine("Barn lv:" + Shop.barnLv);
-            Console.WriteLine("   hellp - show commands");
+            Console.WriteLine("Barn lvl:" + Shop.barnLvl);
+            Console.WriteLine("   Enter 'help' to see commands");
         }
         public void CommList()
         {
@@ -27,9 +27,9 @@ namespace game
             comm = comm.ToLower();
             switch (comm)
             {
-                case "hellp":
+                case "help":
                     Console.Clear();
-                    hellp.HellpList();
+                    help.HelpList();
                     CommList();
                     break;
                 case "wait":
@@ -55,7 +55,7 @@ namespace game
                     Console.Clear();
                     Console.WriteLine("Enter name");
                     string Name = Console.ReadLine();
-                    chickin.Chickin(Name);
+                    chicken.Chicken(Name);
                     barn.AddToBarn();
                     money.MoneyM(Animal.cost);
                     Console.WriteLine("U bought chicken");
@@ -89,10 +89,10 @@ namespace game
                     barn.List();
                     CommList();
                     break;
-                case "buy barn lv":
+                case "buy barn lvl":
                     money.MoneyM(barn.cost);
-                    Shop.barnLv++;
-                    Console.WriteLine("U bought barn lv");
+                    Shop.barnLvl++;
+                    Console.WriteLine("U bought barn lvl up");
                     CommList();
                     break;
                 case "money test 1":
@@ -103,11 +103,11 @@ namespace game
                     money.MoneyM(1);
                     Console.WriteLine("U bought something");
                     break;
-                case "how write command":
+                case "how to write commands":
                     Console.Clear();
-                    Console.WriteLine("\tHow write command");
+                    Console.WriteLine("\tHow to write commands");
                     Console.WriteLine("firstly, there is no space at the end");
-                    Console.WriteLine("secondly,\n...Stop... How u write this command?");
+                    Console.WriteLine("secondly,\n...Stop... How did u write this command?");
                     CommList();
                     break;
                 default:

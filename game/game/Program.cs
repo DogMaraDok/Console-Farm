@@ -11,7 +11,7 @@
 
             Day day = new Day();
             Money money = new Money();
-            Shop.barnLv = 1;
+            Shop.barnLvl = 1;
             Day.day = 1;
             money.MoneyP(10);
             day.DayList();
