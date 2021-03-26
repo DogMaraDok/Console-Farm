@@ -1,5 +1,6 @@
 ﻿using System;
 using static game.Death;
+using static game.Language;
 
 namespace game
 {
@@ -8,18 +9,13 @@ namespace game
         Money money = new Money();
         Barn barn = new Barn();
         Shop shop = new Shop();
-        Hellp hellp = new Hellp();
 
         static public int day;
 
         public void DayList()
-        {
-            Console.WriteLine("\tConsole Farm");
-            Console.WriteLine("Day:" + day);
+        {            
             barn.AllMoneyPerDay();
-            Console.WriteLine("Money:" + Money.money);
-            Console.WriteLine("Barn lv:" + Shop.barnLv);
-            Console.WriteLine("   hellp - show commands");
+            DayListLanguage(day,Money.money,Shop.barnLvl, barn.allMoneyPerDay);
         }
         public void CommList()
         {
@@ -29,7 +25,7 @@ namespace game
             {
                 case "hellp":
                     Console.Clear();
-                    hellp.HellpList();
+                    HellpList();
                     CommList();
                     break;
                 case "wait":
@@ -48,14 +44,14 @@ namespace game
                     break;
                 case "shop":
                     Console.Clear();
-                    shop.ShopList();
+                    shop.ShopL();
                     CommList();
                     break;
                 case "buy chicken":
                     Console.Clear();
                     Console.WriteLine("Enter name");
                     string Name = Console.ReadLine();
-                    chickin.Chickin(Name);
+                    chicken.Chicken(Name);
                     barn.AddToBarn();
                     money.MoneyM(Animal.cost);
                     Console.WriteLine("U bought chicken");
@@ -91,7 +87,7 @@ namespace game
                     break;
                 case "buy barn lv":
                     money.MoneyM(barn.cost);
-                    Shop.barnLv++;
+                    Shop.barnLvl++;
                     Console.WriteLine("U bought barn lv");
                     CommList();
                     break;

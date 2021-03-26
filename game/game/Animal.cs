@@ -28,9 +28,9 @@ namespace game
         static public int cost;
     }
 
-    class chickin : Animal
+    class chicken : Animal
     {
-        public static void Chickin(string name)
+        public static void Chicken(string name)
         {
             Name = name;
             type = "Chicken";
