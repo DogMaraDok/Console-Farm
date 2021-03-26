@@ -10,12 +10,13 @@ namespace game
         Barn barn = new Barn();
         Shop shop = new Shop();
 
+
         static public int day;
 
         public void DayList()
         {            
             barn.AllMoneyPerDay();
-            DayListLanguage(day,Money.money,Shop.barnLvl, barn.allMoneyPerDay);
+            DayListLanguage(day, Money.money, Shop.barnLvl, barn.allMoneyPerDay);
         }
         public void CommList()
         {
@@ -23,7 +24,7 @@ namespace game
             comm = comm.ToLower();
             switch (comm)
             {
-                case "hellp":
+                case "help":
                     Console.Clear();
                     HellpList();
                     CommList();
@@ -85,7 +86,7 @@ namespace game
                     barn.List();
                     CommList();
                     break;
-                case "buy barn lv":
+                case "buy barn lvl":
                     money.MoneyM(barn.cost);
                     Shop.barnLvl++;
                     Console.WriteLine("U bought barn lv");
@@ -99,11 +100,11 @@ namespace game
                     money.MoneyM(1);
                     Console.WriteLine("U bought something");
                     break;
-                case "how write command":
+                case "how to write commands":
                     Console.Clear();
-                    Console.WriteLine("\tHow write command");
+                    Console.WriteLine("\tHow to write commands");
                     Console.WriteLine("firstly, there is no space at the end");
-                    Console.WriteLine("secondly,\n...Stop... How u write this command?");
+                    Console.WriteLine("secondly,\n...Stop... How did u write this command?");
                     CommList();
                     break;
                 default:

@@ -7,8 +7,8 @@ namespace game
     {
         public int cost = 100;
         public int BarnSpace;
-        public int barnLvfantom = Shop.barnLvl;
-        public int allMoneyPerDay = 1;
+        public int barnLvlfantom = Shop.barnLv;
+        public int allMoneyPerDay;
         string[,] AnimalList = new string[10000, 2];
         int[] AnimalMoneyPerDay = new int[10000];
         public void Space()
@@ -67,7 +67,6 @@ namespace game
         public void AllMoneyPerDay()
         {
             Space();
-            Money money = new Money();
             allMoneyPerDay = 0;
             for (int i = 0; i < BarnSpace; i++)
                 allMoneyPerDay += AnimalMoneyPerDay[i];
