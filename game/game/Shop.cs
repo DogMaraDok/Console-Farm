@@ -9,9 +9,9 @@ namespace game
         public void ShopL()
         {
             Barn barn = new Barn();
-            barn.cost *= barnLv;
-            barn.barnLvfantom++;
-            ShopList(barnLvl,barn.barnLvfantom,barn.cost);
+            barn.cost *= barnLvl;
+            barn.barnLvlfantom++;
+            ShopList(barnLvl,barn.barnLvlfantom,barn.cost);
         }
     }
 }
