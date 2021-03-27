@@ -235,5 +235,69 @@ namespace game
 
             }
         }
+        public static void DayCommListEnterName()
+        {
+            switch (language)
+            {
+                case "рус":
+                    Console.WriteLine("Введите имя");
+                    break;
+                case "eng":
+                    Console.WriteLine("Enter name");
+                    break;
+            }
+        }
+        public static void DayCommListAniamlBuy()
+        {
+            switch (language)
+            {
+                case "рус":
+                    Console.WriteLine("Ты купил " +type);
+                    break;
+                case "eng":
+                    Console.WriteLine("U bought "+type);
+                    break;
+            }
+        }
+        public static void DayCommBarnBuy()
+        {
+            switch (language)
+            {
+                case "рус":
+                    Console.WriteLine("Ты купил уровень амбара");
+                    break;
+                case "eng":
+                    Console.WriteLine("U bought barn lv");
+                    break;
+            }
+        }
+        public static void DayCommSomethingBuy()
+        {
+            switch (language)
+            {
+                case "рус":
+                    Console.WriteLine("Ты купил что-то");
+                    break;
+                case "eng":
+                    Console.WriteLine("U bought something");
+                    break;
+            }
+        }
+        public static void DayCommHow()
+        {
+            switch (language)
+            {
+                case "рус":
+                    Console.WriteLine("\tКак писать команды");
+                    Console.WriteLine("Первое, в конце нету пробелов");
+                    Console.WriteLine("Второе,\n...Стоять... как ты написал эту коммаду?");
+                    break;
+                case "eng":
+                    Console.WriteLine("\tHow to write commands");
+                    Console.WriteLine("firstly, there is no space at the end");
+                    Console.WriteLine("secondly,\n...Stop... How did u write this command?");
+                    break;
+            }
+        }
     }
 }

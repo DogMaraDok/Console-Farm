@@ -50,34 +50,34 @@ namespace game
                     break;
                 case "buy chicken":
                     Console.Clear();
-                    Console.WriteLine("Enter name");
+                    DayCommListEnterName();
                     string Name = Console.ReadLine();
                     chicken.Chicken(Name);
                     money.MoneyM(Animal.cost);
                     barn.AddToBarn();
-                    Console.WriteLine("U bought chicken");
+                    DayCommListAniamlBuy();
                     DayList();
                     CommList();
                     break;
                 case "buy cow":
                     Console.Clear();
-                    Console.WriteLine("Enter name");
+                    DayCommListEnterName();
                     string Name1 = Console.ReadLine();
                     cow.Cow(Name1);
                     money.MoneyM(Animal.cost);
                     barn.AddToBarn();
-                    Console.WriteLine("U bought cow");
+                    DayCommListAniamlBuy();
                     DayList();
                     CommList();
                     break;
                 case "buy pig":
                     Console.Clear();
-                    Console.WriteLine("Enter name");
+                    DayCommListEnterName();
                     string Name2 = Console.ReadLine();
                     pig.Pig(Name2);
                     money.MoneyM(Animal.cost);
                     barn.AddToBarn();
-                    Console.WriteLine("U bought pig");
+                    DayCommListAniamlBuy();
                     DayList();
                     CommList();
                     break;
@@ -89,7 +89,7 @@ namespace game
                 case "buy barn lvl":
                     money.MoneyM(barn.cost);
                     Shop.barnLvl++;
-                    Console.WriteLine("U bought barn lv");
+                    DayCommBarnBuy();
                     CommList();
                     break;
                 case "money test 1":
@@ -98,13 +98,12 @@ namespace game
                     break;
                 case "buy (something)":
                     money.MoneyM(1);
-                    Console.WriteLine("U bought something");
+                    DayCommSomethingBuy();
+                    CommList();
                     break;
                 case "how to write commands":
                     Console.Clear();
-                    Console.WriteLine("\tHow to write commands");
-                    Console.WriteLine("firstly, there is no space at the end");
-                    Console.WriteLine("secondly,\n...Stop... How did u write this command?");
+                    
                     CommList();
                     break;
                 default:
