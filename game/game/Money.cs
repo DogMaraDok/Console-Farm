@@ -1,4 +1,5 @@
 ﻿using System;
+using static game.Language;
 
 namespace game
 {
@@ -16,7 +17,7 @@ namespace game
                 money -= minus;
             else
             {
-                Console.WriteLine("Not enough money");
+                MoneyNotEnoughMoney();
                 day.CommList();
             }
         }

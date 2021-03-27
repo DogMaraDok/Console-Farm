@@ -26,7 +26,7 @@ namespace game
             {
                 case "help":
                     Console.Clear();
-                    HellpList();
+                    DayHellpList();
                     CommList();
                     break;
                 case "wait":
@@ -53,8 +53,8 @@ namespace game
                     Console.WriteLine("Enter name");
                     string Name = Console.ReadLine();
                     chicken.Chicken(Name);
-                    barn.AddToBarn();
                     money.MoneyM(Animal.cost);
+                    barn.AddToBarn();
                     Console.WriteLine("U bought chicken");
                     DayList();
                     CommList();
@@ -64,8 +64,8 @@ namespace game
                     Console.WriteLine("Enter name");
                     string Name1 = Console.ReadLine();
                     cow.Cow(Name1);
-                    barn.AddToBarn();
                     money.MoneyM(Animal.cost);
+                    barn.AddToBarn();
                     Console.WriteLine("U bought cow");
                     DayList();
                     CommList();
@@ -75,8 +75,8 @@ namespace game
                     Console.WriteLine("Enter name");
                     string Name2 = Console.ReadLine();
                     pig.Pig(Name2);
-                    barn.AddToBarn();
                     money.MoneyM(Animal.cost);
+                    barn.AddToBarn();
                     Console.WriteLine("U bought pig");
                     DayList();
                     CommList();

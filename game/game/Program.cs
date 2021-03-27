@@ -7,16 +7,16 @@ namespace game
     {
         static void Main(string[] args)
         {
-            //ver 0.4.3
+            //ver 0.4.4
             //DeathClown was here
 
             Day day = new Day();
             Money money = new Money();
             Shop.barnLvl = 1;
-            Day.day = 10949;
+            Day.day = 1;
             money.MoneyP(10);
             Console.WriteLine("\tSelect language\nрус\neng");
-            SelectLanguage();
+            ProgramSelectLanguage();
             day.DayList();
             day.CommList();
         }

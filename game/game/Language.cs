@@ -6,7 +6,7 @@ namespace game
     class Language
     {
         public static string language;
-        public static void SelectLanguage()
+        public static void ProgramSelectLanguage()
         {
             language = Console.ReadLine();
             language = language.ToLower();
@@ -20,7 +20,7 @@ namespace game
                     break;
                 default:
                     Console.WriteLine("Incorrect laguage");
-                    SelectLanguage();
+                    ProgramSelectLanguage();
                     break;
             }
         }
@@ -47,7 +47,7 @@ namespace game
             }
 
         }
-        public static void HellpList()
+        public static void DayHellpList()
         {
             switch (language)
             {
@@ -104,12 +104,12 @@ namespace game
             switch (language)
             {
                 case "рус":
-                    Console.WriteLine("Имя: " + name);
+                    Console.WriteLine("\nИмя: " + name);
                     Console.WriteLine("Тип: " + type);
                     Console.WriteLine("Денег в день: " + moneyPerDay);
                     break;
                 case "eng":
-                    Console.WriteLine("Name: " + name);
+                    Console.WriteLine("\nName: " + name);
                     Console.WriteLine("Type: " + type);
                     Console.WriteLine("Money per day: " + moneyPerDay);
                     break;
@@ -218,6 +218,19 @@ namespace game
                     break;
                 case "eng":
                     Console.WriteLine("Today ur last day\n\tNow u dead");
+                    break;
+
+            }
+        }
+        public static void MoneyNotEnoughMoney()
+        {
+            switch (language)
+            {
+                case "рус":
+                    Console.WriteLine("Не достаточно денег");
+                    break;
+                case "eng":
+                    Console.WriteLine("Not enough money");
                     break;
 
             }
