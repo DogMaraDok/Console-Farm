@@ -1,5 +1,6 @@
 ﻿using System;
 using static game.Animal;
+using static game.Language;
 
 namespace game
 {
@@ -34,7 +35,7 @@ namespace game
                 }
                 else
                 {
-                    Console.WriteLine("Barn out of space");
+                    BarnOutOfSpace();
                     day.CommList();
                 }
             }
@@ -43,22 +44,17 @@ namespace game
         {
             Space();
             int i = 0;
-            Console.WriteLine("\tBarn");
-            Console.WriteLine("   Barn max space:" + BarnSpace);
+            BarnStart(BarnSpace);
             do
             {
                 if (string.IsNullOrEmpty(AnimalList[i, 0]) == true)
                 {
-                    Console.WriteLine("Name: none");
-                    Console.WriteLine("Type: none");
-                    Console.WriteLine("Money per day: 0");
+                    BarnListIfEmpty();
                     i++;
                 }
                 else
                 {
-                    Console.WriteLine("Name: " + AnimalList[i, 0]);
-                    Console.WriteLine("Type: " + AnimalList[i, 1]);
-                    Console.WriteLine("Money per day: " + AnimalMoneyPerDay[i]);
+                    BarnList(AnimalList[i, 0], AnimalList[i, 1], AnimalMoneyPerDay[i]);
                     i++;
                 }
             }

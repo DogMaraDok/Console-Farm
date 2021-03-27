@@ -1,5 +1,6 @@
 ﻿using System;
 using static game.Day;
+using static game.Language;
 
 namespace game
 {
@@ -10,7 +11,7 @@ namespace game
             int lastDay = 10950;
             if (day >= lastDay)
             {
-                Console.WriteLine("Today ur last day\n\tNow u dead");
+                DeadMesseg();
                 Console.ReadKey();
                 Environment.Exit(0);
 

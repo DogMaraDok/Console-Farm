@@ -1,4 +1,5 @@
 ﻿using System;
+using static game.Language;
 
 namespace game
 {
@@ -16,7 +17,8 @@ namespace game
                 if (string.IsNullOrWhiteSpace(value) == true)
                 {
                     Day day = new Day();
-                    Console.WriteLine("Name can't be empty");
+                    AnimalNameCantBeEmpty();
+                    day.DayList();
                     day.CommList();
                 }
                 else
@@ -33,7 +35,7 @@ namespace game
         public static void Chicken(string name)
         {
             Name = name;
-            type = "Chicken";
+            AnimalChickenType();
             moneyPerDay = 5;
             cost = 10;
         }
@@ -43,7 +45,7 @@ namespace game
         public static void Pig(string name)
         {
             Name = name;
-            type = "Pig";
+            AnimalPigType();
             moneyPerDay = 25;
             cost = 50;
         }
@@ -53,7 +55,7 @@ namespace game
         public static void Cow(string name)
         {
             Name = name;
-            type = "Cow";
+            AnimalCowType();
             moneyPerDay = 50;
             cost = 100;
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using static game.Animal;
 
 namespace game
 {
@@ -25,7 +26,7 @@ namespace game
         }
         public static void DayListLanguage(int day, int money, int barnLvl, int allMoneyPerDay)
         {
-            switch(language)
+            switch (language)
             {
                 case "рус":
                     Console.WriteLine("\tConsole Farm");
@@ -96,6 +97,129 @@ namespace game
                     Console.WriteLine("   " + cow.type + "\nMoney per day " + cow.moneyPerDay + "\nCost " + cow.cost);
                     Console.WriteLine("   Barn Lvl \n" + barnLvl + " to " + barnLvfantom + "\ncost " + cost);
                     break;
+            }
+        }
+        public static void BarnList(string name, string type, int moneyPerDay)
+        {
+            switch (language)
+            {
+                case "рус":
+                    Console.WriteLine("Имя: " + name);
+                    Console.WriteLine("Тип: " + type);
+                    Console.WriteLine("Денег в день: " + moneyPerDay);
+                    break;
+                case "eng":
+                    Console.WriteLine("Name: " + name);
+                    Console.WriteLine("Type: " + type);
+                    Console.WriteLine("Money per day: " + moneyPerDay);
+                    break;
+
+            }
+        }
+        public static void BarnListIfEmpty()
+        {
+            switch (language)
+            {
+                case "рус":
+                    BarnList("нету", "нету", 0);
+                    break;
+                case "eng":
+                    BarnList("none", "none", 0);
+                    break;
+
+            }
+        }
+        public static void BarnStart(int barnSpace)
+        {
+            switch (language)
+            {
+                case "рус":
+                    Console.WriteLine("\tАмбар");
+                    Console.WriteLine("Максимальное место в амбаре: " + barnSpace);
+                    break;
+                case "eng":
+                    Console.WriteLine("\tBarn");
+                    Console.WriteLine("   Barn max space: " + barnSpace);
+                    break;
+
+            }
+        }
+        public static void BarnOutOfSpace()
+        {
+            switch (language)
+            {
+                case "рус":
+                    Console.WriteLine("В амбаре нет места");
+                    break;
+                case "eng":
+                    Console.WriteLine("Barn out of space");
+                    break;
+
+            }
+        }
+        public static void AnimalNameCantBeEmpty()
+        {
+            switch (language)
+            {
+                case "рус":
+                    Console.WriteLine("Имя не может быть пустым");
+                    break;
+                case "eng":
+                    Console.WriteLine("Name can't be empty");
+                    break;
+
+            }
+        }
+        public static void AnimalChickenType()
+        {
+            switch (language)
+            {
+                case "рус":
+                    type = "Курица";
+                    break;
+                case "eng":
+                    type = "Chicken";
+                    break;
+
+            }
+        }
+        public static void AnimalCowType()
+        {
+            switch (language)
+            {
+                case "рус":
+                    type = "Корова";
+                    break;
+                case "eng":
+                    type = "Cow";
+                    break;
+
+            }
+        }
+        public static void AnimalPigType()
+        {
+            switch (language)
+            {
+                case "рус":
+                    type = "Свинья";
+                    break;
+                case "eng":
+                    type = "Pig";
+                    break;
+
+            }
+        }
+        public static void DeadMesseg()
+        {
+            switch (language)
+            {
+                case "рус":
+                    Console.WriteLine("Сегодня твой последний день\n\tТеперь ты мертв");
+                    break;
+                case "eng":
+                    Console.WriteLine("Today ur last day\n\tNow u dead");
+                    break;
+
             }
         }
     }

@@ -13,7 +13,7 @@ namespace game
             Day day = new Day();
             Money money = new Money();
             Shop.barnLvl = 1;
-            Day.day = 1;
+            Day.day = 10949;
             money.MoneyP(10);
             Console.WriteLine("\tSelect language\nрус\neng");
             SelectLanguage();
