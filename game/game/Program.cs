@@ -7,7 +7,7 @@ namespace game
     {
         static void Main(string[] args)
         {
-            //ver 0.4.4
+            //ver 0.5.0
             //DeathClown was here
 
             Day day = new Day();
