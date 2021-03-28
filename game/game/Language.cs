@@ -34,7 +34,7 @@ namespace game
                     Console.WriteLine("Денег в день:" + allMoneyPerDay);
                     Console.WriteLine("Денег:" + money);
                     Console.WriteLine("Уровень амбара :" + barnLvl);
-                    Console.WriteLine("   hellp - показать комманды");
+                    Console.WriteLine("   помощь - показать комманды");
                     break;
                 case "eng":
                     Console.WriteLine("\tConsole Farm");
@@ -53,13 +53,13 @@ namespace game
             {
                 case "рус":
                     Console.WriteLine("\tСписок комманд:");
-                    Console.WriteLine("   hellp - показать список комманд");
-                    Console.WriteLine("   how write command - показывает тебе как писать комманды");
-                    Console.WriteLine("   wait - ждать следующего дня");
-                    Console.WriteLine("   back - вернуться назад");
-                    Console.WriteLine("   shop - показать ассортимент магазина");
-                    Console.WriteLine("   buy (something) - купить что-то из магазина");
-                    Console.WriteLine("   barn - показывает твоих животных");
+                    Console.WriteLine("   помощь - показать список комманд");
+                    Console.WriteLine("   как писать коммады - показывает тебе как писать комманды");
+                    Console.WriteLine("   ждать - ждать следующего дня");
+                    Console.WriteLine("   назад - вернуться назад");
+                    Console.WriteLine("   магазин - показать ассортимент магазина");
+                    Console.WriteLine("   купить (что-то) - купить что-то из магазина");
+                    Console.WriteLine("   амбар - показывает твоих животных");
                     break;
                 case "eng":
                     Console.WriteLine("\tCommand list:");
@@ -290,12 +290,12 @@ namespace game
                 case "рус":
                     Console.WriteLine("\tКак писать команды");
                     Console.WriteLine("Первое, в конце нету пробелов");
-                    Console.WriteLine("Второе,\n...Стоять... как ты написал эту коммаду?");
+                    Console.WriteLine("Второе,...\nСтоять... как ты написал эту коммаду?");
                     break;
                 case "eng":
                     Console.WriteLine("\tHow to write commands");
                     Console.WriteLine("firstly, there is no space at the end");
-                    Console.WriteLine("secondly,\n...Stop... How did u write this command?");
+                    Console.WriteLine("secondly,...\nStop... How did u write this command?");
                     break;
             }
         }
