@@ -1,5 +1,4 @@
-﻿using System;
-using static game.Animal;
+﻿using static game.Animal;
 using static game.Language;
 
 namespace game
@@ -40,6 +39,24 @@ namespace game
                 }
             }
         }
+        public void DelFromBarn(int plase)
+        {
+            Day day = new Day();
+            Space();
+
+            for (int i = 0; i <= BarnSpace; i++)
+            {
+
+                if (i == plase)
+                {
+                    AnimalList[i, 0] = null;
+                    AnimalList[i, 1] = null;
+                    AnimalMoneyPerDay[i] = 0;
+                    break;
+                }
+
+            }
+        }
         public void List()
         {
             Space();
@@ -49,12 +66,12 @@ namespace game
             {
                 if (string.IsNullOrEmpty(AnimalList[i, 0]) == true)
                 {
-                    BarnListIfEmpty();
+                    BarnListIfEmpty(i);
                     i++;
                 }
                 else
                 {
-                    BarnList(AnimalList[i, 0], AnimalList[i, 1], AnimalMoneyPerDay[i]);
+                    BarnList(i,AnimalList[i, 0], AnimalList[i, 1], AnimalMoneyPerDay[i]);
                     i++;
                 }
             }
@@ -65,7 +82,7 @@ namespace game
             Space();
             allMoneyPerDay = 0;
             for (int i = 0; i < BarnSpace; i++)
-                allMoneyPerDay += AnimalMoneyPerDay[i];
+                allMoneyPerDay += AnimalMoneyPerDay[i] * Shop.FoodLvl;
         }
     }
 

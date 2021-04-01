@@ -1,6 +1,7 @@
 ﻿using System;
 using static game.Animal;
 
+
 namespace game
 {
     class Language
@@ -42,6 +43,7 @@ namespace game
                     Console.WriteLine("Money per day:" + allMoneyPerDay);
                     Console.WriteLine("Money:" + money);
                     Console.WriteLine("Barn lvl:" + barnLvl);
+                    Console.WriteLine("FoodLvl:"+ Shop.FoodLvl);
                     Console.WriteLine("   hellp - show commands");
                     break;
             }
@@ -96,35 +98,37 @@ namespace game
                     cow.Cow("s");
                     Console.WriteLine("   " + cow.type + "\nMoney per day " + cow.moneyPerDay + "\nCost " + cow.cost);
                     Console.WriteLine("   Barn Lvl \n" + barnLvl + " to " + barnLvfantom + "\ncost " + cost);
+                    Console.WriteLine("   New food\nmultiplies ur money per day by 2\nCost "+Shop.FoodCost);
+                    ShopUHaveIt(Shop.FoodLvl);
                     break;
             }
         }
-        public static void BarnList(string name, string type, int moneyPerDay)
+        public static void BarnList(int nam,string name, string type, int moneyPerDay)
         {
             switch (language)
             {
                 case "рус":
-                    Console.WriteLine("\nИмя: " + name);
+                    Console.WriteLine($"\n{nam}.Имя: " + name);
                     Console.WriteLine("Тип: " + type);
                     Console.WriteLine("Денег в день: " + moneyPerDay);
                     break;
                 case "eng":
-                    Console.WriteLine("\nName: " + name);
+                    Console.WriteLine($"\n{nam}.Name: " + name);
                     Console.WriteLine("Type: " + type);
                     Console.WriteLine("Money per day: " + moneyPerDay);
                     break;
 
             }
         }
-        public static void BarnListIfEmpty()
+        public static void BarnListIfEmpty(int nam)
         {
             switch (language)
             {
                 case "рус":
-                    BarnList("нету", "нету", 0);
+                    BarnList(nam,"нету", "нету", 0);
                     break;
                 case "eng":
-                    BarnList("none", "none", 0);
+                    BarnList(nam,"none", "none", 0);
                     break;
 
             }
@@ -282,6 +286,34 @@ namespace game
                     Console.WriteLine("U bought something");
                     break;
             }
+        }
+        public static void ShopUHaveIt(int namber)
+        {
+            Day day = new Day();
+            switch(language)
+            {
+                case "рус":
+                    if (namber == 2)
+                    {
+                        Console.WriteLine("У тебя есть это");
+                        day.CommList();                    
+                    }
+                        
+                    else
+                        Console.WriteLine("У тебя нет этого");
+                    break;
+                case "eng":
+                    if (namber == 2)
+                    {
+                        Console.WriteLine("U have it");
+                        day.CommList();
+                    }
+                    else
+                        Console.WriteLine("U didn't have it");
+                        
+                    break;
+            }    
+            
         }
         public static void DayCommHow()
         {

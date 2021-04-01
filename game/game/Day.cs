@@ -119,8 +119,8 @@ namespace game
                     }
                 case "eng":
                     {
-                        switch (comm)
-                        {
+                    switch (comm)
+                    {
                             case "help":
                                 Console.Clear();
                                 DayHellpList();
@@ -178,6 +178,12 @@ namespace game
                                 DayList();
                                 CommList();
                                 break;
+                            case "buy new food":
+                                ShopUHaveIt(Shop.FoodLvl);
+                                money.MoneyM(Shop.FoodCost);
+                                Shop.FoodLvl = 2;
+                                ShopUHaveIt(Shop.FoodLvl);
+                                break;
                             case "barn":
                                 Console.Clear();
                                 barn.List();
@@ -187,6 +193,13 @@ namespace game
                                 money.MoneyM(barn.cost);
                                 Shop.barnLvl++;
                                 DayCommBarnBuy();
+                                CommList();
+                                break;
+                            case "del animal":
+                                Console.WriteLine("Enter namber of animal");
+                                int nam = Convert.ToInt32(Console.ReadLine());
+                                barn.DelFromBarn(nam);
+                                Console.WriteLine("U delete animal "+nam);
                                 CommList();
                                 break;
                             case "money test 1":
