@@ -35,6 +35,7 @@ namespace game
                     Console.WriteLine("Денег в день:" + allMoneyPerDay);
                     Console.WriteLine("Денег:" + money);
                     Console.WriteLine("Уровень амбара :" + barnLvl);
+                    Console.WriteLine("Уровень еды:" + Shop.FoodLvl);
                     Console.WriteLine("   помощь - показать комманды");
                     break;
                 case "eng":
@@ -44,7 +45,7 @@ namespace game
                     Console.WriteLine("Money:" + money);
                     Console.WriteLine("Barn lvl:" + barnLvl);
                     Console.WriteLine("FoodLvl:"+ Shop.FoodLvl);
-                    Console.WriteLine("   hellp - show commands");
+                    Console.WriteLine("   help - show commands");
                     break;
             }
 
@@ -62,16 +63,18 @@ namespace game
                     Console.WriteLine("   магазин - показать ассортимент магазина");
                     Console.WriteLine("   купить (что-то) - купить что-то из магазина");
                     Console.WriteLine("   амбар - показывает твоих животных");
+                    Console.WriteLine("   удалить животное - удалить какое-то животное");
                     break;
                 case "eng":
                     Console.WriteLine("\tCommand list:");
-                    Console.WriteLine("   hellp - show commands");
+                    Console.WriteLine("   help - show commands");
                     Console.WriteLine("   how write command - show u how write command");
                     Console.WriteLine("   wait - wait to next day");
                     Console.WriteLine("   back - go back");
                     Console.WriteLine("   shop - show store assortment");
                     Console.WriteLine("   buy (something) - buy something from shop");
                     Console.WriteLine("   barn - shows ur animals");
+                    Console.WriteLine("   del animal - delete some animal");
                     break;
             }
         }
@@ -88,6 +91,8 @@ namespace game
                     cow.Cow("s");
                     Console.WriteLine("   " + cow.type + "\nДенег в день " + cow.moneyPerDay + "\nЦена " + cow.cost);
                     Console.WriteLine("   Уровень амбара \nиз " + barnLvl + " в " + barnLvfantom + "\nЦена " + cost);
+                    Console.WriteLine("   Новая еда\nумножает получаемые деньги в день на 2\nЦена " + Shop.FoodCost);
+                    ShopUHaveIt(Shop.FoodLvl);
                     break;
                 case "eng":
                     chicken.Chicken("s");

@@ -59,8 +59,9 @@ namespace game
                                 chicken.Chicken(Name);
                                 money.MoneyM(Animal.cost);
                                 barn.AddToBarn();
-                                DayCommListAniamlBuy();
+                                Console.Clear();
                                 DayList();
+                                DayCommListAniamlBuy();
                                 CommList();
                                 break;
                             case "купить корову":
@@ -70,8 +71,9 @@ namespace game
                                 cow.Cow(Name1);
                                 money.MoneyM(Animal.cost);
                                 barn.AddToBarn();
-                                DayCommListAniamlBuy();
+                                Console.Clear();
                                 DayList();
+                                DayCommListAniamlBuy();
                                 CommList();
                                 break;
                             case "купить свинью":
@@ -81,9 +83,16 @@ namespace game
                                 pig.Pig(Name2);
                                 money.MoneyM(Animal.cost);
                                 barn.AddToBarn();
-                                DayCommListAniamlBuy();
+                                Console.Clear();
                                 DayList();
+                                DayCommListAniamlBuy();
                                 CommList();
+                                break;
+                            case "Купить новую еду":
+                                ShopUHaveIt(Shop.FoodLvl);
+                                money.MoneyM(Shop.FoodCost);
+                                Shop.FoodLvl = 2;
+                                ShopUHaveIt(Shop.FoodLvl);
                                 break;
                             case "амбар":
                                 Console.Clear();
@@ -94,6 +103,15 @@ namespace game
                                 money.MoneyM(barn.cost);
                                 Shop.barnLvl++;
                                 DayCommBarnBuy();
+                                CommList();
+                                break;
+                            case "удалить животное":
+                                Console.WriteLine("Напиши номер животного");
+                                int nam = Convert.ToInt32(Console.ReadLine());
+                                barn.DelFromBarn(nam);
+                                Console.Clear();
+                                DayList();
+                                Console.WriteLine("Ты удолил животное №" + nam);
                                 CommList();
                                 break;
                             case "money test 1":
@@ -152,8 +170,9 @@ namespace game
                                 chicken.Chicken(Name);
                                 money.MoneyM(Animal.cost);
                                 barn.AddToBarn();
-                                DayCommListAniamlBuy();
+                                Console.Clear();
                                 DayList();
+                                DayCommListAniamlBuy();
                                 CommList();
                                 break;
                             case "buy cow":
@@ -163,8 +182,9 @@ namespace game
                                 cow.Cow(Name1);
                                 money.MoneyM(Animal.cost);
                                 barn.AddToBarn();
-                                DayCommListAniamlBuy();
+                                Console.Clear();
                                 DayList();
+                                DayCommListAniamlBuy();
                                 CommList();
                                 break;
                             case "buy pig":
@@ -174,8 +194,9 @@ namespace game
                                 pig.Pig(Name2);
                                 money.MoneyM(Animal.cost);
                                 barn.AddToBarn();
-                                DayCommListAniamlBuy();
+                                Console.Clear();
                                 DayList();
+                                DayCommListAniamlBuy();
                                 CommList();
                                 break;
                             case "buy new food":
@@ -199,7 +220,9 @@ namespace game
                                 Console.WriteLine("Enter namber of animal");
                                 int nam = Convert.ToInt32(Console.ReadLine());
                                 barn.DelFromBarn(nam);
-                                Console.WriteLine("U delete animal "+nam);
+                                Console.Clear();
+                                DayList();
+                                Console.WriteLine("U delete animal №"+nam);
                                 CommList();
                                 break;
                             case "money test 1":
