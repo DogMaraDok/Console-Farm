@@ -1,11 +1,13 @@
 ﻿using System;
 using static game.Animal;
+using static game.Death;
 
 
 namespace game
 {
     class Language
     {
+        public static string[] commandList = new string[50];
         public static string language;
         public static void ProgramSelectLanguage()
         {
@@ -22,6 +24,18 @@ namespace game
                 default:
                     Console.WriteLine("Incorrect laguage");
                     ProgramSelectLanguage();
+                    break;
+            }
+        }
+        public static void CommandList()
+        {
+            switch (language)
+            {
+                case "рус":
+                    commandList[0] = "ждать";
+                    break;
+                case "eng":
+                    commandList[0] = "wait";
                     break;
             }
         }

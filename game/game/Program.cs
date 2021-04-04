@@ -1,5 +1,7 @@
 ﻿using System;
 using static game.Language;
+using static game.Seting;
+
 namespace game
 {
  
@@ -11,13 +13,10 @@ namespace game
             //DeathClown was here
 
             Day day = new Day();
-            Money money = new Money();
-            Shop.barnLvl = 1;
-            Shop.FoodLvl = 1;
-            Day.day = 1;
-            money.MoneyP(10);
+            Setings();
             Console.WriteLine("\tSelect language\nрус\neng");
             ProgramSelectLanguage();
+            CommandList();
             day.DayList();
             day.CommList();
         }

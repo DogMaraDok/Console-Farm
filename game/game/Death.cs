@@ -14,7 +14,6 @@ namespace game
                 DeadMesseg();
                 Console.ReadKey();
                 Environment.Exit(0);
-
             }
         }
     }

@@ -1,5 +1,4 @@
 ﻿using System;
-using static game.Death;
 using static game.Language;
 
 namespace game
@@ -36,7 +35,7 @@ namespace game
                             case "ждать":
                                 Console.Clear();
                                 day++;
-                                Dead();
+                                Death.Dead();
                                 money.MoneyP(barn.allMoneyPerDay);
                                 barn.allMoneyPerDay = 0;
                                 DayList();
@@ -100,7 +99,7 @@ namespace game
                                 CommList();
                                 break;
                             case "купить уровень амбара":
-                                money.MoneyM(barn.cost);
+                                money.MoneyM(Barn.cost);
                                 Shop.barnLvl++;
                                 DayCommBarnBuy();
                                 CommList();
@@ -137,8 +136,8 @@ namespace game
                     }
                 case "eng":
                     {
-                    switch (comm)
-                    {
+                        switch (comm)
+                        {
                             case "help":
                                 Console.Clear();
                                 DayHellpList();
@@ -147,7 +146,7 @@ namespace game
                             case "wait":
                                 Console.Clear();
                                 day++;
-                                Dead();
+                                Death.Dead();
                                 money.MoneyP(barn.allMoneyPerDay);
                                 barn.allMoneyPerDay = 0;
                                 DayList();
@@ -200,10 +199,18 @@ namespace game
                                 CommList();
                                 break;
                             case "buy new food":
-                                ShopUHaveIt(Shop.FoodLvl);
-                                money.MoneyM(Shop.FoodCost);
-                                Shop.FoodLvl = 2;
-                                ShopUHaveIt(Shop.FoodLvl);
+                                if (Shop.FoodLvl == 1)
+                                {
+                                    ShopUHaveIt(Shop.FoodLvl);
+                                    money.MoneyM(Shop.FoodCost);
+                                    Shop.FoodLvl = 2;
+                                    ShopUHaveIt(Shop.FoodLvl);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("U already bought it");
+                                }
+                                CommList();
                                 break;
                             case "barn":
                                 Console.Clear();
@@ -211,7 +218,7 @@ namespace game
                                 CommList();
                                 break;
                             case "buy barn lvl":
-                                money.MoneyM(barn.cost);
+                                money.MoneyM(Barn.cost);
                                 Shop.barnLvl++;
                                 DayCommBarnBuy();
                                 CommList();
@@ -222,7 +229,7 @@ namespace game
                                 barn.DelFromBarn(nam);
                                 Console.Clear();
                                 DayList();
-                                Console.WriteLine("U delete animal №"+nam);
+                                Console.WriteLine("U delete animal №" + nam);
                                 CommList();
                                 break;
                             case "money test 1":
@@ -246,9 +253,8 @@ namespace game
                         }
                         break;
                     }
-
             }
-        }
 
+        }
     }
 }

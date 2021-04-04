@@ -5,7 +5,7 @@ namespace game
 {
     class Barn
     {
-        public int cost = 100;
+        public static int cost;
         public int BarnSpace;
         public int barnLvlfantom = Shop.barnLvl;
         public int allMoneyPerDay;

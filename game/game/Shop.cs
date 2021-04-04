@@ -1,5 +1,4 @@
-﻿using System;
-using static game.Language;
+﻿using static game.Language;
 
 namespace game
 {
@@ -7,13 +6,13 @@ namespace game
     {
         public static int barnLvl;
         public static int FoodLvl;
-        public static int FoodCost = 500;
+        public static int FoodCost;
         public void ShopL()
         {
             Barn barn = new Barn();
-            barn.cost *= barnLvl;
+            Barn.cost *= barnLvl;
             barn.barnLvlfantom++;
-            ShopList(barnLvl,barn.barnLvlfantom,barn.cost);
+            ShopList(barnLvl,barn.barnLvlfantom,Barn.cost);
         }
     }
 }
