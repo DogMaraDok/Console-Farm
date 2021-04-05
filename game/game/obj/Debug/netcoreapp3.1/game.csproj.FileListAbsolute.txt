@@ -37,3 +37,7 @@ C:\Users\i\Source\Repos\DogMaraDok\Console-Farm\game\game\bin\Debug\netcoreapp3.
 C:\Users\i\Source\Repos\DogMaraDok\Console-Farm\game\game\bin\Debug\netcoreapp3.1\game.dll
 C:\Users\i\Source\Repos\DogMaraDok\Console-Farm\game\game\bin\Debug\netcoreapp3.1\game.pdb
 C:\Users\i\Source\Repos\DogMaraDok\Console-Farm\game\game\obj\Debug\netcoreapp3.1\game.genruntimeconfig.cache
+C:\Users\i\source\repos\DogMaraDok\Console-Farm\game\game\bin\Debug\netcoreapp3.1\SharpDX.dll
+C:\Users\i\source\repos\DogMaraDok\Console-Farm\game\game\bin\Debug\netcoreapp3.1\SharpDX.Direct2D1.dll
+C:\Users\i\source\repos\DogMaraDok\Console-Farm\game\game\bin\Debug\netcoreapp3.1\SharpDX.DXGI.dll
+C:\Users\i\source\repos\DogMaraDok\Console-Farm\game\game\obj\Debug\netcoreapp3.1\game.csproj.CopyComplete

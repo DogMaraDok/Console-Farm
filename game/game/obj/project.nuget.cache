@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eCNYcnLiIIYaPuZKmueR1u6j7CfgY9leaQ6p6guAfVXgmmkcU9WLaRnqmFkqBC7/0VjsWlcYeW71V0IIxaOfhA==",
+  "dgSpecHash": "SxDJXagYqI1Cj4V9rZUpdicvYimz5OVNIKMlK9RB+G4w5H42rp7CgeKko3drTKnngjRvzmrLxblOBJleehwxsg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\i\\Source\\Repos\\DogMaraDok\\Console-Farm\\game\\game\\game.csproj",
+  "projectFilePath": "C:\\Users\\i\\source\\repos\\DogMaraDok\\Console-Farm\\game\\game\\game.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\i\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\i\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

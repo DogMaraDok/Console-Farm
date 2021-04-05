@@ -32,10 +32,36 @@ namespace game
             switch (language)
             {
                 case "рус":
-                    commandList[0] = "ждать";
+                    commandList[0] = "помощь";
+                    commandList[1] = "ждать";
+                    commandList[2] = "назад";
+                    commandList[3] = "магазин";
+                    commandList[4] = "купить курицу";
+                    commandList[5] = "купить корову";
+                    commandList[6] = "купить свинью";
+                    commandList[7] = "купить новую еду";
+                    commandList[8] = "амбар";
+                    commandList[9] = "купить уровень амбара";
+                    commandList[10] = "удалить животное";
+                    commandList[11] = "money test 1";
+                    commandList[12] = "купить (что-то)";
+                    commandList[13] = "как писать комманды";
                     break;
                 case "eng":
-                    commandList[0] = "wait";
+                    commandList[0] = "help";
+                    commandList[1] = "wait";
+                    commandList[2] = "back";
+                    commandList[3] = "shop";
+                    commandList[4] = "buy chicken";
+                    commandList[5] = "buy cow";
+                    commandList[6] = "buy pig";
+                    commandList[7] = "buy hew food";
+                    commandList[8] = "barn";
+                    commandList[9] = "buy barn lvl";
+                    commandList[10] = "del animal";
+                    commandList[11] = "money test 1";
+                    commandList[12] = "buy (something)";
+                    commandList[13] = "how to write commands";
                     break;
             }
         }
@@ -314,7 +340,7 @@ namespace game
                 case "рус":
                     if (namber == 2)
                     {
-                        Console.WriteLine("У тебя есть это");
+                        Console.WriteLine("У уже тебя есть это");
                         day.CommList();                    
                     }
                         
