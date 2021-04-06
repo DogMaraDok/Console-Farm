@@ -1,6 +1,5 @@
 ﻿using System;
 using static game.Animal;
-using static game.Death;
 
 
 namespace game
