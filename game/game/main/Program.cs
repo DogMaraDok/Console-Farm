@@ -13,9 +13,9 @@ namespace game
             //ver 0.5.2
             //DeathClown was here
             Day day = new Day();
-            Setings();
             Console.WriteLine("\tSelect language\nрус\neng");
             ProgramSelectLanguage();
+            Setings();
             CommandList();
             day.DayList();
             day.CommList();

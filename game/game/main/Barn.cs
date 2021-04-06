@@ -7,24 +7,24 @@ namespace game
     class Barn
     {
         public static int cost;
-        public int BarnSpace;
+        public int barnSpace;
         public int barnLvlfantom = Shop.barnLvl;
         public int allMoneyPerDay;
         public static int plase;
-        string[,] AnimalList = new string[10000, 2];
-        int[] AnimalMoneyPerDay = new int[10000];
+        string[,] AnimalList = new string[50, 2];
+        int[] AnimalMoneyPerDay = new int[50];
         public void Space()
         {
-            BarnSpace = 5 * Shop.barnLvl;
+            barnSpace = 5 * Shop.barnLvl;
         }
         public void AddToBarn()
         {
             Day day = new Day();
             Space();
 
-            for (int i = 0; i <= BarnSpace; i++)
+            for (int i = 0; i <= barnSpace; i++)
             {
-                if (i != BarnSpace)
+                if (i != barnSpace)
                 {
                     if (string.IsNullOrEmpty(AnimalList[i, 0]) == true)
                     {
@@ -62,7 +62,7 @@ namespace game
         {
             Space();
             int i = 0;
-            BarnStart(BarnSpace);
+            BarnStart(barnSpace);
             do
             {
                 if (string.IsNullOrEmpty(AnimalList[i, 0]) == true)
@@ -76,13 +76,13 @@ namespace game
                     i++;
                 }
             }
-            while (i < BarnSpace);
+            while (i < barnSpace);
         }
         public void AllMoneyPerDay()
         {
             Space();
             allMoneyPerDay = 0;
-            for (int i = 0; i < BarnSpace; i++)
+            for (int i = 0; i < barnSpace; i++)
                 allMoneyPerDay += AnimalMoneyPerDay[i] * Shop.FoodLvl;
         }
     }

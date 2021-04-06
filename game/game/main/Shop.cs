@@ -5,8 +5,9 @@ namespace game
     class Shop
     {
         public static int barnLvl;
+        public static int barnMaxLvl = 10;
         public static int FoodLvl;
-        public static int FoodCost;
+        public static int FoodCost;        
         public void ShopL()
         {
             Barn barn = new Barn();

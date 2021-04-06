@@ -129,8 +129,11 @@ namespace game
                     Console.WriteLine("   " + pig.type + "\nДенег в день " + pig.moneyPerDay + "\nЦена " + pig.cost);
                     cow.Cow("s");
                     Console.WriteLine("   " + cow.type + "\nДенег в день " + cow.moneyPerDay + "\nЦена " + cow.cost);
-                    Console.WriteLine("   Уровень амбара \nиз " + barnLvl + " в " + barnLvfantom + "\nЦена " + cost);
-                    Console.WriteLine("   Новая еда\nумножает получаемые деньги в день на 2\nЦена " + Shop.FoodCost);
+                    Console.WriteLine("   Уровень амбара");
+                    if(Shop.barnMaxLvl == Shop.barnLvl)                    
+                        Console.WriteLine("   Ты достиг максимального уровня амбара");                    
+                    else
+                        Console.WriteLine("   Новая еда\nумножает получаемые деньги в день на 2\nЦена " + Shop.FoodCost);
                     ShopUHaveIt(Shop.FoodLvl);
                     break;
                 case "eng":

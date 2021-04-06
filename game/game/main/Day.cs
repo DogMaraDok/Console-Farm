@@ -21,7 +21,7 @@ namespace game
         {
             string comm = Console.ReadLine();
             comm = comm.ToLower();
-            for(int i = 0; i < 50; i++)
+            for (int i = 0; i < 50; i++)
             {
                 if (comm == commandList[i])
                 {
@@ -97,7 +97,7 @@ namespace game
                             }
                             else
                             {
-                                ShopUHaveIt(Shop.FoodLvl); 
+                                ShopUHaveIt(Shop.FoodLvl);
                             }
                             CommList();
                             break;
@@ -107,10 +107,20 @@ namespace game
                             CommList();
                             break;
                         case 9:
-                            money.MoneyM(Barn.cost);
-                            Shop.barnLvl++;
-                            DayCommBarnBuy();
-                            CommList();
+                            if (Shop.barnMaxLvl == Shop.barnLvl)
+                            {
+                                Console.WriteLine("U have max barnLvl");
+                                CommList();
+                            }
+
+                            else
+                            {
+                                money.MoneyM(Barn.cost);
+                                Shop.barnLvl++;
+                                DayCommBarnBuy();
+                                CommList();
+                            }
+
                             break;
                         case 10:
                             Console.WriteLine("Enter namber of animal");
@@ -133,10 +143,10 @@ namespace game
                             Console.Clear();
                             DayCommHow();
                             CommList();
-                            break;                                                 
+                            break;
                     }
                 }
-                else if(i == 49)
+                else if (i == 49)
                 {
                     Console.WriteLine("Unknown command");
                     CommList();
