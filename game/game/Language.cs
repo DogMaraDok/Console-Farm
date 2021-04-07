@@ -8,8 +8,10 @@ namespace game
     {
         public static string[] commandList = new string[50];
         public static string language;
+        
         public static void ProgramSelectLanguage()
         {
+            IniFile iniFile = new IniFile("setings.ini");
             language = Console.ReadLine();
             language = language.ToLower();
             switch (language)

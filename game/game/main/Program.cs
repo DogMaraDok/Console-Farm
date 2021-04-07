@@ -2,6 +2,7 @@
 using System.IO;
 using static game.Language;
 using static game.Seting;
+using static game.CreateIni;
 
 namespace game
 {
@@ -13,7 +14,11 @@ namespace game
             //ver 0.5.2
             //DeathClown was here
             Day day = new Day();
-            Console.WriteLine("\tSelect language\nрус\neng");
+            IniFile iniFile = new IniFile("localozation.ini");
+            CreateLocalizationINI();
+            Console.WriteLine("\tSelect language");
+            for(int i = 1; i < 2;i++)            
+                Console.WriteLine(iniFile.ReadINI("Main","type"+i));            
             ProgramSelectLanguage();
             Setings();
             CommandList();
