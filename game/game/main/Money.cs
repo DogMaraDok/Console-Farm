@@ -1,4 +1,6 @@
-﻿using static game.Language;
+﻿using System;
+using System.Xml;
+using static game.Language;
 
 namespace game
 {
@@ -16,7 +18,7 @@ namespace game
                 money -= minus;
             else
             {
-                MoneyNotEnoughMoney();
+                foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "NotEnoughMoney") Console.WriteLine(LocalizationNode.InnerText);
                 day.CommList();
             }
         }

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Localizations>
+	<rus name="рус">
+		
+	</rus>
+	<eng name="eng">
+		<CommandList>
+			<help>help</help>
+			<wait>wait</wait>
+			<back>back</back>
+			<shop>shop</shop>
+			<buychicken>buy chicken</buychicken>
+			<buycow>buy cow</buycow>
+			<buypig>buy pig</buypig>
+			<buynewfood>buy new food</buynewfood>
+			<barn>barn</barn>
+			<buybarnlvl>buy barn lvl</buybarnlvl>
+			<delanimal>del animal</delanimal>
+			<buysmth>buy (something)</buysmth>
+			<howto>how to write commands</howto>
+		</CommandList>
+		<DayList>
+			<head>ConsoleFarm</head>
+			<day>Day:</day>
+			<moneyperday>Money per day:</moneyperday>
+			<money>Money:</money>
+			<barnlvl>Barn lvl:</barnlvl>
+			<foodlvl>Food lvl:</foodlvl>
+			<help>   help - show commands</help>
+			<entername>Enter name</entername>
+			<boughtanimal>U bought</boughtanimal>
+			<boughtbarnlvl>U bought barn lvl</boughtbarnlvl>
+			<boughtfoodlvl>U bought new food</boughtfoodlvl>
+			<boughtsmth>U bought something</boughtsmth>
+			<uhaveit>U already have it</uhaveit>
+			<barnlvlmax>   Ur at the max barn lvl</barnlvlmax>
+			<unknown>Unknown command</unknown>
+		</DayList>
+		<HelpList>
+			<head>CommandList:</head>
+			<help>   help - shows commands</help>
+			<howtowritecommands>   how to write commands - shows u how to write commands</howtowritecommands>
+			<wait>   wait - wait to the next day</wait>
+			<back>   back - go back</back>
+			<shop>   shop - shows store assortment</shop>
+			<buy>   buy (something) - buy something from shop</buy>
+			<barn>   barn - shows ur animals</barn>
+			<delanimal>   del animal - delete some animal</delanimal>
+		</HelpList>
+		<ShopList>
+			<head>my shop not urs</head>
+			<moneyperday>Money per day </moneyperday>
+			<cost>Cost </cost>
+			<barnlvl>   Barn lvl </barnlvl>
+			<to> => </to>
+			<foodlvl>New food</foodlvl>
+			<foodlvlinfo>multiplies ur money per day by 2</foodlvlinfo>
+			<uhaveit>U already have it</uhaveit>
+		</ShopList>
+		<BarnList>
+			<head>Barn</head>
+			<maxspace>   Barn max space: </maxspace>
+			<name>Name: </name>
+			<type>Type: </type>
+			<moneyperday>Money per day: </moneyperday>
+			<empty>none</empty>
+			<outofspace>Barn out of space</outofspace>
+		</BarnList>
+		<HowToList>
+			<head>How to write commands</head>
+			<first>firstly, there is no space at the end</first>
+			<second>secondly,...</second>
+			<stop>Stop... How did u write this command?</stop>
+		</HowToList>
+		<DeadMessege1>Today ur last day</DeadMessege1>
+		<DeadMessege2>Now u dead</DeadMessege2>
+		<NotEnoughMoney>Not enough money</NotEnoughMoney>
+		<chicken>Chicken</chicken>
+		<cow>Cow</cow>
+		<pig>Pig</pig>
+		<emptyname>Name can't be empty</emptyname>
+	</eng>
+</Localizations>

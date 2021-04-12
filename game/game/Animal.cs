@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Xml;
 using static game.Language;
 
 namespace game
 {
+
     class Animal
     {
         static public string name;
@@ -17,7 +19,7 @@ namespace game
                 if (string.IsNullOrWhiteSpace(value) == true)
                 {
                     Day day = new Day();
-                    AnimalNameCantBeEmpty();
+                    foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "emptyname") Console.WriteLine(LocalizationNode.InnerText);
                     day.DayList();
                     day.CommList();
                 }
@@ -35,7 +37,7 @@ namespace game
         public static void Chicken(string name)
         {
             Name = name;
-            AnimalChickenType();
+            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "chicken") Console.WriteLine(type = LocalizationNode.InnerText);
             moneyPerDay = 5;
             cost = 10;
         }
@@ -45,7 +47,7 @@ namespace game
         public static void Pig(string name)
         {
             Name = name;
-            AnimalPigType();
+            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "pig") Console.WriteLine(type = LocalizationNode.InnerText);
             moneyPerDay = 25;
             cost = 50;
         }
@@ -55,7 +57,7 @@ namespace game
         public static void Cow(string name)
         {
             Name = name;
-            AnimalCowType();
+            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "cow") Console.WriteLine(type = LocalizationNode.InnerText);
             moneyPerDay = 50;
             cost = 100;
         }
