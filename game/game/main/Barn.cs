@@ -62,7 +62,7 @@ namespace game
             }
             catch (FormatException)
             {
-                Console.WriteLine("Это не цифра");
+                foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "formatexception") Console.WriteLine(LocalizationNode.InnerText);
                 day.CommList();
             }
         }

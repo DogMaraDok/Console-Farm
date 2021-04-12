@@ -148,11 +148,11 @@ namespace game
 
                             break;
                         case 10:
-                            Console.WriteLine("Enter namber of animal");
+                            foreach (XmlNode LocalizationNode in DayListNode.ChildNodes) if (LocalizationNode.Name == "delenter") Console.WriteLine(LocalizationNode.InnerText);
                             barn.DelFromBarn();
                             Console.Clear();
                             DayList();
-                            Console.WriteLine("U delete animal №" + Barn.plase);
+                            foreach (XmlNode LocalizationNode in DayListNode.ChildNodes) if (LocalizationNode.Name == "delmsg") Console.WriteLine(LocalizationNode.InnerText + Barn.plase);
                             CommList();
                             break;
                         case 11:
@@ -169,7 +169,7 @@ namespace game
                             foreach (XmlNode LocalizationNode in HowToListNode.ChildNodes) if (LocalizationNode.Name == "head") Console.WriteLine("\t" + LocalizationNode.InnerText);
                             foreach (XmlNode LocalizationNode in HowToListNode.ChildNodes) if (LocalizationNode.Name == "first") Console.WriteLine(LocalizationNode.InnerText);
                             foreach (XmlNode LocalizationNode in HowToListNode.ChildNodes) if (LocalizationNode.Name == "second") Console.WriteLine(LocalizationNode.InnerText);
-                            foreach (XmlNode LocalizationNode in HowToListNode.ChildNodes) if (LocalizationNode.Name == "stop") Console.WriteLine("\n" + LocalizationNode.InnerText);
+                            foreach (XmlNode LocalizationNode in HowToListNode.ChildNodes) if (LocalizationNode.Name == "stop") Console.WriteLine(LocalizationNode.InnerText);
                             CommList();
                             break;
                     }

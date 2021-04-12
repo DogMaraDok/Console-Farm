@@ -1,7 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Localizations>
 	<rus name="рус">
-		
+		<CommandList>
+			<help>помощь</help>
+			<wait>ждать</wait>
+			<back>назад</back>
+			<shop>магазин</shop>
+			<buychicken>купить курицу</buychicken>
+			<buycow>купить корову</buycow>
+			<buypig>
+			купить свинью</buypig>
+			<buynewfood>купить новую еду</buynewfood>
+			<barn>амбар</barn>
+			<buybarnlvl>купить уровень уровень амбара</buybarnlvl>
+			<delanimal>удалить животное</delanimal>
+			<buysmth>купить (что-то)</buysmth>
+			<howto>как писать команды</howto>
+		</CommandList>
+		<DayList>
+			<head>ConsoleFarm</head>
+			<day>День:</day>
+			<moneyperday>Денег в день:</moneyperday>
+			<money>Диньги:</money>
+			<barnlvl>Уровень амбара:</barnlvl>
+			<foodlvl>Уровень еды:</foodlvl>
+			<help>   помощь - показать команды</help>
+			<entername>Введите имя</entername>
+			<boughtanimal>Ты купил</boughtanimal>
+			<boughtbarnlvl>Ты купил уровень амбара</boughtbarnlvl>
+			<boughtfoodlvl>Ты купил новую еду</boughtfoodlvl>
+			<boughtsmth>Ты купил что-то</boughtsmth>
+			<uhaveit>У тебя уже есть это</uhaveit>
+			<barnlvlmax>   Ты достиг максимального уровня амбара </barnlvlmax>
+			<unknown>Неизвестная команда</unknown>
+			<delenter>Введите номер животного</delenter>
+			<delmsg>Ты удалил животное №</delmsg>
+		</DayList>
+		<HelpList>
+			<head>Список команд:</head>
+			<help>   помощь - показать команды</help>
+			<howtowritecommands>   как писать команды - показывает как писать команды</howtowritecommands>
+			<wait>   ждать - ждать следующего дня</wait>
+			<back>   назад - вернуться назад</back>
+			<shop>   магазин - показать ассортимент магазина</shop>
+			<buy>   купить (что-то) - купить что-то из магазина</buy>
+			<barn>   амбар - показывает твоих животных</barn>
+			<delanimal>   удалить животное - удаление животных</delanimal>
+		</HelpList>
+		<ShopList>
+			<head>мой магазин не твой</head>
+			<moneyperday>Денег в день </moneyperday>
+			<cost>Стоимость </cost>
+			<barnlvl>   Уровень амбара </barnlvl>
+			<to> => </to>
+			<foodlvl>Новая еда</foodlvl>
+			<foodlvlinfo>Умнажает доход в 2 раза</foodlvlinfo>
+			<uhaveit>У тебя уже есть это</uhaveit>
+		</ShopList>
+		<BarnList>
+			<head>Амбар</head>
+			<maxspace>   Максимум мест в амбаре: </maxspace>
+			<name>Имя: </name>
+			<type>Тип: </type>
+			<moneyperday>Денег в день: </moneyperday>
+			<empty>нету</empty>
+			<outofspace>В амбаре нету места</outofspace>
+			<formatexception>Неизвестный номер</formatexception>
+		</BarnList>
+		<HowToList>
+			<head>Как писать команда</head>
+			<first>Во первых, никаких пробелов в конце</first>
+			<second>Во вторых,...</second>
+			<stop>Стоп... Как ты написал эту команду?</stop>
+		</HowToList>
+		<DeadMessege1>Сегодня твой последний день</DeadMessege1>
+		<DeadMessege2>Теперь ты мертв</DeadMessege2>
+		<NotEnoughMoney>Недостаточно денег</NotEnoughMoney>
+		<chicken>Курица</chicken>
+		<cow>Корова</cow>
+		<pig>Свинья</pig>
+		<emptyname>Имя не может быть пустым</emptyname>
 	</rus>
 	<eng name="eng">
 		<CommandList>
@@ -35,6 +113,8 @@
 			<uhaveit>U already have it</uhaveit>
 			<barnlvlmax>   Ur at the max barn lvl</barnlvlmax>
 			<unknown>Unknown command</unknown>
+			<delenter>Enter the animal number</delenter>
+			<delmsg>U deleted animal #</delmsg>
 		</DayList>
 		<HelpList>
 			<head>CommandList:</head>
@@ -65,6 +145,7 @@
 			<moneyperday>Money per day: </moneyperday>
 			<empty>none</empty>
 			<outofspace>Barn out of space</outofspace>
+			<formatexception>Unknown number</formatexception>
 		</BarnList>
 		<HowToList>
 			<head>How to write commands</head>
