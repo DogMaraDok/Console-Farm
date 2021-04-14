@@ -12,8 +12,8 @@ namespace game
             int lastDay = 10950;
             if (day >= lastDay)
             {
-                foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "DeadMessege1") Console.WriteLine(LocalizationNode.InnerText);
-                foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "DeadMessege2") Console.WriteLine("\n","\t",LocalizationNode.InnerText);
+                Messege("","DeadMessege1","");
+                Messege("","DeadMessege2","\t");
                 Console.ReadKey();
                 Environment.Exit(0);
             }

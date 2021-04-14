@@ -39,6 +39,22 @@ namespace game
             Console.WriteLine("Unknown language\nPlease write the existing language");
             LangChoosing(languages);
             return null;
+        }                
+        public static void Messege(string node, string type, string attribute)
+        {
+            XmlNode MessegeNode = null;
+            foreach (XmlNode SomeNode in language.ChildNodes) if (SomeNode.Name == type) { Console.WriteLine(attribute + SomeNode.InnerText); return; }
+            foreach (XmlNode SomeNode in language.ChildNodes) if (SomeNode.Name == node) MessegeNode = SomeNode;
+            foreach (XmlNode SomeNode in MessegeNode.ChildNodes) if (SomeNode.Name == type) { Console.WriteLine(attribute + SomeNode.InnerText); return; }
+            Console.WriteLine("Unknown messege");
+        }
+        public static void MessegeNumber(string node, string type, string attribute,int number)
+        {
+            XmlNode MessegeNode = null;
+            foreach (XmlNode SomeNode in language.ChildNodes) if (SomeNode.Name == type) { Console.WriteLine(attribute + SomeNode.InnerText + number); break; }
+            foreach (XmlNode SomeNode in language.ChildNodes) if (SomeNode.Name == node) MessegeNode = SomeNode;
+            foreach (XmlNode SomeNode in MessegeNode.ChildNodes) if (SomeNode.Name == type) { Console.WriteLine(attribute + SomeNode.InnerText + number); return; }
+            Console.WriteLine("Unknown messege");
         }
 
         public static void CommandList()

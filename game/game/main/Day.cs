@@ -27,13 +27,13 @@ namespace game
         public void DayList()
         {
             barn.AllMoneyPerDay();
-            foreach (XmlNode LocalizationNode in DayListNode.ChildNodes) if (LocalizationNode.Name == "head") Console.WriteLine("\t" + LocalizationNode.InnerText);
-            foreach (XmlNode LocalizationNode in DayListNode.ChildNodes) if (LocalizationNode.Name == "day") Console.WriteLine(LocalizationNode.InnerText + day);
-            foreach (XmlNode LocalizationNode in DayListNode.ChildNodes) if (LocalizationNode.Name == "moneyperday") Console.WriteLine(LocalizationNode.InnerText + barn.allMoneyPerDay);
-            foreach (XmlNode LocalizationNode in DayListNode.ChildNodes) if (LocalizationNode.Name == "money") Console.WriteLine(LocalizationNode.InnerText + Money.money);
-            foreach (XmlNode LocalizationNode in DayListNode.ChildNodes) if (LocalizationNode.Name == "barnlvl") Console.WriteLine(LocalizationNode.InnerText + Shop.barnLvl);
-            foreach (XmlNode LocalizationNode in DayListNode.ChildNodes) if (LocalizationNode.Name == "foodlvl") Console.WriteLine(LocalizationNode.InnerText + Shop.FoodLvl);
-            foreach (XmlNode LocalizationNode in DayListNode.ChildNodes) if (LocalizationNode.Name == "help") Console.WriteLine(LocalizationNode.InnerText);
+            Messege("DayList","head","\t");
+            MessegeNumber("DayList", "day", "",day);
+            MessegeNumber("DayList", "moneyperday", "", barn.allMoneyPerDay);
+            MessegeNumber("DayList", "money", "", Money.money);
+            MessegeNumber("DayList", "barnlvl", "", Shop.barnLvl);
+            MessegeNumber("DayList", "foodlvl", "", Shop.FoodLvl);
+            Messege("DayList","help","");
         }
         public void CommList()
         {
