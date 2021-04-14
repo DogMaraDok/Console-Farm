@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "game": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\i\\source\\repos\\DogMaraDok\\Console-Farm\\game\\game\\bin\\Debug\\netcoreapp3.1"
+    },
+    "WSL 2": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}

@@ -12,12 +12,6 @@
             iniFile.Write("Setings","barnCost","100");
             iniFile.Write("Setings","startMoney","10");
             iniFile.Write("Setings","barnMaxLvl","10");
-        }
-        public static void CreateLocalizationINI()
-        {
-            IniFile iniFile = new IniFile("localozation.ini");
-            iniFile.Write("Main", "type1", "рус");
-            iniFile.Write("Main","type2","eng");
-        }
+        }        
     }
 }

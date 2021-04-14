@@ -13,11 +13,10 @@ namespace game
     {
         static void Main(string[] args)
         {
-            //ver 0.5.2
+            //ver 0.6.1
             //DeathClown was here
             Day day = new Day();
             IniFile iniFile = new IniFile("localozation.ini");
-            CreateLocalizationINI();
             Setings();
             ProgramSelectLanguage();
             CommandList();

@@ -37,7 +37,7 @@ namespace game
         public static void Chicken(string name)
         {
             Name = name;
-            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "chicken") Console.WriteLine(type = LocalizationNode.InnerText);
+            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "chicken") type = LocalizationNode.InnerText;
             moneyPerDay = 5;
             cost = 10;
         }
@@ -47,7 +47,7 @@ namespace game
         public static void Pig(string name)
         {
             Name = name;
-            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "pig") Console.WriteLine(type = LocalizationNode.InnerText);
+            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "pig") type = LocalizationNode.InnerText;
             moneyPerDay = 25;
             cost = 50;
         }
@@ -57,7 +57,7 @@ namespace game
         public static void Cow(string name)
         {
             Name = name;
-            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "cow") Console.WriteLine(type = LocalizationNode.InnerText);
+            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "cow") type = LocalizationNode.InnerText;
             moneyPerDay = 50;
             cost = 100;
         }

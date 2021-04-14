@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Xml;
 using static game.Language;
+using static game.chicken;
+using static game.pig;
+using static game.cow;
 
 namespace game
 {
@@ -34,8 +37,11 @@ namespace game
             foreach (XmlNode LocalizationNode in ShopListNode.ChildNodes) if (LocalizationNode.Name == "to") to = LocalizationNode.InnerText;
 
             foreach (XmlNode LocalizationNode in ShopListNode.ChildNodes) if (LocalizationNode.Name == "head") Console.WriteLine("\t" + LocalizationNode.InnerText);
+            Chicken("DogMaraDok");
             Console.WriteLine("   " + chicken.type + "\n" + moneyPerDay + chicken.moneyPerDay + "\n" + cost + chicken.cost);
+            Pig("Death Clown");
             Console.WriteLine("   " + pig.type + "\n" + moneyPerDay + pig.moneyPerDay + "\n" + cost + pig.cost);
+            Cow("Korovka");
             Console.WriteLine("   " + cow.type + "\n" + moneyPerDay + cow.moneyPerDay + "\n" + cost + cow.cost);
             Console.WriteLine(barnLvlInfo + "\n" + barnLvl + to + barn.barnLvlfantom + "\n" + cost + Barn.cost);
             foreach (XmlNode LocalizationNode in ShopListNode.ChildNodes) if (LocalizationNode.Name == "foodlvl") Console.WriteLine("   " + LocalizationNode.InnerText);
