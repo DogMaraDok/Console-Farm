@@ -37,7 +37,7 @@ namespace game
             foreach (XmlNode LocalizationNode in ShopListNode.ChildNodes) if (LocalizationNode.Name == "to") to = LocalizationNode.InnerText;
 
             Messege("ShopList","head","\t");
-            Chicken("DogMaraDok");
+            Chicken("DogMaraDok");  
             Console.WriteLine("   " + chicken.type + "\n" + moneyPerDay + chicken.moneyPerDay + "\n" + cost + chicken.cost);
             Pig("Death Clown");
             Console.WriteLine("   " + pig.type + "\n" + moneyPerDay + pig.moneyPerDay + "\n" + cost + pig.cost);

@@ -18,7 +18,7 @@ namespace game
                 money -= minus;
             else
             {
-                foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "NotEnoughMoney") Console.WriteLine(LocalizationNode.InnerText);
+                Messege("","NotEnoughMoney",""); 
                 day.CommList();
             }
         }

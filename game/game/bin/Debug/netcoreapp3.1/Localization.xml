@@ -12,7 +12,7 @@
 			купить свинью</buypig>
 			<buynewfood>купить новую еду</buynewfood>
 			<barn>амбар</barn>
-			<buybarnlvl>купить уровень уровень амбара</buybarnlvl>
+			<buybarnlvl>купить уровень амбара</buybarnlvl>
 			<delanimal>удалить животное</delanimal>
 			<buysmth>купить (что-то)</buysmth>
 			<howto>как писать команды</howto>
@@ -26,7 +26,9 @@
 			<foodlvl>Уровень еды:</foodlvl>
 			<help>   помощь - показать команды</help>
 			<entername>Введите имя</entername>
-			<boughtanimal>Ты купил</boughtanimal>
+			<boughtchicken>Ты купил курицу</boughtchicken>
+			<boughtpig>Ты купил свинью</boughtpig>
+			<boughtcow>Ты купил корову</boughtcow>
 			<boughtbarnlvl>Ты купил уровень амбара</boughtbarnlvl>
 			<boughtfoodlvl>Ты купил новую еду</boughtfoodlvl>
 			<boughtsmth>Ты купил что-то</boughtsmth>
@@ -106,7 +108,9 @@
 			<foodlvl>Food lvl:</foodlvl>
 			<help>   help - show commands</help>
 			<entername>Enter name</entername>
-			<boughtanimal>U bought</boughtanimal>
+			<boughtchicken>U bought chicken</boughtchicken>
+			<boughtpig>U bought pig</boughtpig>
+			<boughtcow>U bought cow</boughtcow>
 			<boughtbarnlvl>U bought barn lvl</boughtbarnlvl>
 			<boughtfoodlvl>U bought new food</boughtfoodlvl>
 			<boughtsmth>U bought something</boughtsmth>

@@ -16,13 +16,11 @@ namespace game
             //ver 0.6.1
             //DeathClown was here
             Day day = new Day();
-            IniFile iniFile = new IniFile("localozation.ini");
             Setings();
             ProgramSelectLanguage();
             CommandList();
             BarnListSet();
             ShopListSet();
-            day.DayListSet();
             day.DayList();
             day.CommList();
         }

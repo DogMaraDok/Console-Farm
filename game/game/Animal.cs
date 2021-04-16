@@ -19,7 +19,7 @@ namespace game
                 if (string.IsNullOrWhiteSpace(value) == true)
                 {
                     Day day = new Day();
-                    foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "emptyname") Console.WriteLine(LocalizationNode.InnerText);
+                    Messege("","NotEnoughMoney","");
                     day.DayList();
                     day.CommList();
                 }

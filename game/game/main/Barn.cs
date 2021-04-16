@@ -62,7 +62,7 @@ namespace game
             }
             catch (FormatException)
             {
-                foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "formatexception") Console.WriteLine(LocalizationNode.InnerText);
+                Messege("BarnList", "formatexception", "");
                 day.CommList();
             }
         }
@@ -70,8 +70,8 @@ namespace game
         {
             Space();
             int i = 0;
-            foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "head") Console.WriteLine("\t" + LocalizationNode.InnerText);
-            foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "maxspace") Console.WriteLine(LocalizationNode.InnerText + barnSpace);
+            Messege("BarnList", "head", "\t");
+            MessegeNumber("BarnList" ,"maxspace","", barnSpace);
             do
             {
                 if (string.IsNullOrEmpty(AnimalList[i, 0]) == true)
