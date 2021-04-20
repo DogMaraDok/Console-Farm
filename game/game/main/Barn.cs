@@ -15,12 +15,10 @@ namespace game
         string[,] AnimalList = new string[50, 2];
         int[] AnimalMoneyPerDay = new int[50];
         static XmlNode BarnListNode;
-        
         public static void BarnListSet()
         {
             foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "BarnList") BarnListNode = LocalizationNode;
         }
-        
         public void Space()
         {
             barnSpace = 5 * Shop.barnLvl;

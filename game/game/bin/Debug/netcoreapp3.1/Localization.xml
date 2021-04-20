@@ -85,12 +85,17 @@
 			<second>Во вторых,...</second>
 			<stop>Стоп... Как ты написал эту команду?</stop>
 		</HowToList>
+		<Animal>
+			<chicken>Курица</chicken>
+			<cow>Корова</cow>
+			<pig>Свинья</pig>
+		</Animal>
+		<Plant>
+			<rice>Рис</rice>
+		</Plant>
 		<DeadMessege1>Сегодня твой последний день</DeadMessege1>
 		<DeadMessege2>Теперь ты мертв</DeadMessege2>
 		<NotEnoughMoney>Недостаточно денег</NotEnoughMoney>
-		<chicken>Курица</chicken>
-		<cow>Корова</cow>
-		<pig>Свинья</pig>
 		<emptyname>Имя не может быть пустым</emptyname>
 	</rus>
 	<eng name="eng">

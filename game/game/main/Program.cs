@@ -3,6 +3,7 @@ using static game.Seting;
 using static game.Barn;
 using static game.Shop;
 using static game.Field;
+using static game.Animal;
 
 namespace game
 {

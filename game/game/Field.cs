@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Xml;
-using static game.Animal;
+using static game.Plants;
 using static game.Language;
 
 
@@ -8,9 +8,9 @@ namespace game
 {
     class Field
     {
-        string[,] fieldList = new string[50, 2];
+        string[] fieldList = new string[50];
         int[] fieldMoneyPerDay = new int[50];
-        public int fieldSpase;
+        public int fieldSpace;
         static XmlNode fieldListNode;
 
         public static void FieldListSet()
@@ -19,7 +19,28 @@ namespace game
         }
         void Spase()
         {
-            fieldSpase = 5 * Shop.fieldLvl;
+            fieldSpace = 5 * Shop.fieldLvl;
+        }
+        public void AddToField()
+        {
+            Day day = new Day();
+            for (int i = 0; i <= fieldSpace; i++)
+            {
+                if (i != fieldSpace)
+                {
+                    if (string.IsNullOrEmpty(fieldList[i]) == true)
+                    {
+                        fieldList[i] = type;
+                        fieldMoneyPerDay[i] = moneyPerDay;
+                        break;
+                    }
+                }
+                else
+                {
+                    Messege("FieldList", "outofspace", "");
+                    day.CommList();
+                }
+            }
         }
         public void FieldList()
         {
@@ -29,24 +50,22 @@ namespace game
             Messege("FieldList","maxspace","");
             do
             {
-                if (string.IsNullOrEmpty(fieldList[i, 0]) == true)
+                if (string.IsNullOrEmpty(fieldList[i]) == true)
                 {
                     string empty = null;
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "empty") empty = LocalizationNode.InnerText;
-                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "name") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + empty);
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine(LocalizationNode.InnerText + empty);
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "moneyperday") Console.WriteLine(LocalizationNode.InnerText + 0);
                     i++;
                 }
                 else
                 {
-                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "name") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + fieldList[i, 0]);
-                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine(LocalizationNode.InnerText + fieldList[i, 1]);
+                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine(LocalizationNode.InnerText + fieldList[i]);
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "moneyperday") Console.WriteLine(LocalizationNode.InnerText + fieldMoneyPerDay[i]);
                     i++;
                 }
             }
-            while (i < fieldSpase);
+            while (i < fieldSpace);
         }
 
     }
