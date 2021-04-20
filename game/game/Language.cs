@@ -21,7 +21,11 @@ namespace game
                 Console.WriteLine(LocalizationNode.Attributes.GetNamedItem("name").Value);
                 languages.Add(LocalizationNode);
             }
-            language = LangChoosing(languages);
+            do
+            {
+                language = LangChoosing(languages);
+            }
+            while (language == null);
             Console.Clear();
         }
 
@@ -37,7 +41,6 @@ namespace game
                 }
             }
             Console.WriteLine("Unknown language\nPlease write the existing language");
-            LangChoosing(languages);
             return null;
         }                
         public static void Messege(string node, string type, string attribute)
