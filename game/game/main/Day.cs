@@ -9,7 +9,7 @@ namespace game
         Money money = new Money();
         Barn barn = new Barn();
         Shop shop = new Shop();
-
+        Field field = new Field();
 
         static public int day;
         
@@ -118,7 +118,7 @@ namespace game
                             break;
                         case 8:
                             Console.Clear();
-                            barn.List();
+                            barn.BarnList();
                             CommList();
                             break;
                         case 9:
@@ -130,7 +130,7 @@ namespace game
 
                             else
                             {
-                                money.MoneyM(Barn.cost);
+                                money.MoneyM(Shop.barnCost);
                                 Shop.barnLvl++;
                                 Messege("DayList", "boughtbarnlvl", "");
                                 CommList();
@@ -160,6 +160,11 @@ namespace game
                             Messege("HowToList", "first", "");
                             Messege("HowToList", "second", "");
                             Messege("HowToList", "stop", "");
+                            CommList();
+                            break;
+                        case 14:
+                            Console.Clear();
+                            field.FieldList();
                             CommList();
                             break;
                     }

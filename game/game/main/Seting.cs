@@ -34,7 +34,7 @@ namespace game
                 }                    
                 Day.day = Convert.ToInt32(iniFile.ReadINI("Setings", "day"));
                 Shop.FoodCost = Convert.ToInt32(iniFile.ReadINI("Setings", "foodCost"));
-                Barn.cost = Convert.ToInt32(iniFile.ReadINI("Setings", "barnCost"));
+                Shop.barnCost = Convert.ToInt32(iniFile.ReadINI("Setings", "barnCost"));
                 money.MoneyP(Convert.ToInt32(iniFile.ReadINI("Setings", "startMoney")));
             }
             catch(FormatException)

@@ -16,6 +16,7 @@
 			<delanimal>удалить животное</delanimal>
 			<buysmth>купить (что-то)</buysmth>
 			<howto>как писать команды</howto>
+			<fieldlist>поле</fieldlist>
 		</CommandList>
 		<DayList>
 			<head>ConsoleFarm</head>
@@ -61,7 +62,7 @@
 		</ShopList>
 		<BarnList>
 			<head>Амбар</head>
-			<maxspace>   Максимум мест в амбаре: </maxspace>
+			<maxspace>Максимум мест в амбаре: </maxspace>
 			<name>Имя: </name>
 			<type>Тип: </type>
 			<moneyperday>Денег в день: </moneyperday>
@@ -69,6 +70,15 @@
 			<outofspace>В амбаре нету места</outofspace>
 			<formatexception>Неизвестный номер</formatexception>
 		</BarnList>
+		<FieldList>
+			<head>Поле</head>
+			<maxspace>   Максимум растений на поле:</maxspace>
+			<type>Вид: </type>
+			<empty>нету</empty>
+			<moneyperday>Денег в день: </moneyperday>
+			<outofspase>На поле нету свободного места</outofspase>
+			<formatexception>Неизвестный номер</formatexception>
+		</FieldList>
 		<HowToList>
 			<head>Как писать команда</head>
 			<first>Во первых, никаких пробелов в конце</first>

@@ -72,9 +72,10 @@ namespace game
             foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "barn") commandList[8] = LocalizationNode.InnerText;
             foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buybarnlvl") commandList[9] = LocalizationNode.InnerText;
             foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "delanimal") commandList[10] = LocalizationNode.InnerText;
+            commandList[11] = "money test 1";
             foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buysmth") commandList[12] = LocalizationNode.InnerText;
             foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "howto") commandList[13] = LocalizationNode.InnerText;
-            commandList[11] = "money test 1";     
+            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "fieldlist") commandList[14] = LocalizationNode.InnerText;
         }
     }
 }

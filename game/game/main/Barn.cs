@@ -7,7 +7,7 @@ namespace game
 {
     class Barn
     {
-        public static int cost;
+
         public int barnSpace;
         public int barnLvlfantom = Shop.barnLvl;
         public int allMoneyPerDay;
@@ -44,7 +44,7 @@ namespace game
                 }
                 else
                 {
-                    foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "outofspace") Console.WriteLine(LocalizationNode.InnerText);
+                    Messege("BarnList","outofspace","");
                     day.CommList();
                 }
             }
@@ -66,7 +66,7 @@ namespace game
                 day.CommList();
             }
         }
-        public void List()
+        public void BarnList()
         {
             Space();
             int i = 0;

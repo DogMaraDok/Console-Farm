@@ -1,10 +1,8 @@
-﻿using System;
-using System.IO;
-using static game.Language;
+﻿using static game.Language;
 using static game.Seting;
-using static game.CreateIni;
 using static game.Barn;
 using static game.Shop;
+using static game.Field;
 
 namespace game
 {
@@ -20,6 +18,7 @@ namespace game
             ProgramSelectLanguage();
             CommandList();
             BarnListSet();
+            FieldListSet();
             ShopListSet();
             day.DayList();
             day.CommList();

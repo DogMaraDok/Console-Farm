@@ -9,10 +9,12 @@ namespace game
 {
     class Shop
     {
+        public static int barnCost;
         public static int barnLvl;
         public static int barnMaxLvl = 10;
         public static int FoodLvl;
         public static int FoodCost;
+        public static int fieldLvl = 1;
         static XmlNode ShopListNode;
 
         public static void ShopListSet()
@@ -23,7 +25,7 @@ namespace game
         public void ShopL()
         {
             Barn barn = new Barn();
-            Barn.cost *= barnLvl;
+            barnCost *= barnLvl;
             barn.barnLvlfantom++;
 
             string moneyPerDay = null;
@@ -43,7 +45,7 @@ namespace game
             Console.WriteLine("   " + pig.type + "\n" + moneyPerDay + pig.moneyPerDay + "\n" + cost + pig.cost);
             Cow("Korovka");
             Console.WriteLine("   " + cow.type + "\n" + moneyPerDay + cow.moneyPerDay + "\n" + cost + cow.cost);
-            Console.WriteLine(barnLvlInfo + "\n" + barnLvl + to + barn.barnLvlfantom + "\n" + cost + Barn.cost);
+            Console.WriteLine(barnLvlInfo + "\n" + barnLvl + to + barn.barnLvlfantom + "\n" + cost + barnCost);
             foreach (XmlNode LocalizationNode in ShopListNode.ChildNodes) if (LocalizationNode.Name == "foodlvl") Console.WriteLine("   " + LocalizationNode.InnerText);
             foreach (XmlNode LocalizationNode in ShopListNode.ChildNodes) if (LocalizationNode.Name == "foodlvlinfo") Console.WriteLine(LocalizationNode.InnerText + "\n" + cost + Shop.FoodCost);
 
