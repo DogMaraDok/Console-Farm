@@ -16,10 +16,11 @@ namespace game
 
         public void DayList()
         {
-            barn.AllMoneyPerDay();
+            barn.BarnAllMoneyPerDay();
+            field.FieldAllMoneyPerDay();
             Messege("DayList", "head", "\t");
             MessegeNumber("DayList", "day", "", day);
-            MessegeNumber("DayList", "moneyperday", "", barn.allMoneyPerDay);
+            MessegeNumber("DayList", "moneyperday", "", barn.barnAllMoneyPerDay+ field.fieldAllMoneyPerDay);
             MessegeNumber("DayList", "money", "", Money.money);
             MessegeNumber("DayList", "barnlvl", "", Shop.barnLvl);
             MessegeNumber("DayList", "foodlvl", "", Shop.FoodLvl);
@@ -52,8 +53,7 @@ namespace game
                             Console.Clear();
                             day++;
                             Death.Dead();
-                            money.MoneyP(barn.allMoneyPerDay);
-                            barn.allMoneyPerDay = 0;
+                            money.MoneyP(barn.barnAllMoneyPerDay+field.fieldAllMoneyPerDay);
                             DayList();
                             CommList();
                             break;
@@ -138,11 +138,11 @@ namespace game
 
                             break;
                         case 10:
-                            Messege("DayList", "delenter", "");
+                            Messege("DayList", "delenteranimal", "");
                             barn.DelFromBarn();
                             Console.Clear();
                             DayList();
-                            Messege("DayList", "delmsg", "");
+                            Messege("DayList", "delmsganimal", "");
                             CommList();
                             break;
                         case 11:
@@ -165,6 +165,22 @@ namespace game
                         case 14:
                             Console.Clear();
                             field.FieldList();
+                            CommList();
+                            break;
+                        case 15:
+                            rice.Rice();
+                            field.AddToField();
+                            money.MoneyM(rice.cost);
+                            Console.Clear();
+                            DayList();
+                            CommList();
+                            break;
+                        case 16:
+                            Messege("DayList", "delenterplant", "");
+                            field.DelFromField();
+                            Console.Clear();
+                            DayList();
+                            Messege("DayList", "delmsgplant", "");
                             CommList();
                             break;
                     }

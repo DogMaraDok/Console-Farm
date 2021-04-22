@@ -8,22 +8,25 @@ namespace game
 {
     class Field
     {
-        string[] fieldList = new string[50];
-        int[] fieldMoneyPerDay = new int[50];
+        public string[] fieldList = new string[50];
+        public int[] fieldMoneyPerDay = new int[50];
+        public static int plase;
         public int fieldSpace;
+        public int fieldAllMoneyPerDay;
         static XmlNode fieldListNode;
 
         public static void FieldListSet()
         {
             foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "FieldList") fieldListNode = LocalizationNode;
         }
-        void Spase()
+        void Space()
         {
             fieldSpace = 5 * Shop.fieldLvl;
         }
         public void AddToField()
         {
             Day day = new Day();
+            Space();
             for (int i = 0; i <= fieldSpace; i++)
             {
                 if (i != fieldSpace)
@@ -44,7 +47,7 @@ namespace game
         }
         public void FieldList()
         {
-            Spase();
+            Space();
             int i = 0;
             Messege("FieldList","head","\t");
             Messege("FieldList","maxspace","");
@@ -54,19 +57,41 @@ namespace game
                 {
                     string empty = null;
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "empty") empty = LocalizationNode.InnerText;
-                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine(LocalizationNode.InnerText + empty);
+                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + empty);
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "moneyperday") Console.WriteLine(LocalizationNode.InnerText + 0);
                     i++;
                 }
                 else
                 {
-                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine(LocalizationNode.InnerText + fieldList[i]);
+                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + fieldList[i]);
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "moneyperday") Console.WriteLine(LocalizationNode.InnerText + fieldMoneyPerDay[i]);
                     i++;
                 }
             }
             while (i < fieldSpace);
         }
-
+        public void FieldAllMoneyPerDay()
+        {
+            Space();
+            fieldAllMoneyPerDay = 0;
+            for (int i = 0; i < fieldSpace; i++)
+                fieldAllMoneyPerDay +=fieldMoneyPerDay[i];
+        }
+        public void DelFromField()
+        {
+            Day day = new Day();
+            Space();
+            try
+            {
+                plase = Convert.ToInt32(Console.ReadLine());
+                fieldList[plase] = null;
+                fieldMoneyPerDay[plase] = 0;
+            }
+            catch (FormatException)
+            {
+                Messege("BarnList", "formatexception", "");
+                day.CommList();
+            }
+        }
     }
 }

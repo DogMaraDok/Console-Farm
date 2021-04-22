@@ -8,8 +8,7 @@
 			<shop>магазин</shop>
 			<buychicken>купить курицу</buychicken>
 			<buycow>купить корову</buycow>
-			<buypig>
-			купить свинью</buypig>
+			<buypig>купить свинью</buypig>
 			<buynewfood>купить новую еду</buynewfood>
 			<barn>амбар</barn>
 			<buybarnlvl>купить уровень амбара</buybarnlvl>
@@ -17,6 +16,8 @@
 			<buysmth>купить (что-то)</buysmth>
 			<howto>как писать команды</howto>
 			<fieldlist>поле</fieldlist>
+			<buyrice>купить рис</buyrice>
+			<delplant>удалить растение</delplant>
 		</CommandList>
 		<DayList>
 			<head>ConsoleFarm</head>
@@ -36,8 +37,10 @@
 			<uhaveit>У тебя уже есть это</uhaveit>
 			<barnlvlmax>   Ты достиг максимального уровня амбара </barnlvlmax>
 			<unknown>Неизвестная команда</unknown>
-			<delenter>Введите номер животного</delenter>
-			<delmsg>Ты удалил животное №</delmsg>
+			<delenteranimal>Введите номер животного</delenteranimal>
+			<delenterplant>Введите номер растения</delenterplant>
+			<delmsganimal>Ты удалил животное</delmsganimal>
+			<delmsgplant>Ты удалил растение</delmsgplant>
 		</DayList>
 		<HelpList>
 			<head>Список команд:</head>
@@ -76,7 +79,7 @@
 			<type>Вид: </type>
 			<empty>нету</empty>
 			<moneyperday>Денег в день: </moneyperday>
-			<outofspase>На поле нету свободного места</outofspase>
+			<outofspaсe>На поле нету свободного места</outofspaсe>
 			<formatexception>Неизвестный номер</formatexception>
 		</FieldList>
 		<HowToList>
