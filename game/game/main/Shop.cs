@@ -43,7 +43,7 @@ namespace game
             Console.WriteLine("   " + chicken.type + "\n" + moneyPerDay + chicken.moneyPerDay + "\n" + cost + chicken.cost);
             Pig("Death Clown");
             Console.WriteLine("   " + pig.type + "\n" + moneyPerDay + pig.moneyPerDay + "\n" + cost + pig.cost);
-            Cow("Korovka");
+            Cow("MamkaTvoya");
             Console.WriteLine("   " + cow.type + "\n" + moneyPerDay + cow.moneyPerDay + "\n" + cost + cow.cost);
             Console.WriteLine(barnLvlInfo + "\n" + barnLvl + to + barn.barnLvlfantom + "\n" + cost + barnCost);
             foreach (XmlNode LocalizationNode in ShopListNode.ChildNodes) if (LocalizationNode.Name == "foodlvl") Console.WriteLine("   " + LocalizationNode.InnerText);

@@ -1,6 +1,7 @@
 ﻿using System;
 using static game.Day;
 using static game.Language;
+using static game.Barn;
 
 namespace game
 {
@@ -24,7 +25,7 @@ namespace game
             barn.Space();
             for (int i = 0; i <= barn.barnSpace; i++)
             {
-                if(barn.AnimalDay[i,1] >= day)
+                if(AnimalDay[i,1] <= day && AnimalDay[i,1] != 0)
                 {
                     barn.DelFromBarn(i);
                     Console.Clear();

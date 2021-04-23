@@ -21,6 +21,7 @@ namespace game
             BarnListSet();
             FieldListSet();
             ShopListSet();
+            AnimalListSet();
             day.DayList();
             day.CommList();
         }

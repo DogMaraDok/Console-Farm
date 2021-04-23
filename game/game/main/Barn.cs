@@ -11,9 +11,9 @@ namespace game
         public int barnSpace;
         public int barnLvlfantom = Shop.barnLvl;
         public int barnAllMoneyPerDay;
-        string[,] AnimalList = new string[50, 2];
-        int[] AnimalMoneyPerDay = new int[50];
-        public int[,] AnimalDay = new int[50, 2];
+        static string[,] AnimalList = new string[50, 2];
+        static int[] AnimalMoneyPerDay = new int[50];
+        static public int[,] AnimalDay = new int[50, 2];
         static XmlNode BarnListNode;
         public static void BarnListSet()
         {
@@ -56,8 +56,8 @@ namespace game
             AnimalList[plase, 0] = null;
             AnimalList[plase, 1] = null;
             AnimalMoneyPerDay[plase] = 0;
+            AnimalDay[plase, 0] = 0;
             AnimalDay[plase, 1] = 0;
-            AnimalDay[plase, 2] = 0;
         }
         public void BarnList()
         {

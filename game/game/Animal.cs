@@ -30,16 +30,20 @@ namespace game
         static public string type;
         static public int moneyPerDay;
         static public int cost;
-        static public int daysOfLife;       
+        static public int daysOfLife;
+        static public XmlNode AnimalListNode;
+
+        public static void AnimalListSet()
+        {
+            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "Animal") AnimalListNode = LocalizationNode;
+        }
     }
 
     class chicken : Animal
     {
-        static XmlNode AnimalListNode;
         public static void Chicken(string name)
         {
             Name = name;            
-            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "Animal") AnimalListNode = LocalizationNode;
             foreach (XmlNode LocalizationNode in AnimalListNode.ChildNodes) if (LocalizationNode.Name == "chicken") type = LocalizationNode.InnerText;
             moneyPerDay = 5;
             cost = 10;
@@ -48,11 +52,9 @@ namespace game
     }
     class pig : Animal
     {
-        static XmlNode AnimalListNode;
         public static void Pig(string name)
         {
             Name = name;
-            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "Animal") AnimalListNode = LocalizationNode;
             foreach (XmlNode LocalizationNode in AnimalListNode.ChildNodes) if (LocalizationNode.Name == "pig") type = LocalizationNode.InnerText;
             moneyPerDay = 25;
             cost = 50;
@@ -60,11 +62,9 @@ namespace game
     }
     class cow : Animal
     {
-        static XmlNode AnimalListNode;
         public static void Cow(string name)
         {
             Name = name;
-            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "Animal") AnimalListNode = LocalizationNode;
             foreach (XmlNode LocalizationNode in AnimalListNode.ChildNodes) if (LocalizationNode.Name == "cow") type = LocalizationNode.InnerText;
             moneyPerDay = 50;
             cost = 100;
