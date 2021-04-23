@@ -2,6 +2,7 @@
 using System.Xml;
 using static game.Language;
 
+
 namespace game
 {
     class Day
@@ -10,6 +11,7 @@ namespace game
         Barn barn = new Barn();
         Shop shop = new Shop();
         Field field = new Field();
+        Death death = new Death();
 
         static public int day;
         
@@ -55,6 +57,7 @@ namespace game
                             Death.Dead();
                             money.MoneyP(barn.barnAllMoneyPerDay+field.fieldAllMoneyPerDay);
                             DayList();
+                            death.AnimalDeath(day);
                             CommList();
                             break;
                         case 2:
@@ -139,11 +142,20 @@ namespace game
                             break;
                         case 10:
                             Messege("DayList", "delenteranimal", "");
-                            barn.DelFromBarn();
-                            Console.Clear();
-                            DayList();
-                            Messege("DayList", "delmsganimal", "");
-                            CommList();
+                            try
+                            {
+                                int plase = Convert.ToInt32(Console.ReadLine());
+                                barn.DelFromBarn(plase);
+                                Console.Clear();
+                                DayList();
+                                Messege("DayList", "delmsganimal", "");
+                                CommList();
+                            }
+                                        catch (FormatException)
+                            {
+                                Messege("BarnList", "formatexception", "");
+                                CommList();
+                            }                            
                             break;
                         case 11:
                             money.MoneyP(1000);
@@ -181,6 +193,11 @@ namespace game
                             Console.Clear();
                             DayList();
                             Messege("DayList", "delmsgplant", "");
+                            CommList();
+                            break;
+                        case 17:
+                            Console.Clear();
+                            barn.DebugBarnList();
                             CommList();
                             break;
                     }

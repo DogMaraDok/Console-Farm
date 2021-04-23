@@ -30,7 +30,7 @@ namespace game
         static public string type;
         static public int moneyPerDay;
         static public int cost;
-       
+        static public int daysOfLife;       
     }
 
     class chicken : Animal
@@ -43,6 +43,7 @@ namespace game
             foreach (XmlNode LocalizationNode in AnimalListNode.ChildNodes) if (LocalizationNode.Name == "chicken") type = LocalizationNode.InnerText;
             moneyPerDay = 5;
             cost = 10;
+            daysOfLife = 5;
         }
     }
     class pig : Animal

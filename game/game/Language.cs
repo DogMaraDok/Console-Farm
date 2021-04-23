@@ -81,6 +81,7 @@ namespace game
             foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "fieldlist") commandList[14] = LocalizationNode.InnerText;
             foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buyrice") commandList[15] = LocalizationNode.InnerText;
             foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "delplant") commandList[16] = LocalizationNode.InnerText;
+            commandList[17] = "debug barn";
         }
     }
 }
