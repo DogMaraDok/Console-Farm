@@ -10,6 +10,7 @@ namespace game
         static public string type;
         static public int moneyPerDay;
         static public int cost;
+        static public int daysOfLife;
     }
     class rice: Plants
     {
@@ -20,6 +21,7 @@ namespace game
             foreach (XmlNode LocalizationNode in FieldListNode.ChildNodes) if (LocalizationNode.Name == "rice") type = LocalizationNode.InnerText;
             moneyPerDay = 5;
             cost = 15;
+            daysOfLife = 3;
         }
     }
 }

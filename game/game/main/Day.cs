@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Xml;
 using static game.Language;
 
 
@@ -11,10 +10,8 @@ namespace game
         Barn barn = new Barn();
         Shop shop = new Shop();
         Field field = new Field();
-        Death death = new Death();
 
         static public int day;
-        
 
         public void DayList()
         {
@@ -25,7 +22,9 @@ namespace game
             MessegeNumber("DayList", "moneyperday", "", barn.barnAllMoneyPerDay+ field.fieldAllMoneyPerDay);
             MessegeNumber("DayList", "money", "", Money.money);
             MessegeNumber("DayList", "barnlvl", "", Shop.barnLvl);
-            MessegeNumber("DayList", "foodlvl", "", Shop.FoodLvl);
+            Messege("DayList","uhaveit","\t");
+            if(Shop.FoodLvl== 2)
+                Messege("DayList", "foodlvl", "");
             Messege("DayList", "help", "");
         }
         public void CommList()
@@ -38,7 +37,7 @@ namespace game
                 {
                     switch (i)
                     {
-                        case 0:
+                        case 0://help
                             Console.Clear();
                             Messege("HelpList", "head", "\t");
                             Messege("HelpList", "help", "");
@@ -48,29 +47,32 @@ namespace game
                             Messege("HelpList", "shop", "");
                             Messege("HelpList", "buy", "");
                             Messege("HelpList", "barn", "");
+                            Messege("HelpList", "field","");
                             Messege("HelpList", "delanimal", "");
+                            Messege("HelpList", "delplant", "");
                             CommList();
                             break;
-                        case 1:
+                        case 1://wait 
                             Console.Clear();
                             day++;
                             Death.Dead();
-                            money.MoneyP(barn.barnAllMoneyPerDay+field.fieldAllMoneyPerDay);
+                            Death.AnimalDeath();
+                            Death.PlantDeath();
                             DayList();
-                            death.AnimalDeath(day);
+                            money.MoneyP(barn.barnAllMoneyPerDay + field.fieldAllMoneyPerDay);
                             CommList();
                             break;
-                        case 2:
+                        case 2://back 
                             Console.Clear();
                             DayList();
                             CommList();
                             break;
-                        case 3:
+                        case 3://shop 
                             Console.Clear();
                             shop.ShopL();
                             CommList();
                             break;
-                        case 4:
+                        case 4://buy chicken
                             Console.Clear();
                             Messege("DayList", "entername", "");
                             string Name = Console.ReadLine();
@@ -82,19 +84,7 @@ namespace game
                             Messege("DayList", "boughtchicken", "");
                             CommList();
                             break;
-                        case 5:
-                            Console.Clear();
-                            Messege("DayList", "entername", "");
-                            string Name1 = Console.ReadLine();
-                            cow.Cow(Name1);
-                            money.MoneyM(Animal.cost);
-                            barn.AddToBarn();
-                            Console.Clear();
-                            DayList();
-                            Messege("DayList", "boughtcow", "");
-                            CommList();
-                            break;
-                        case 6:
+                        case 5://buy pig
                             Console.Clear();
                             Messege("DayList", "entername", "");
                             string Name2 = Console.ReadLine();
@@ -106,26 +96,51 @@ namespace game
                             Messege("DayList", "boughtpig", "");
                             CommList();
                             break;
-                        case 7:
+                        case 6://buy cow
+                            Console.Clear();
+                            Messege("DayList", "entername", "");
+                            string Name1 = Console.ReadLine();
+                            cow.Cow(Name1);
+                            money.MoneyM(Animal.cost);
+                            barn.AddToBarn();
+                            Console.Clear();
+                            DayList();
+                            Messege("DayList", "boughtcow", "");
+                            CommList();
+                            break;                            
+                        case 7://buy rice
+                            rice.Rice();
+                            money.MoneyM(rice.cost);
+                            field.AddToField();
+                            Console.Clear();
+                            DayList();
+                            Messege("DayList", "boughtrice", "");
+                            CommList();
+                            break;
+                        case 8://buy something
+                            money.MoneyM(1);
+                            Messege("DayList", "boughtsmth", "");
+                            CommList();
+                            break;                            
+                        case 9://buy new food
                             if (Shop.FoodLvl == 1)
                             {
                                 money.MoneyM(Shop.FoodCost);
                                 Shop.FoodLvl = 2;
+                                Console.Clear();
+                                DayList();
                                 Messege("DayList", "boughtfoodlvl", "");
                             }
                             else
                             {
+                                Console.Clear();
+                                DayList();
                                 Messege("DayList", "uhaveit", "");
                             }
                             CommList();
-                            break;
-                        case 8:
-                            Console.Clear();
-                            barn.BarnList();
-                            CommList();
-                            break;
-                        case 9:
-                            if (Shop.barnMaxLvl == Shop.barnLvl)
+                            break;                            
+                        case 10://buy barn lvl
+                            if (Shop.MaxLvl == Shop.barnLvl)
                             {
                                 Messege("DayList", "barnlvlmax", "");
                                 CommList();
@@ -138,9 +153,18 @@ namespace game
                                 Messege("DayList", "boughtbarnlvl", "");
                                 CommList();
                             }
-
+                            break;                            
+                        case 11://barn
+                            Console.Clear();
+                            barn.BarnList();
+                            CommList();
+                            break;                            
+                        case 12://field
+                            Console.Clear();
+                            field.FieldList();
+                            CommList();
                             break;
-                        case 10:
+                        case 13://del animal
                             Messege("DayList", "delenteranimal", "");
                             try
                             {
@@ -151,22 +175,30 @@ namespace game
                                 Messege("DayList", "delmsganimal", "");
                                 CommList();
                             }
-                                        catch (FormatException)
+                            catch (FormatException)
                             {
                                 Messege("BarnList", "formatexception", "");
                                 CommList();
-                            }                            
+                            }
                             break;
-                        case 11:
-                            money.MoneyP(1000);
-                            CommList();
+                        case 14://del plant
+                            Messege("DayList", "delenterplant", "");
+                            try
+                            {
+                                int place = Convert.ToInt32(Console.ReadLine());
+                                field.DelFromField(place);
+                                Console.Clear();
+                                DayList();
+                                Messege("DayList", "delmsgplant", "");
+                                CommList();                                
+                            }
+                            catch (FormatException)
+                            {
+                                Messege("BarnList", "formatexception", "");
+                                CommList();
+                            }
                             break;
-                        case 12:
-                            money.MoneyM(1);
-                            Messege("DayList", "boughtsmth", "");
-                            CommList();
-                            break;
-                        case 13:
+                        case 15://how write command
                             Console.Clear();
                             Messege("HowToList", "head", "");
                             Messege("HowToList", "first", "");
@@ -174,30 +206,19 @@ namespace game
                             Messege("HowToList", "stop", "");
                             CommList();
                             break;
-                        case 14:
-                            Console.Clear();
-                            field.FieldList();
+                        case 16://money test 1
+                            money.MoneyP(1000);
+                            Messege("DayList","cheat","");
                             CommList();
                             break;
-                        case 15:
-                            rice.Rice();
-                            field.AddToField();
-                            money.MoneyM(rice.cost);
-                            Console.Clear();
-                            DayList();
-                            CommList();
-                            break;
-                        case 16:
-                            Messege("DayList", "delenterplant", "");
-                            field.DelFromField();
-                            Console.Clear();
-                            DayList();
-                            Messege("DayList", "delmsgplant", "");
-                            CommList();
-                            break;
-                        case 17:
+                        case 17://debug barn
                             Console.Clear();
                             barn.DebugBarnList();
+                            CommList();
+                            break;
+                        case 18://debug field
+                            Console.Clear();
+                            field.DebugFieldList();
                             CommList();
                             break;
                     }

@@ -19,8 +19,9 @@ namespace game
                 if (string.IsNullOrWhiteSpace(value) == true)
                 {
                     Day day = new Day();
-                    Messege("", "emptyname", "");
+                    Console.Clear();
                     day.DayList();
+                    Messege("", "emptyname", "");
                     day.CommList();
                 }
                 else

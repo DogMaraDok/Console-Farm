@@ -11,7 +11,7 @@ namespace game
         public int barnSpace;
         public int barnLvlfantom = Shop.barnLvl;
         public int barnAllMoneyPerDay;
-        static string[,] AnimalList = new string[50, 2];
+        static public string[,] AnimalList = new string[50, 2];
         static int[] AnimalMoneyPerDay = new int[50];
         static public int[,] AnimalDay = new int[50, 2];
         static XmlNode BarnListNode;
@@ -26,6 +26,7 @@ namespace game
         public void AddToBarn()
         {
             Day day = new Day();
+            Money money = new Money();
             Space();
 
             for (int i = 0; i <= barnSpace; i++)
@@ -44,6 +45,9 @@ namespace game
                 }
                 else
                 {
+                    money.MoneyP(Animal.cost);
+                    Console.Clear();
+                    day.DayList();
                     Messege("BarnList", "outofspace", "");
                     day.CommList();
                 }
@@ -51,8 +55,6 @@ namespace game
         }
         public void DelFromBarn(int plase)
         {
-            Day day = new Day();
-            Space();
             AnimalList[plase, 0] = null;
             AnimalList[plase, 1] = null;
             AnimalMoneyPerDay[plase] = 0;
@@ -65,6 +67,8 @@ namespace game
             int i = 0;
             Messege("BarnList", "head", "\t");
             MessegeNumber("BarnList", "maxspace", "", barnSpace);
+            BarnAllMoneyPerDay();
+            MessegeNumber("BarnList","allmoneyperday","",barnAllMoneyPerDay);
             do
             {
                 if (string.IsNullOrEmpty(AnimalList[i, 0]) == true)
@@ -73,14 +77,14 @@ namespace game
                     foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "empty") empty = LocalizationNode.InnerText;
                     foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "name") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + empty);
                     foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine(LocalizationNode.InnerText + empty);
-                    foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "moneyperday") Console.WriteLine(LocalizationNode.InnerText + 0);
+                    MessegeNumber("BarnList", "moneyperday", "", AnimalMoneyPerDay[i]);
                     i++;
                 }
                 else
                 {
                     foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "name") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + AnimalList[i, 0]);
                     foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine(LocalizationNode.InnerText + AnimalList[i, 1]);
-                    foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "moneyperday") Console.WriteLine(LocalizationNode.InnerText + AnimalMoneyPerDay[i]);
+                    MessegeNumber("BarnList", "moneyperday", "", AnimalMoneyPerDay[i]);
                     i++;
                 }
             }
@@ -92,6 +96,8 @@ namespace game
             int i = 0;
             Messege("BarnList", "head", "\t");
             MessegeNumber("BarnList", "maxspace", "", barnSpace);
+            BarnAllMoneyPerDay();
+            MessegeNumber("BarnList", "moneyperday", "", barnAllMoneyPerDay);
             do
             {
                 if (string.IsNullOrEmpty(AnimalList[i, 0]) == true)
@@ -100,18 +106,18 @@ namespace game
                     foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "empty") empty = LocalizationNode.InnerText;
                     foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "name") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + empty);
                     foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine(LocalizationNode.InnerText + empty);
-                    foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "moneyperday") Console.WriteLine(LocalizationNode.InnerText + 0);
-                    Console.WriteLine(AnimalDay[i,0]);
-                    Console.WriteLine(AnimalDay[i, 1]);
+                    MessegeNumber("BarnList", "moneyperday", "", AnimalMoneyPerDay[i]);
+                    MessegeNumber("BarnList", "daybought", "", AnimalDay[i, 0]);
+                    MessegeNumber("BarnList", "daydeath", "", AnimalDay[i, 1]);
                     i++;
                 }
                 else
                 {
                     foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "name") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + AnimalList[i, 0]);
                     foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine(LocalizationNode.InnerText + AnimalList[i, 1]);
-                    foreach (XmlNode LocalizationNode in BarnListNode.ChildNodes) if (LocalizationNode.Name == "moneyperday") Console.WriteLine(LocalizationNode.InnerText + AnimalMoneyPerDay[i]);
-                    Console.WriteLine(AnimalDay[i, 0]);
-                    Console.WriteLine(AnimalDay[i, 1]);
+                    MessegeNumber("BarnList", "moneyperday", "", AnimalMoneyPerDay[i]);
+                    MessegeNumber("BarnList", "daybought", "", AnimalDay[i, 0]);
+                    MessegeNumber("BarnList", "daydeath", "", AnimalDay[i, 1]);
                     i++;
                 }
             }

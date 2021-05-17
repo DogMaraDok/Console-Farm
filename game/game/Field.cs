@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Xml;
-using static game.Plants;
 using static game.Language;
+using static game.Plants;
 
 
 namespace game
 {
     class Field
     {
-        public string[] fieldList = new string[50];
-        public int[] fieldMoneyPerDay = new int[50];
-        public static int plase;
+        static public string[] fieldList = new string[50];
+        static public int[] fieldMoneyPerDay = new int[50];
+        static public int[,] fieldDay = new int[50, 2];
         public int fieldSpace;
         public int fieldAllMoneyPerDay;
         static XmlNode fieldListNode;
@@ -19,13 +19,14 @@ namespace game
         {
             foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "FieldList") fieldListNode = LocalizationNode;
         }
-        void Space()
+        public void Space()
         {
             fieldSpace = 5 * Shop.fieldLvl;
         }
         public void AddToField()
         {
             Day day = new Day();
+            Money money = new Money();
             Space();
             for (int i = 0; i <= fieldSpace; i++)
             {
@@ -35,11 +36,16 @@ namespace game
                     {
                         fieldList[i] = type;
                         fieldMoneyPerDay[i] = moneyPerDay;
+                        fieldDay[i, 0] = Day.day;
+                        fieldDay[i, 1] = Day.day + Plants.daysOfLife;
                         break;
                     }
                 }
                 else
                 {
+                    money.MoneyP(Plants.cost);
+                    Console.Clear();
+                    day.DayList();
                     Messege("FieldList", "outofspace", "");
                     day.CommList();
                 }
@@ -49,8 +55,10 @@ namespace game
         {
             Space();
             int i = 0;
-            Messege("FieldList","head","\t");
-            Messege("FieldList","maxspace","");
+            Messege("FieldList", "head", "\t");
+            MessegeNumber("FieldList", "maxspace", "", fieldSpace);
+            FieldAllMoneyPerDay();
+            MessegeNumber("FieldList", "allmoneyperday", "", fieldAllMoneyPerDay);
             do
             {
                 if (string.IsNullOrEmpty(fieldList[i]) == true)
@@ -58,13 +66,44 @@ namespace game
                     string empty = null;
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "empty") empty = LocalizationNode.InnerText;
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + empty);
-                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "moneyperday") Console.WriteLine(LocalizationNode.InnerText + 0);
+                    MessegeNumber("FieldList", "moneyperday", "", fieldMoneyPerDay[i]);
                     i++;
                 }
                 else
                 {
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + fieldList[i]);
-                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "moneyperday") Console.WriteLine(LocalizationNode.InnerText + fieldMoneyPerDay[i]);
+                    MessegeNumber("FieldList", "moneyperday", "", fieldMoneyPerDay[i]);
+                    i++;
+                }
+            }
+            while (i < fieldSpace);
+        }
+        public void DebugFieldList()
+        {
+            Space();
+            int i = 0;
+            Messege("FieldList", "head", "\t");
+            MessegeNumber("FieldList", "maxspace", "", fieldSpace);
+            FieldAllMoneyPerDay();
+            MessegeNumber("FieldList", "allmoneyperday", "", fieldAllMoneyPerDay);
+            do
+            {
+                if (string.IsNullOrEmpty(fieldList[i]) == true)
+                {
+                    string empty = null;
+                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "empty") empty = LocalizationNode.InnerText;
+                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + empty);
+                    MessegeNumber("FieldList", "moneyperday", "", fieldMoneyPerDay[i]);
+                    MessegeNumber("FieldList", "daubought", "", fieldDay[i, 0]);
+                    MessegeNumber("FieldList", "daubought", "", fieldDay[i, 1]);
+                    i++;
+                }
+                else
+                {
+                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + fieldList[i]);
+                    MessegeNumber("FieldList", "moneyperday", "", fieldMoneyPerDay[i]);
+                    MessegeNumber("FieldList", "daubought", "", fieldDay[i, 0]);
+                    MessegeNumber("FieldList", "daubought", "", fieldDay[i, 1]);
                     i++;
                 }
             }
@@ -75,17 +114,18 @@ namespace game
             Space();
             fieldAllMoneyPerDay = 0;
             for (int i = 0; i < fieldSpace; i++)
-                fieldAllMoneyPerDay +=fieldMoneyPerDay[i];
+                fieldAllMoneyPerDay += fieldMoneyPerDay[i];
         }
-        public void DelFromField()
+        public void DelFromField(int place)
         {
             Day day = new Day();
             Space();
             try
             {
-                plase = Convert.ToInt32(Console.ReadLine());
-                fieldList[plase] = null;
-                fieldMoneyPerDay[plase] = 0;
+                fieldList[place] = null;
+                fieldMoneyPerDay[place] = 0;
+                fieldDay[place, 0] = 0;
+                fieldDay[place, 1] = 0;
             }
             catch (FormatException)
             {

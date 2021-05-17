@@ -5,10 +5,10 @@
   },
   "projects": {
     "C:\\Users\\i\\Source\\Repos\\DogMaraDok\\Console-Farm\\game\\game\\game.csproj": {
-      "version": "1.0.0",
+      "version": "0.7.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\i\\Source\\Repos\\DogMaraDok\\Console-Farm\\game\\game\\game.csproj",
-        "projectName": "game",
+        "projectName": "ConsoleFarm",
         "projectPath": "C:\\Users\\i\\Source\\Repos\\DogMaraDok\\Console-Farm\\game\\game\\game.csproj",
         "packagesPath": "C:\\Users\\i\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\i\\Source\\Repos\\DogMaraDok\\Console-Farm\\game\\game\\obj\\",

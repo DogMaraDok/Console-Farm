@@ -7,40 +7,43 @@
 			<back>назад</back>
 			<shop>магазин</shop>
 			<buychicken>купить курицу</buychicken>
-			<buycow>купить корову</buycow>
 			<buypig>купить свинью</buypig>
-			<buynewfood>купить новую еду</buynewfood>
-			<barn>амбар</barn>
-			<buybarnlvl>купить уровень амбара</buybarnlvl>
-			<delanimal>удалить животное</delanimal>
-			<buysmth>купить (что-то)</buysmth>
-			<howto>как писать команды</howto>
-			<fieldlist>поле</fieldlist>
+			<buycow>купить корову</buycow>
 			<buyrice>купить рис</buyrice>
+			<buysmth>купить (что-то)</buysmth>
+			<buynewfood>купить новую еду</buynewfood>
+			<buybarnlvl>купить уровень амбара</buybarnlvl>
+			<barn>амбар</barn>
+			<field>поле</field>
+			<delanimal>удалить животное</delanimal>
 			<delplant>удалить растение</delplant>
+			<howto>как писать команды</howto>
 		</CommandList>
 		<DayList>
 			<head>ConsoleFarm</head>
 			<day>День:</day>
 			<moneyperday>Денег в день:</moneyperday>
-			<money>Диньги:</money>
+			<money>Деньги:</money>
 			<barnlvl>Уровень амбара:</barnlvl>
-			<foodlvl>Уровень еды:</foodlvl>
+			<uhaveit>У тебя есть это</uhaveit>
+			<foodlvl>Новая еда</foodlvl>
 			<help>   помощь - показать команды</help>
 			<entername>Введите имя</entername>
 			<boughtchicken>Ты купил курицу</boughtchicken>
 			<boughtpig>Ты купил свинью</boughtpig>
 			<boughtcow>Ты купил корову</boughtcow>
+			<boughtrice>Ты купил рис</boughtrice>
+			<boughtsmth>Ты купил что-то</boughtsmth>
 			<boughtbarnlvl>Ты купил уровень амбара</boughtbarnlvl>
 			<boughtfoodlvl>Ты купил новую еду</boughtfoodlvl>
-			<boughtsmth>Ты купил что-то</boughtsmth>
 			<uhaveit>У тебя уже есть это</uhaveit>
 			<barnlvlmax>   Ты достиг максимального уровня амбара </barnlvlmax>
-			<unknown>Неизвестная команда</unknown>
 			<delenteranimal>Введите номер животного</delenteranimal>
 			<delenterplant>Введите номер растения</delenterplant>
 			<delmsganimal>Ты удалил животное</delmsganimal>
 			<delmsgplant>Ты удалил растение</delmsgplant>
+			<unknown>Неизвестная команда</unknown>
+			<cheat>Ты грязный читер</cheat>
 		</DayList>
 		<HelpList>
 			<head>Список команд:</head>
@@ -51,14 +54,20 @@
 			<shop>   магазин - показать ассортимент магазина</shop>
 			<buy>   купить (что-то) - купить что-то из магазина</buy>
 			<barn>   амбар - показывает твоих животных</barn>
+			<field>   поле - показывает твои растения</field>
 			<delanimal>   удалить животное - удаление животных</delanimal>
+			<delplant>   удалить растение - удаление растений</delplant>
 		</HelpList>
 		<ShopList>
+			<animal>Животныe</animal>
+			<plants>Растения</plants>
+			<upgrades>Улучшения</upgrades>
 			<head>мой магазин не твой</head>
 			<moneyperday>Денег в день </moneyperday>
 			<cost>Стоимость </cost>
-			<barnlvl>   Уровень амбара </barnlvl>
+			<barnlvl>Aмбар</barnlvl>
 			<to> => </to>
+			<></>
 			<foodlvl>Новая еда</foodlvl>
 			<foodlvlinfo>Умнажает доход в 2 раза</foodlvlinfo>
 			<uhaveit>У тебя уже есть это</uhaveit>
@@ -66,19 +75,25 @@
 		<BarnList>
 			<head>Амбар</head>
 			<maxspace>Максимум мест в амбаре: </maxspace>
+			<allmoneyperday>Денег в день от амбара: </allmoneyperday>
 			<name>Имя: </name>
 			<type>Тип: </type>
 			<moneyperday>Денег в день: </moneyperday>
+			<daybought>День покупки: </daybought>
+			<daydeath>День смерти: </daydeath>
 			<empty>нету</empty>
 			<outofspace>В амбаре нету места</outofspace>
 			<formatexception>Неизвестный номер</formatexception>
 		</BarnList>
 		<FieldList>
 			<head>Поле</head>
-			<maxspace>   Максимум растений на поле:</maxspace>
+			<maxspace>Максимум растений на поле:</maxspace>
+			<allmoneyperday>Денег в день от поля: </allmoneyperday>
 			<type>Вид: </type>
+			<moneyperday>Денег в день: </moneyperday>			
+			<daybought>День покупки: </daybought>
+			<daydeath>День смерти: </daydeath>
 			<empty>нету</empty>
-			<moneyperday>Денег в день: </moneyperday>
 			<outofspaсe>На поле нету свободного места</outofspaсe>
 			<formatexception>Неизвестный номер</formatexception>
 		</FieldList>
@@ -96,8 +111,13 @@
 		<Plant>
 			<rice>Рис</rice>
 		</Plant>
-		<DeadMessege1>Сегодня твой последний день</DeadMessege1>
-		<DeadMessege2>Теперь ты мертв</DeadMessege2>
+		<Death>
+			<deadmessege1>Сегодня твой последний день</deadmessege1>
+			<deadmessege2>Теперь ты мертв</deadmessege2>
+			<deadanimal>Сегодня умерло животное: </deadanimal>
+			<name> ,по имени </name>
+			<deadplant>Сегодня высохло растение: </deadplant>
+		</Death>		
 		<NotEnoughMoney>Недостаточно денег</NotEnoughMoney>
 		<emptyname>Имя не может быть пустым</emptyname>
 	</rus>

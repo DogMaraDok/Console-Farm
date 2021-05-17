@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "game/1.0.0": {
+      "game/0.7.0": {
         "dependencies": {
           "SharpDX.Direct2D1": "4.2.0"
         },
@@ -719,7 +719,7 @@
     }
   },
   "libraries": {
-    "game/1.0.0": {
+    "game/0.7.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -3,6 +3,12 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageIcon></PackageIcon>
+    <PackageId>ConsoleFarm</PackageId>
+    <Version>0.7.0</Version>
+    <Authors>DogMaraDok</Authors>
+    <Company>non</Company>
+    <Product>ConsoleFarm</Product>
   </PropertyGroup>
 
   <ItemGroup>

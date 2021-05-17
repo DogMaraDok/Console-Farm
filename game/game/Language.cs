@@ -69,19 +69,20 @@ namespace game
             foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "back") commandList[2] = LocalizationNode.InnerText;
             foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "shop") commandList[3] = LocalizationNode.InnerText;
             foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buychicken") commandList[4] = LocalizationNode.InnerText;
-            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buycow") commandList[5] = LocalizationNode.InnerText;
-            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buypig") commandList[6] = LocalizationNode.InnerText;
-            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buynewfood") commandList[7] = LocalizationNode.InnerText;
-            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "barn") commandList[8] = LocalizationNode.InnerText;
-            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buybarnlvl") commandList[9] = LocalizationNode.InnerText;
-            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "delanimal") commandList[10] = LocalizationNode.InnerText;
-            commandList[11] = "money test 1";
-            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buysmth") commandList[12] = LocalizationNode.InnerText;
-            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "howto") commandList[13] = LocalizationNode.InnerText;
-            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "fieldlist") commandList[14] = LocalizationNode.InnerText;
-            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buyrice") commandList[15] = LocalizationNode.InnerText;
-            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "delplant") commandList[16] = LocalizationNode.InnerText;
+            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buypig") commandList[5] = LocalizationNode.InnerText;
+            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buycow") commandList[6] = LocalizationNode.InnerText;
+            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buyrice") commandList[7] = LocalizationNode.InnerText;
+            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buysmth") commandList[8] = LocalizationNode.InnerText;
+            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buynewfood") commandList[9] = LocalizationNode.InnerText;
+            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "buybarnlvl") commandList[10] = LocalizationNode.InnerText;            
+            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "barn") commandList[11] = LocalizationNode.InnerText;
+            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "field") commandList[12] = LocalizationNode.InnerText;
+            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "delanimal") commandList[13] = LocalizationNode.InnerText;
+            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "delplant") commandList[14] = LocalizationNode.InnerText;
+            foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes) if (LocalizationNode.Name == "howto") commandList[15] = LocalizationNode.InnerText;
+            commandList[16] = "money test 1";
             commandList[17] = "debug barn";
+            commandList[18] = "debug field";
         }
     }
 }
