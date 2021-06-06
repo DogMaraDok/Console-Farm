@@ -13,6 +13,7 @@
             iniFile.Write("Setings", "fieldCost", "50");
             iniFile.Write("Setings", "day", "1");
             iniFile.Write("Setings", "startMoney", "10");
+            iniFile.Write("Setings", "lastDay","10950");
         }
     }
 }

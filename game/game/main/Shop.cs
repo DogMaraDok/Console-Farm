@@ -12,8 +12,8 @@ namespace game
     {
         public static int barnCost;
         public static int barnLvl;
-        public static int fieldCost = 50;
-        public static int fieldLvl = 1;
+        public static int fieldCost;
+        public static int fieldLvl;
         public static int MaxLvl = 10;
         public static int FoodLvl;
         public static int FoodCost;
@@ -53,8 +53,9 @@ namespace game
             Console.WriteLine("   " + rice.type);
             
             Messege("ShopList","upgrades","");
+            Messege("ShopList", "fieldlvl","   ");
             Messege("ShopList","barnlvl","   ");
-            Messege("ShopList","foodlvl","   ") ;
+            Messege("ShopList","foodlvl","   ");
         }
     }
 }

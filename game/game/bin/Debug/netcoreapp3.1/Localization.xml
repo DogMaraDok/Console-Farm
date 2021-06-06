@@ -65,9 +65,9 @@
 			<head>мой магазин не твой</head>
 			<moneyperday>Денег в день </moneyperday>
 			<cost>Стоимость </cost>
-			<barnlvl>Aмбар</barnlvl>
+			<barnlvl>Вместительность aмбарa</barnlvl>
 			<to> => </to>
-			<></>
+			<fieldlvl>Вместительность поля</fieldlvl>
 			<foodlvl>Новая еда</foodlvl>
 			<foodlvlinfo>Умнажает доход в 2 раза</foodlvlinfo>
 			<uhaveit>У тебя уже есть это</uhaveit>

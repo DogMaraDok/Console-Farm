@@ -51,6 +51,7 @@ namespace game
                 Shop.barnCost = Convert.ToInt32(iniFile.ReadINI("Setings", "barnCost"));
                 Shop.fieldCost = Convert.ToInt32(iniFile.ReadINI("Setings", "fieldCost"));
                 money.MoneyP(Convert.ToInt32(iniFile.ReadINI("Setings", "startMoney")));
+                Death.lastDay = Convert.ToInt32(iniFile.ReadINI("Setings","lastDay"));
             }
             catch(FormatException)
             {

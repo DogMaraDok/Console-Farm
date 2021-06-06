@@ -9,7 +9,7 @@ namespace game
     class Death
     {
         static XmlNode DeathNode;
-        public static int lastDay = 10950;
+        public static int lastDay;
         static string messsege;
 
         public static void DeathSet()
