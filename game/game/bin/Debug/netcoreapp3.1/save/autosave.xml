@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save name="autosave">
+  <numbers>
+    <day>2</day>
+    <money>10</money>
+    <barnlvl>1</barnlvl>
+    <fieldlvl>1</fieldlvl>
+    <foodlvl>1</foodlvl>
+    <fieldlvl>1</fieldlvl>
+  </numbers>
+</save>

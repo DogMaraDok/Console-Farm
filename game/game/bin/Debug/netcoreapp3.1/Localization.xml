@@ -42,6 +42,9 @@
 			<delenterplant>Введите номер растения</delenterplant>
 			<delmsganimal>Ты удалил животное</delmsganimal>
 			<delmsgplant>Ты удалил растение</delmsgplant>
+			<savename>Название сейва</savename>
+			<uhavesave>Сейв заменен</uhavesave>
+			<saved>Сохранено</saved>
 			<unknown>Неизвестная команда</unknown>
 			<cheat>Ты грязный читер</cheat>
 		</DayList>

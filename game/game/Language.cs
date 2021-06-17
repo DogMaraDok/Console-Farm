@@ -83,6 +83,7 @@ namespace game
             commandList[16] = "money test 1";
             commandList[17] = "debug barn";
             commandList[18] = "debug field";
+            commandList[19] = "save";
         }
     }
 }

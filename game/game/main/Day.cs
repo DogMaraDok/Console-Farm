@@ -1,5 +1,7 @@
 ﻿using System;
 using static game.Language;
+using static game.main.Save;
+
 
 
 namespace game
@@ -60,6 +62,7 @@ namespace game
                             Death.PlantDeath();
                             DayList();
                             money.MoneyP(barn.barnAllMoneyPerDay + field.fieldAllMoneyPerDay);
+                            DoSave("autosave");
                             CommList();
                             break;
                         case 2://back 
@@ -221,6 +224,13 @@ namespace game
                             field.DebugFieldList();
                             CommList();
                             break;
+                        case 19://save
+                            Messege("DayList","savename","");
+                            string name = Console.ReadLine();
+                            DoSave(name);
+                            Messege("DayList","saved","");
+                            CommList();
+                            break;
                     }
                 }
                 else if (i == 49)
@@ -232,107 +242,6 @@ namespace game
 
             }
         }
-        public void ShopСommList()
-        {
-            string comm = Console.ReadLine();
-            comm = comm.ToLower();
-            for (int i = 0; i < 50; i++)
-            {
-                if (comm == commandList[i])
-                {
-                    switch (i)
-                    {
-                        case 4://buy chicken
-                            Console.Clear();
-                            Messege("DayList", "entername", "");
-                            string Name = Console.ReadLine();
-                            chicken.Chicken(Name);
-                            money.MoneyM(Animal.cost);
-                            barn.AddToBarn();
-                            Console.Clear();
-                            DayList();
-                            Messege("DayList", "boughtchicken", "");
-                            CommList();
-                            break;
-                        case 5://buy pig
-                            Console.Clear();
-                            Messege("DayList", "entername", "");
-                            string Name2 = Console.ReadLine();
-                            pig.Pig(Name2);
-                            money.MoneyM(Animal.cost);
-                            barn.AddToBarn();
-                            Console.Clear();
-                            DayList();
-                            Messege("DayList", "boughtpig", "");
-                            CommList();
-                            break;
-                        case 6://buy cow
-                            Console.Clear();
-                            Messege("DayList", "entername", "");
-                            string Name1 = Console.ReadLine();
-                            cow.Cow(Name1);
-                            money.MoneyM(Animal.cost);
-                            barn.AddToBarn();
-                            Console.Clear();
-                            DayList();
-                            Messege("DayList", "boughtcow", "");
-                            CommList();
-                            break;
-                        case 7://buy rice
-                            rice.Rice();
-                            money.MoneyM(rice.cost);
-                            field.AddToField();
-                            Console.Clear();
-                            DayList();
-                            Messege("DayList", "boughtrice", "");
-                            CommList();
-                            break;
-                        case 8://buy something
-                            money.MoneyM(1);
-                            Messege("DayList", "boughtsmth", "");
-                            CommList();
-                            break;
-                        case 9://buy new food
-                            if (Shop.FoodLvl == 1)
-                            {
-                                money.MoneyM(Shop.FoodCost);
-                                Shop.FoodLvl = 2;
-                                Console.Clear();
-                                DayList();
-                                Messege("DayList", "boughtfoodlvl", "");
-                            }
-                            else
-                            {
-                                Console.Clear();
-                                DayList();
-                                Messege("DayList", "uhaveit", "");
-                            }
-                            CommList();
-                            break;
-                        case 10://buy barn lvl
-                            if (Shop.MaxLvl == Shop.barnLvl)
-                            {
-                                Messege("DayList", "barnlvlmax", "");
-                                CommList();
-                            }
 
-                            else
-                            {
-                                money.MoneyM(Shop.barnCost);
-                                Shop.barnLvl++;
-                                Messege("DayList", "boughtbarnlvl", "");
-                                CommList();
-                            }
-                            break;
-                    }
-
-                }
-                else if (i == 49)
-                {
-                    Messege("DayList", "unknown", "");
-                    CommList();
-                }
-            }
-        }
     }
 }
