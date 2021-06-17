@@ -225,11 +225,30 @@ namespace game
                             CommList();
                             break;
                         case 19://save
-                            Messege("DayList","savename","");
-                            string name = Console.ReadLine();
-                            DoSave(name);
-                            Messege("DayList","saved","");
+                            Messege("DayList", "savename", "");
+                            string saveName = Console.ReadLine();
+                            DoSave(saveName);
+                            Messege("DayList", "saved", "");
                             CommList();
+                            break;
+                        case 20://load
+                            Messege("DayList", "savename", "");
+                            string loadName = Console.ReadLine();
+                            try
+                            {
+                                LoadSave(loadName);
+                                Console.Clear();
+                                DayList();
+                                Messege("DayList", "loaded", "");
+                                Console.WriteLine(loadName);
+                                CommList();
+
+                            }
+                            catch(TypeLoadException)
+                            {
+                                Messege("DayList", "savedontexist", "");
+                                CommList();
+                            }
                             break;
                     }
                 }

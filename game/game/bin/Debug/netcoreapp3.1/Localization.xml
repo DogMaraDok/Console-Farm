@@ -45,6 +45,8 @@
 			<savename>Название сейва</savename>
 			<uhavesave>Сейв заменен</uhavesave>
 			<saved>Сохранено</saved>
+			<loaded>Загружено</loaded>
+			<savedontexist>Сохранения не существует</savedontexist>
 			<unknown>Неизвестная команда</unknown>
 			<cheat>Ты грязный читер</cheat>
 		</DayList>
