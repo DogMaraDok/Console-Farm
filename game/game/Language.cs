@@ -81,7 +81,7 @@ namespace game
                     case "shop":
                         commandList[3] = LocalizationNode.InnerText;
                         break;
-                    case "buychiken":
+                    case "buychicken":
                         commandList[4] = LocalizationNode.InnerText;
                         break;
                     case "buypig":

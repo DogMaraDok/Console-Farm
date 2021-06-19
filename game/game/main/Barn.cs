@@ -12,14 +12,14 @@ namespace game
         public int barnLvlfantom = Shop.barnLvl;
         public int barnAllMoneyPerDay;
         static public string[,] AnimalList = new string[50, 2];
-        static int[] AnimalMoneyPerDay = new int[50];
+        static public int[] AnimalMoneyPerDay = new int[50];
         static public int[,] AnimalDay = new int[50, 2];
         static XmlNode BarnListNode;
         public static void BarnListSet()
         {
             foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "BarnList") BarnListNode = LocalizationNode;
         }
-        public void Space()
+        public void bSpace()
         {
             barnSpace = 5 * Shop.barnLvl;
         }
@@ -27,7 +27,7 @@ namespace game
         {
             Day day = new Day();
             Money money = new Money();
-            Space();
+            bSpace();
 
             for (int i = 0; i <= barnSpace; i++)
             {
@@ -63,7 +63,7 @@ namespace game
         }
         public void BarnList()
         {
-            Space();
+            bSpace();
             int i = 0;
             Messege("BarnList", "head", "\t");
             MessegeNumber("BarnList", "maxspace", "", barnSpace);
@@ -92,7 +92,7 @@ namespace game
         }
         public void DebugBarnList()
         {
-            Space();
+            bSpace();
             int i = 0;
             Messege("BarnList", "head", "\t");
             MessegeNumber("BarnList", "maxspace", "", barnSpace);
@@ -125,7 +125,7 @@ namespace game
         }
         public void BarnAllMoneyPerDay()
         {
-            Space();
+            bSpace();
             barnAllMoneyPerDay = 0;
             for (int i = 0; i < barnSpace; i++)
                 barnAllMoneyPerDay += AnimalMoneyPerDay[i] * Shop.FoodLvl;

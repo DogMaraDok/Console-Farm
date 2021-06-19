@@ -19,7 +19,7 @@ namespace game
         {
             foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "FieldList") fieldListNode = LocalizationNode;
         }
-        public void Space()
+        public void fSpace()
         {
             fieldSpace = 5 * Shop.fieldLvl;
         }
@@ -27,7 +27,7 @@ namespace game
         {
             Day day = new Day();
             Money money = new Money();
-            Space();
+            fSpace();
             for (int i = 0; i <= fieldSpace; i++)
             {
                 if (i != fieldSpace)
@@ -53,7 +53,7 @@ namespace game
         }
         public void FieldList()
         {
-            Space();
+            fSpace();
             int i = 0;
             Messege("FieldList", "head", "\t");
             MessegeNumber("FieldList", "maxspace", "", fieldSpace);
@@ -80,7 +80,7 @@ namespace game
         }
         public void DebugFieldList()
         {
-            Space();
+            fSpace();
             int i = 0;
             Messege("FieldList", "head", "\t");
             MessegeNumber("FieldList", "maxspace", "", fieldSpace);
@@ -111,7 +111,7 @@ namespace game
         }
         public void FieldAllMoneyPerDay()
         {
-            Space();
+            fSpace();
             fieldAllMoneyPerDay = 0;
             for (int i = 0; i < fieldSpace; i++)
                 fieldAllMoneyPerDay += fieldMoneyPerDay[i];
@@ -119,7 +119,7 @@ namespace game
         public void DelFromField(int place)
         {
             Day day = new Day();
-            Space();
+            fSpace();
             try
             {
                 fieldList[place] = null;

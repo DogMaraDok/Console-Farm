@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Xml;
 using System.Xml.Linq;
+using static game.Barn;
 using static game.Day;
 using static game.Money;
 using static game.Shop;
+using static game.Field;
 
 namespace game.main
 {
@@ -11,15 +13,43 @@ namespace game.main
     {
         public static void DoSave(string name)
         {
-            XDocument xSave = new XDocument(new XElement("save",
+            Barn barn = new Barn();
+            Field field = new Field();
+            barn.bSpace();
+            field.fSpace();
+            XDocument xSave = new XDocument();
+            XElement xelSave = new XElement("save",
                  new XAttribute("name", name),
                new XElement("numbers",
                    new XElement("day", day),
                    new XElement("money", money),
                    new XElement("barnlvl", barnLvl),
                    new XElement("fieldlvl", fieldLvl),
-                   new XElement("foodlvl", FoodLvl))));
-
+                   new XElement("foodlvl", FoodLvl)));
+            XElement xelField = new XElement("field");
+            XElement xelBarn = new XElement("barn");
+            for (int i = 0; i <= barn.barnSpace; i++)
+            {
+                XElement xelAnimal = new XElement("animal",
+                    new XElement("name", AnimalList[i, 0]),
+                    new XElement("type", AnimalList[i, 1]),
+                    new XElement("moneyperday", AnimalMoneyPerDay[i]),
+                    new XElement("dayofbuy", AnimalDay[i, 0]),
+                    new XElement("dayofdie", AnimalDay[i, 1]));
+                xelBarn.Add(xelAnimal);
+            }
+            xelSave.Add(xelBarn);
+            for(int i = 0; i<= field.fieldSpace; i++)
+            {
+                XElement xelPlant = new XElement("plant",
+                    new XElement("type", fieldList[i]),
+                    new XElement("moneyperday", fieldMoneyPerDay[i]),
+                    new XElement("dayofbuy", fieldDay[i, 0]),
+                    new XElement("dayofdie", fieldDay[i, 1]));
+                xelField.Add(xelPlant);
+            }
+            xelSave.Add(xelField);
+            xSave.Add(xelSave);
             xSave.Save(@"save/" + name + ".xml");
         }
         public static void LoadSave(string name)
@@ -56,9 +86,68 @@ namespace game.main
                             }
                         }
                         break;
-                    case "animals":
+                    case "barn":
+                        int i = 0;
+                        foreach (XmlElement xAnimal in xType.ChildNodes)
+                        {
+                            if (xAnimal.Name == "animal")
+                            {
+                                foreach (XmlElement xElement in xAnimal.ChildNodes)
+                                {
+                                    string Att = Convert.ToString(xElement.Name);
+                                    switch (Att)
+                                    {
+                                        case "name":
+                                            AnimalList[i, 0] = xElement.InnerText;
+                                            break;
+                                        case "type":
+                                            AnimalList[i,1] = xElement.InnerText;
+                                            break;
+                                        case "moneyperday":
+                                            AnimalMoneyPerDay[i] = Convert.ToInt32(xElement.InnerText);
+                                            break;
+                                        case "dayofbuy":
+                                            AnimalDay[i,0] = Convert.ToInt32(xElement.InnerText);
+                                            break;
+                                        case "dayofdie":
+                                            AnimalDay[i, 1] = Convert.ToInt32(xElement.InnerText);
+                                            break;
+                                    }
+                                    
+                                }
+                                i++;
+                            }
+                        }
                         break;
-                    case "plants":
+                    case "field":
+                        int x = 0;
+                        foreach (XmlElement xPlant in xType.ChildNodes)
+                        {
+                            if (xPlant.Name == "plant")
+                            {
+                                foreach (XmlElement xElement in xPlant.ChildNodes)
+                                {
+                                    string Att = Convert.ToString(xElement.Name);
+                                    switch (Att)
+                                    {
+                                        case "type":
+                                            fieldList[x] = xElement.InnerText;
+                                            break;
+                                        case "moneyperday":
+                                            fieldMoneyPerDay[x] = Convert.ToInt32(xElement.InnerText);
+                                            break;
+                                        case "dayofbuy":
+                                            fieldDay[x, 0] = Convert.ToInt32(xElement.InnerText);
+                                            break;
+                                        case "dayofdie":
+                                            fieldDay[x, 1] = Convert.ToInt32(xElement.InnerText);
+                                            break;
+                                    }
+
+                                }
+                                x++;
+                            }
+                        }
                         break;
                 }
 

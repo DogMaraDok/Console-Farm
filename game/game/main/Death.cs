@@ -29,7 +29,7 @@ namespace game
         public static void AnimalDeath()
         {
             Barn barn = new Barn();
-            barn.Space();
+            barn.bSpace();
             for (int i = 0; i <= barn.barnSpace; i++)
             {
                 if (Barn.AnimalDay[i,1] <= Day.day && Barn.AnimalDay[i,1] != 0)
@@ -45,7 +45,7 @@ namespace game
         public static void PlantDeath()
         {
             Field field = new Field();
-            field.Space();
+            field.fSpace();
             for (int i = 0; i <= field.fieldSpace; i++)
             {
                 if (fieldDay[i, 1] <= Day.day && fieldDay[i, 1] != 0)

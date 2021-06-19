@@ -1,6 +1,7 @@
 ﻿using System;
 using static game.Language;
 using static game.main.Save;
+using static game.Barn;
 
 
 
