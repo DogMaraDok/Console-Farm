@@ -15,13 +15,16 @@ namespace game
         Field field = new Field();
 
         static public int day;
+        static public int year;
+        static public string[,] month = new string[12, 2];
+        static public int numMonth;
 
         public void DayList()
         {
             barn.BarnAllMoneyPerDay();
             field.FieldAllMoneyPerDay();
             Messege("DayList", "head", "\t");
-            MessegeNumber("DayList", "day", "", day);
+            Console.WriteLine(day+" "+month[numMonth,0]+" "+year);
             MessegeNumber("DayList", "moneyperday", "", barn.barnAllMoneyPerDay + field.fieldAllMoneyPerDay);
             MessegeNumber("DayList", "money", "", Money.money);
             MessegeNumber("DayList", "barnlvl", "", Shop.barnLvl);
@@ -58,6 +61,21 @@ namespace game
                         case 1://wait 
                             Console.Clear();
                             day++;
+                            if (day > Convert.ToInt32(month[numMonth,1]))
+                            {
+                                day = 1;
+                                numMonth++;
+                                if(numMonth > 11)
+                                {
+                                    year++;
+                                    numMonth = 0;
+                                    if (year % 4 == 0)
+                                        month[1, 1] = "29";
+                                    else
+                                        month[1, 1] = "28";
+                                }
+                            }
+                            
                             Death.Dead();
                             Death.AnimalDeath();
                             Death.PlantDeath();

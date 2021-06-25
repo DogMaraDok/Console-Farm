@@ -59,11 +59,74 @@ namespace game
             foreach (XmlNode SomeNode in MessegeNode.ChildNodes) if (SomeNode.Name == type) { Console.WriteLine(attribute + SomeNode.InnerText + number); return; }
             Console.WriteLine("Unknown messege");
         }
+        public static void MonthList()
+        {
+            XmlNode MonthNode = null;
+            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "Month") MonthNode = LocalizationNode;
+            foreach (XmlNode LocalizationNode in MonthNode.ChildNodes)
+            {
+                string month = LocalizationNode.Name;
+                switch (month)
+                {
+                    case "january":
+                        Day.month[0, 0] = LocalizationNode.InnerText;
+                        Day.month[0, 1] = "31";
+                        break;
+                    case "february":
+                        Day.month[1, 0] = LocalizationNode.InnerText;
+                        if (Day.year % 4 == 0)
+                            Day.month[1, 1] = "29";
+                        else
+                            Day.month[1, 1] = "28";
+                        break;
+                    case "march":
+                        Day.month[2, 0] = LocalizationNode.InnerText;
+                        Day.month[2, 1] = "31";
+                        break;
+                    case "april":
+                        Day.month[3, 0] = LocalizationNode.InnerText;
+                        Day.month[3, 1] = "30";
+                        break;
+                    case "may":
+                        Day.month[4, 0] = LocalizationNode.InnerText;
+                        Day.month[4, 1] = "31";
+                        break;
+                    case "june":
+                        Day.month[5, 0] = LocalizationNode.InnerText;
+                        Day.month[5, 1] = "30";
+                        break;
+                    case "july":
+                        Day.month[6, 0] = LocalizationNode.InnerText;
+                        Day.month[6, 1] = "31";
+                        break;
+                    case "august":
+                        Day.month[7, 0] = LocalizationNode.InnerText;
+                        Day.month[7, 1] = "31";
+                        break;
+                    case "september":
+                        Day.month[8, 0] = LocalizationNode.InnerText;
+                        Day.month[8, 1] = "30";
+                        break;
+                    case "october":
+                        Day.month[9, 0] = LocalizationNode.InnerText;
+                        Day.month[9, 1] = "31";
+                        break;
+                    case "november":
+                        Day.month[10, 0] = LocalizationNode.InnerText;
+                        Day.month[10, 1] = "30";
+                        break;
+                    case "december":
+                        Day.month[11, 0] = LocalizationNode.InnerText;
+                        Day.month[11, 1] = "31";
+                        break;
+                }
+            }
+        }
 
         public static void CommandList()
         {
             XmlNode CommandListNode = null;
-            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "CommandList") CommandListNode = LocalizationNode; 
+            foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "CommandList") CommandListNode = LocalizationNode;
             foreach (XmlNode LocalizationNode in CommandListNode.ChildNodes)
             {
                 string commName = LocalizationNode.Name;

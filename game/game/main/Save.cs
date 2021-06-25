@@ -22,6 +22,8 @@ namespace game.main
                  new XAttribute("name", name),
                new XElement("numbers",
                    new XElement("day", day),
+                   new XElement("month", numMonth),
+                   new XElement("year", year),
                    new XElement("money", money),
                    new XElement("barnlvl", barnLvl),
                    new XElement("fieldlvl", fieldLvl),
@@ -70,6 +72,12 @@ namespace game.main
                             {
                                 case "day":
                                     day = Convert.ToInt32(xNumbers.InnerText);
+                                    break;
+                                case "month":
+                                    numMonth = Convert.ToInt32(xNumbers.InnerText);
+                                    break;
+                                case "year":
+                                    year = Convert.ToInt32(xNumbers.InnerText);
                                     break;
                                 case "money":
                                     money = Convert.ToInt32(xNumbers.InnerText);

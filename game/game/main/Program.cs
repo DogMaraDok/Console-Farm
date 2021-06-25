@@ -22,6 +22,7 @@ namespace game
             Setings();
             ProgramSelectLanguage();
             CommandList();
+            MonthList();
             BarnListSet();
             FieldListSet();
             ShopListSet();

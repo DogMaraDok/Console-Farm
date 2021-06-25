@@ -116,6 +116,20 @@
 		<Plant>
 			<rice>Рис</rice>
 		</Plant>
+		<Month>
+			<january>Январь</january>
+			<february>Февраль</february>
+			<march>Март</march>
+			<april>Апрель</april>
+			<may>Май</may>
+			<june>Июнь</june>
+			<july>Июль</july>
+			<august>Август</august>
+			<september>Сентябрь</september>
+			<october>Октябрь</october>
+			<november>Ноябрь</november>
+			<december>Декабрь</december>
+		</Month>
 		<Death>
 			<deadmessege1>Сегодня твой последний день</deadmessege1>
 			<deadmessege2>Теперь ты мертв</deadmessege2>
@@ -126,7 +140,7 @@
 		<NotEnoughMoney>Недостаточно денег</NotEnoughMoney>
 		<emptyname>Имя не может быть пустым</emptyname>
 	</rus>
-	<eng name="eng">
+	<eng name = "eng">
 		<CommandList>
 			<help>help</help>
 			<wait>wait</wait>
