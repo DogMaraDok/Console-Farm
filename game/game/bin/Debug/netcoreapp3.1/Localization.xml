@@ -48,7 +48,7 @@
 			<loaded>Загружено</loaded>
 			<savedontexist>Сохранения не существует</savedontexist>
 			<unknown>Неизвестная команда</unknown>
-			<cheat>Ты грязный читер</cheat>
+			<cheat>Грязный читер</cheat>
 		</DayList>
 		<HelpList>
 			<head>Список команд:</head>
@@ -149,11 +149,14 @@
 			<buychicken>buy chicken</buychicken>
 			<buycow>buy cow</buycow>
 			<buypig>buy pig</buypig>
+			<buyrice>buy rice</buyrice>
 			<buynewfood>buy new food</buynewfood>
+			<buysmth>buy (something)</buysmth>
 			<barn>barn</barn>
+			<field>field</field>
 			<buybarnlvl>buy barn lvl</buybarnlvl>
 			<delanimal>del animal</delanimal>
-			<buysmth>buy (something)</buysmth>
+			<delplant>del plant</delplant>
 			<howto>how to write commands</howto>
 		</CommandList>
 		<DayList>
@@ -168,14 +171,23 @@
 			<boughtchicken>U bought chicken</boughtchicken>
 			<boughtpig>U bought pig</boughtpig>
 			<boughtcow>U bought cow</boughtcow>
+			<boughtrice>U bought rice</boughtrice>
 			<boughtbarnlvl>U bought barn lvl</boughtbarnlvl>
 			<boughtfoodlvl>U bought new food</boughtfoodlvl>
 			<boughtsmth>U bought something</boughtsmth>
 			<uhaveit>U already have it</uhaveit>
 			<barnlvlmax>   Ur at the max barn lvl</barnlvlmax>
 			<unknown>Unknown command</unknown>
-			<delenter>Enter the animal number</delenter>
-			<delmsg>U deleted animal #</delmsg>
+			<delenteranimal>Enter the animal number</delenteranimal>
+			<delenterplant>Enter the plant number</delenterplant>
+			<delmsganimal>U deleted animal #</delmsganimal>
+			<delmsgplant>U deleted plant #</delmsgplant>
+			<savename>Save name</savename>
+			<uhavesave>Save has been rewritten</uhavesave>
+			<saved>Saved</saved>
+			<loaded>Loaded</loaded>
+			<savedonotexist>Save do not exist</savedonotexist>
+			<cheat>Dirty cheater</cheat>
 		</DayList>
 		<HelpList>
 			<head>CommandList:</head>
@@ -187,13 +199,18 @@
 			<buy>   buy (something) - buy something from shop</buy>
 			<barn>   barn - shows ur animals</barn>
 			<delanimal>   del animal - delete some animal</delanimal>
+			<delplant>   del plant - delete some plant</delplant>
 		</HelpList>
 		<ShopList>
+			<animal>Animals</animal>
+			<plants>Plants</plants>
+			<upgrades>Upgrades</upgrades>
 			<head>my shop not urs</head>
 			<moneyperday>Money per day </moneyperday>
 			<cost>Cost </cost>
-			<barnlvl>   Barn lvl </barnlvl>
+			<barnlvl>Barn lvl </barnlvl>
 			<to> => </to>
+			<fieldlvl>Field size</fieldlvl>
 			<foodlvl>New food</foodlvl>
 			<foodlvlinfo>multiplies ur money per day by 2</foodlvlinfo>
 			<uhaveit>U already have it</uhaveit>
@@ -201,9 +218,12 @@
 		<BarnList>
 			<head>Barn</head>
 			<maxspace>   Barn max space: </maxspace>
+			<allmoneyperday>Money per day by barn:</allmoneyperday>
 			<name>Name: </name>
 			<type>Type: </type>
 			<moneyperday>Money per day: </moneyperday>
+			<daybought>Day of purchase: </daybought>
+			<daydeath>Day of death: </daydeath>
 			<empty>none</empty>
 			<outofspace>Barn out of space</outofspace>
 			<formatexception>Unknown number</formatexception>
@@ -214,12 +234,36 @@
 			<second>secondly,...</second>
 			<stop>Stop... How did u write this command?</stop>
 		</HowToList>
-		<DeadMessege1>Today ur last day</DeadMessege1>
-		<DeadMessege2>Now u dead</DeadMessege2>
+		<Animal>
+			<chicken>Chicken</chicken>
+			<cow>Cow</cow>
+			<pig>Pig</pig>
+		</Animal>
+		<Plant>
+			<rice>Rice</rice>
+		</Plant>
+		<Month>
+			<january>January</january>
+			<february>February</february>
+			<march>March</march>
+			<april>April</april>
+			<may>May</may>
+			<june>June</june>
+			<july>July</july>
+			<august>August</august>
+			<september>September</september>
+			<october>October</october>
+			<november>November</november>
+			<december>December</december>
+		</Month>
+		<Death>
+			<deadmessege1>Today is your last day</deadmessege1>
+			<deadmessege2>Now you are dead</deadmessege2>
+			<deadanimal>Today an animal has died: </deadanimal>
+			<name>, by the name </name>
+			<deadplant>Today a plant has died: </deadplant>
+		</Death>
 		<NotEnoughMoney>Not enough money</NotEnoughMoney>
-		<chicken>Chicken</chicken>
-		<cow>Cow</cow>
-		<pig>Pig</pig>
 		<emptyname>Name can't be empty</emptyname>
 	</eng>
 </Localizations>
