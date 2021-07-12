@@ -22,10 +22,9 @@ namespace game
         public void DayList()
         {
             barn.BarnAllMoneyPerDay();
-            field.FieldAllMoneyPerDay();
             Messege("DayList", "head", "\t");
             Console.WriteLine(day+" "+month[numMonth,0]+" "+year);
-            MessegeNumber("DayList", "moneyperday", "", barn.barnAllMoneyPerDay + field.fieldAllMoneyPerDay);
+            MessegeNumber("DayList", "moneyperday", "", barn.barnAllMoneyPerDay);
             MessegeNumber("DayList", "money", "", Money.money);
             MessegeNumber("DayList", "barnlvl", "", Shop.barnLvl);
             Messege("DayList", "uhaveit", "\t");
@@ -80,7 +79,7 @@ namespace game
                             Death.AnimalDeath();
                             Death.PlantDeath();
                             DayList();
-                            money.MoneyP(barn.barnAllMoneyPerDay + field.fieldAllMoneyPerDay);
+                            money.MoneyP(barn.barnAllMoneyPerDay);
                             DoSave("autosave");
                             CommList();
                             break;

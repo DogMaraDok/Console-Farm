@@ -8,9 +8,10 @@ namespace game
     class Plants
     {
         static public string type;
-        static public int moneyPerDay;
         static public int cost;
-        static public int daysOfLife;
+        static public int daysOfGrowItem;
+        static public int daysOfGrowSeed;
+        static public string item;
     }
     class rice: Plants
     {
@@ -19,9 +20,10 @@ namespace game
         {
             foreach (XmlNode LocalizationNode in language.ChildNodes) if (LocalizationNode.Name == "Plant") FieldListNode = LocalizationNode;
             foreach (XmlNode LocalizationNode in FieldListNode.ChildNodes) if (LocalizationNode.Name == "rice") type = LocalizationNode.InnerText;
-            moneyPerDay = 5;
             cost = 15;
-            daysOfLife = 3;
+            daysOfGrowSeed = 7;
+            daysOfGrowItem = 5;
+            foreach (XmlNode LocalizationNode in FieldListNode.ChildNodes) if (LocalizationNode.Name == "rice") item = LocalizationNode.InnerText;
         }
     }
 }

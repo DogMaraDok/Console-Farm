@@ -9,10 +9,8 @@ namespace game
     class Field
     {
         static public string[] fieldList = new string[50];
-        static public int[] fieldMoneyPerDay = new int[50];
-        static public int[,] fieldDay = new int[50, 2];
+        static public int[,,] fieldDay = new int[50, 3, 2];
         public int fieldSpace;
-        public int fieldAllMoneyPerDay;
         static XmlNode fieldListNode;
 
         public static void FieldListSet()
@@ -35,9 +33,29 @@ namespace game
                     if (string.IsNullOrEmpty(fieldList[i]) == true)
                     {
                         fieldList[i] = type;
-                        fieldMoneyPerDay[i] = moneyPerDay;
-                        fieldDay[i, 0] = Day.day;
-                        fieldDay[i, 1] = Day.day + Plants.daysOfLife;
+                        fieldDay[i, 1, 0] = Day.numMonth;
+                        fieldDay[i, 2, 0] = Day.year;
+                        for (fieldDay[i, 0, 0] = Day.day + daysOfGrowSeed; fieldDay[i, 0, 0] > Convert.ToInt32(Day.month[Day.numMonth, 1]); fieldDay[i, 0, 0] = fieldDay[i, 0, 0] - Convert.ToInt32(Day.month[Day.numMonth, 1]))
+                        {
+                            fieldDay[i, 1, 0]++;
+                            if (fieldDay[i, 1, 0] > 11)
+                            {
+                                fieldDay[i, 1, 0] = 0;
+                                fieldDay[i, 2, 0]++;
+                            }
+                        }
+
+                        fieldDay[i, 1, 1] = fieldDay[i, 1, 0];
+                        fieldDay[i, 2, 1] = fieldDay[i, 2, 0];
+                        for (fieldDay[i, 0, 1] = fieldDay[i, 0, 0] + daysOfGrowItem; fieldDay[i, 0, 1] > Convert.ToInt32(Day.month[Day.numMonth, 1]); fieldDay[i, 0, 1] = fieldDay[i, 0, 1] - Convert.ToInt32(Day.month[Day.numMonth, 1]))
+                        {
+                            fieldDay[i, 1, 1]++;
+                            if (fieldDay[i, 1, 1] > 11)
+                            {
+                                fieldDay[i, 1, 1] = 0;
+                                fieldDay[i, 2, 1] = Day.year++;
+                            }
+                        }
                         break;
                     }
                 }
@@ -46,7 +64,7 @@ namespace game
                     money.MoneyP(Plants.cost);
                     Console.Clear();
                     day.DayList();
-                    Messege("FieldList", "outofspace", "");
+                    Messege("FieldList", "outofspaсe", "");
                     day.CommList();
                 }
             }
@@ -57,8 +75,6 @@ namespace game
             int i = 0;
             Messege("FieldList", "head", "\t");
             MessegeNumber("FieldList", "maxspace", "", fieldSpace);
-            FieldAllMoneyPerDay();
-            MessegeNumber("FieldList", "allmoneyperday", "", fieldAllMoneyPerDay);
             do
             {
                 if (string.IsNullOrEmpty(fieldList[i]) == true)
@@ -66,13 +82,11 @@ namespace game
                     string empty = null;
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "empty") empty = LocalizationNode.InnerText;
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + empty);
-                    MessegeNumber("FieldList", "moneyperday", "", fieldMoneyPerDay[i]);
                     i++;
                 }
                 else
                 {
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + fieldList[i]);
-                    MessegeNumber("FieldList", "moneyperday", "", fieldMoneyPerDay[i]);
                     i++;
                 }
             }
@@ -84,8 +98,6 @@ namespace game
             int i = 0;
             Messege("FieldList", "head", "\t");
             MessegeNumber("FieldList", "maxspace", "", fieldSpace);
-            FieldAllMoneyPerDay();
-            MessegeNumber("FieldList", "allmoneyperday", "", fieldAllMoneyPerDay);
             do
             {
                 if (string.IsNullOrEmpty(fieldList[i]) == true)
@@ -93,28 +105,19 @@ namespace game
                     string empty = null;
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "empty") empty = LocalizationNode.InnerText;
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + empty);
-                    MessegeNumber("FieldList", "moneyperday", "", fieldMoneyPerDay[i]);
-                    MessegeNumber("FieldList", "daubought", "", fieldDay[i, 0]);
-                    MessegeNumber("FieldList", "daubought", "", fieldDay[i, 1]);
+                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "dategrow") Console.WriteLine(LocalizationNode.InnerText + empty);
+                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "dateitem") Console.WriteLine(LocalizationNode.InnerText + empty);
                     i++;
                 }
                 else
                 {
                     foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "type") Console.WriteLine($"\n{i}." + LocalizationNode.InnerText + fieldList[i]);
-                    MessegeNumber("FieldList", "moneyperday", "", fieldMoneyPerDay[i]);
-                    MessegeNumber("FieldList", "daubought", "", fieldDay[i, 0]);
-                    MessegeNumber("FieldList", "daubought", "", fieldDay[i, 1]);
+                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "dategrow") Console.WriteLine(LocalizationNode.InnerText + fieldDay[i, 0, 0] + " " + Day.month[fieldDay[i, 1, 0], 0] + " " + fieldDay[i, 2, 0]);
+                    foreach (XmlNode LocalizationNode in fieldListNode.ChildNodes) if (LocalizationNode.Name == "dateitem") Console.WriteLine(LocalizationNode.InnerText + fieldDay[i, 0, 1] + " " + Day.month[fieldDay[i, 1, 1], 0] + " " + fieldDay[i, 2, 1]);
                     i++;
                 }
             }
             while (i < fieldSpace);
-        }
-        public void FieldAllMoneyPerDay()
-        {
-            fSpace();
-            fieldAllMoneyPerDay = 0;
-            for (int i = 0; i < fieldSpace; i++)
-                fieldAllMoneyPerDay += fieldMoneyPerDay[i];
         }
         public void DelFromField(int place)
         {
@@ -123,9 +126,12 @@ namespace game
             try
             {
                 fieldList[place] = null;
-                fieldMoneyPerDay[place] = 0;
-                fieldDay[place, 0] = 0;
-                fieldDay[place, 1] = 0;
+                fieldDay[place, 0, 0] = 0;
+                fieldDay[place, 1, 0] = 0;
+                fieldDay[place, 2, 0] = 0;
+                fieldDay[place, 0, 1] = 0;
+                fieldDay[place, 1, 1] = 0;
+                fieldDay[place, 2, 1] = 0;
             }
             catch (FormatException)
             {

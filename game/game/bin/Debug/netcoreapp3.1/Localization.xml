@@ -96,8 +96,8 @@
 			<allmoneyperday>Денег в день от поля: </allmoneyperday>
 			<type>Вид: </type>
 			<moneyperday>Денег в день: </moneyperday>			
-			<daybought>День покупки: </daybought>
-			<daydeath>День смерти: </daydeath>
+			<dategrow>Вырастет: </dategrow>
+			<dateitem>Даст плоды: </dateitem>
 			<empty>нету</empty>
 			<outofspaсe>На поле нету свободного места</outofspaсe>
 			<formatexception>Неизвестный номер</formatexception>

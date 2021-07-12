@@ -44,10 +44,8 @@ namespace game.main
             for(int i = 0; i<= field.fieldSpace; i++)
             {
                 XElement xelPlant = new XElement("plant",
-                    new XElement("type", fieldList[i]),
-                    new XElement("moneyperday", fieldMoneyPerDay[i]),
-                    new XElement("dayofbuy", fieldDay[i, 0]),
-                    new XElement("dayofdie", fieldDay[i, 1]));
+                    new XElement("type", fieldList[i])
+                    );
                 xelField.Add(xelPlant);
             }
             xelSave.Add(xelField);
@@ -140,15 +138,6 @@ namespace game.main
                                     {
                                         case "type":
                                             fieldList[x] = xElement.InnerText;
-                                            break;
-                                        case "moneyperday":
-                                            fieldMoneyPerDay[x] = Convert.ToInt32(xElement.InnerText);
-                                            break;
-                                        case "dayofbuy":
-                                            fieldDay[x, 0] = Convert.ToInt32(xElement.InnerText);
-                                            break;
-                                        case "dayofdie":
-                                            fieldDay[x, 1] = Convert.ToInt32(xElement.InnerText);
                                             break;
                                     }
 
