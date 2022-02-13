@@ -1,0 +1,14 @@
+C:\Users\Atyg7\source\repos\Console farm reborn\Console farm reborn\bin\Debug\netcoreapp3.1\Console farm reborn.exe
+C:\Users\Atyg7\source\repos\Console farm reborn\Console farm reborn\bin\Debug\netcoreapp3.1\Console farm reborn.deps.json
+C:\Users\Atyg7\source\repos\Console farm reborn\Console farm reborn\bin\Debug\netcoreapp3.1\Console farm reborn.runtimeconfig.json
+C:\Users\Atyg7\source\repos\Console farm reborn\Console farm reborn\bin\Debug\netcoreapp3.1\Console farm reborn.runtimeconfig.dev.json
+C:\Users\Atyg7\source\repos\Console farm reborn\Console farm reborn\bin\Debug\netcoreapp3.1\Console farm reborn.dll
+C:\Users\Atyg7\source\repos\Console farm reborn\Console farm reborn\bin\Debug\netcoreapp3.1\Console farm reborn.pdb
+C:\Users\Atyg7\source\repos\Console farm reborn\Console farm reborn\obj\Debug\netcoreapp3.1\Console farm reborn.csproj.AssemblyReference.cache
+C:\Users\Atyg7\source\repos\Console farm reborn\Console farm reborn\obj\Debug\netcoreapp3.1\Console farm reborn.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Atyg7\source\repos\Console farm reborn\Console farm reborn\obj\Debug\netcoreapp3.1\Console farm reborn.AssemblyInfoInputs.cache
+C:\Users\Atyg7\source\repos\Console farm reborn\Console farm reborn\obj\Debug\netcoreapp3.1\Console farm reborn.AssemblyInfo.cs
+C:\Users\Atyg7\source\repos\Console farm reborn\Console farm reborn\obj\Debug\netcoreapp3.1\Console farm reborn.csproj.CoreCompileInputs.cache
+C:\Users\Atyg7\source\repos\Console farm reborn\Console farm reborn\obj\Debug\netcoreapp3.1\Console farm reborn.dll
+C:\Users\Atyg7\source\repos\Console farm reborn\Console farm reborn\obj\Debug\netcoreapp3.1\Console farm reborn.pdb
+C:\Users\Atyg7\source\repos\Console farm reborn\Console farm reborn\obj\Debug\netcoreapp3.1\Console farm reborn.genruntimeconfig.cache

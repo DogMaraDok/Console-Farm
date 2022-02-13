@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<language name="eng"> 
+	<Menu>
+		<newGame>New game</newGame>
+		<loadSave>Load save</loadSave>
+		<setings>Setings</setings>
+		<leave>Leave</leave>
+		<back>back</back>
+		<invalid>Invalid command</invalid>
+		<dontwork>Don't work</dontwork>
+	</Menu>
+	<Setings>
+		<lang>Language</lang>
+		<invalid>Invalid language</invalid>
+	</Setings>
+	<Command>
+		<newGame>new game</newGame>
+		<loadSave>load save</loadSave>
+		<setings>setings</setings>
+		<leave>leave</leave>
+		<lang>language</lang>
+		<back>back</back>
+	</Command>
+</language>

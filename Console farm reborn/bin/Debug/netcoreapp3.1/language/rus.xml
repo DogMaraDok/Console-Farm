@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language name="rus">
+	<Menu>
+		<newGame>Новая игра</newGame>
+		<loadSave>Загрузить сохранение</loadSave>
+		<setings>Настройки</setings>
+		<leave>Выйти</leave>
+		<back>назад</back>
+		<invalid>НЕправильная комманда</invalid>
+		<dontwork>Не работает</dontwork>
+	</Menu>
+	<Setings>
+		<lang>Язык</lang>
+		<invalid>Неправильный язык</invalid>
+	</Setings>
+	<Command>
+		<newGame>новая игра</newGame>
+		<loadSave>загрузить сохранение</loadSave>
+		<setings>настройки</setings>
+		<leave>выйти</leave>
+		<lang>язык</lang>
+		<back>назад</back>
+	</Command>
+</language>
