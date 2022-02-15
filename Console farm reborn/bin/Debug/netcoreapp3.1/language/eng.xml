@@ -13,6 +13,24 @@
 		<lang>Language</lang>
 		<invalid>Invalid language</invalid>
 	</Setings>
+	<Day>
+		<money>Money:</money>
+		<january>January</january>
+		<february>February</february>
+		<march>March</march>
+		<april>April</april>
+		<may>May</may>
+		<june>June</june>
+		<july>July</july>
+		<august>August</august>
+		<september>September</september>
+		<october>October</october>
+		<november>November</november>
+		<december>December</december>
+	</Day>
+	<Money>
+		<notEnough>not enough money</notEnough>
+	</Money>
 	<Command>
 		<newGame>new game</newGame>
 		<loadSave>load save</loadSave>
@@ -20,5 +38,8 @@
 		<leave>leave</leave>
 		<lang>language</lang>
 		<back>back</back>
+		<sleep>sleep</sleep>
+		<money10>money10</money10>
+		<money-10>money-10</money-10>
 	</Command>
 </language>

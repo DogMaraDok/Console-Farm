@@ -2,6 +2,7 @@
 using System.Xml;
 using static Console_farm_reborn.language;
 using static Console_farm_reborn.Settings;
+using static Console_farm_reborn.Day;
 
 namespace Console_farm_reborn
 {
@@ -9,7 +10,7 @@ namespace Console_farm_reborn
     {
         public static void Main()
         {
-            Console.Title = "ConsoleFarm Reborn v0.1.0.bild";
+            Console.Title = "ConsoleFarm Reborn v0.1.0.bild 150222";
             LoadLang();
             Console.WriteLine("\tCONSOLE FARM");
             Messege("Menu", "newGame", "  ");
@@ -30,11 +31,7 @@ namespace Console_farm_reborn
                     switch (CommandNode.Name)
                     {
                         case "newGame":
-                            Console.Clear();
-                            Messege("Menu","dontwork","");
-                            Console.ReadKey();
-                            Console.Clear();
-                            Main();
+                            DayInfo();
                             break;
                         case "loadSave":
                             Console.Clear();
@@ -50,12 +47,14 @@ namespace Console_farm_reborn
                         case "leave":
                             Environment.Exit(0);
                             break;
+                        default:
+                            Messege("Menu", "invalid", "");
+                            MenuCommand();
+                            break;
                     }
 
                 }
             }
-            Messege("Menu", "invalid", "");
-            MenuCommand();
         }
     }
 }
