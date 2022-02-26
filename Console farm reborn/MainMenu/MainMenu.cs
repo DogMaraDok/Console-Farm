@@ -10,7 +10,7 @@ namespace Console_farm_reborn
     {
         public static void Main()
         {
-            Console.Title = "ConsoleFarm Reborn v0.1.0.bild 150222";
+            Console.Title = "ConsoleFarm Reborn v0.1.0.bild 260222";
             LoadLang();
             Console.WriteLine("\tCONSOLE FARM");
             Messege("Menu", "newGame", "  ");
@@ -47,14 +47,12 @@ namespace Console_farm_reborn
                         case "leave":
                             Environment.Exit(0);
                             break;
-                        default:
-                            Messege("Menu", "invalid", "");
-                            MenuCommand();
-                            break;
                     }
 
                 }
             }
+            Messege("Menu", "invalid", "");
+            MenuCommand();
         }
     }
 }

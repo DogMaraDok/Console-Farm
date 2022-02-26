@@ -2,5 +2,13 @@
 <Setings>
   <GameSetings>
     <lang>eng.xml</lang>
+	<Plants>
+		<carrot>
+			<coast>10</coast>
+			<growDay>10</growDay>
+			<ripeDay>5</ripeDay>
+			<fruitingSeveralTimes>false</fruitingSeveralTimes>
+		</carrot>
+	</Plants>
   </GameSetings>
 </Setings>

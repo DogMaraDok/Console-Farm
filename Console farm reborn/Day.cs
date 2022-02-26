@@ -2,20 +2,21 @@
 using System.Xml;
 using static Console_farm_reborn.language;
 using static Console_farm_reborn.Money;
+using static Console_farm_reborn.Field;
 
 namespace Console_farm_reborn
 {
     internal class Day
     {
         public static int day = 1;
-        public static string month = "december";
+        public static int month = 0;
         public static int year = 2022;
 
         public static void DayInfo()
         {
             Console.Clear();
             Console.WriteLine("\tCONSOLE FARM");
-            Messege("Day", month, "", day, year);
+            Console.WriteLine(day + " " + MonthDay[month, 0] + " " + year);
             Messege("Day", "money", "", money);
             DayCommand();
         }
@@ -31,6 +32,7 @@ namespace Console_farm_reborn
                     switch (CommandNode.Name)
                     {
                         case "sleep":
+                            AddToField("carrot");
                             NextDay();
                             DayInfo();
                             break;
@@ -51,56 +53,38 @@ namespace Console_farm_reborn
 
         public static void NextDay()
         {
-            XmlNode MessegeNode = null;
-            foreach (XmlNode SomeNode in xlanguage.ChildNodes)
+            day++;
+            if (day > Convert.ToInt32(MonthDay[month,1]))
             {
-                if (SomeNode.Name == "Day")
+                day = 0;
+                month++;
+                if (month > 11)
                 {
-                    MessegeNode = SomeNode;
-                    foreach (XmlNode SomeNode2 in MessegeNode.ChildNodes)
+                    month = 0;
+                    year++;
+                    foreach (XmlNode Node in xlanguage.ChildNodes)
                     {
-                        switch (SomeNode2.Name)
+                        if (Node.Name == "Day")
                         {
-                            case "january":
-                                if (day < 31)
+                            foreach (XmlNode SomeNode in Node.ChildNodes)
+                            {
+                                switch (SomeNode.Name)
                                 {
-
+                                    case "february":
+                                        MonthDay[0, 0] = SomeNode.InnerText;
+                                        if (year % 4 == 0)
+                                            MonthDay[0, 1] = "29";
+                                        else
+                                            MonthDay[0, 1] = "28";
+                                        break;
                                 }
-                                break;
-                            case "february":
-                                break;
-                            case "march":
-                                
-                            case "april":
-                                if (day < 30)
-                                {
-
-                                }
-                                break;
-                            case "may":
-                                break;
-                            case "june":
-                                break;
-                            case "july":
-                                break;
-                            case "august":
-                                break;
-                            case "september":
-                                break;
-                            case "october":
-                                break;
-                            case "november":
-                                break;
-                            case "december":
-                                break;
+                            }
                         }
                     }
                 }
             }
-            day++;
         }
-
     }
 }
-    
+
 

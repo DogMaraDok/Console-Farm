@@ -31,6 +31,12 @@
 	<Money>
 		<notEnough>not enough money</notEnough>
 	</Money>
+	<Plants>
+		<carrot>Carrot</carrot>
+		<wheat>Wheat</wheat>
+		<tomatoes>Tomatoes</tomatoes>
+		<cucumbers>Cucumbers</cucumbers>
+	</Plants>
 	<Command>
 		<newGame>new game</newGame>
 		<loadSave>load save</loadSave>
