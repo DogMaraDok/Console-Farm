@@ -9,6 +9,7 @@ namespace Console_farm_reborn
     internal class Field
     {
         public static int FieldLvl = 1;
+        public static int Count;
         public static string[] Plant = new string[50];
         public static int[,] PlantGrow = new int[50, 3];//0 = день 1 = месяц 2 = год
         public static int[,] PlantRipe = new int[50, 3];//0 = день 1 = месяц 2 = год
@@ -21,7 +22,37 @@ namespace Console_farm_reborn
 
         public static void FieldInf()
         {
-
+            Console.Clear();
+            MessegeLn("Field", "field", "\t");
+            MessegeLn("Field", "lvl", "  ", FieldLvl);
+            Messege("Field", "space", "  ");
+            Console.WriteLine(" " + Count + "/" + FieldSpace());
+            for (int i = 0; i < FieldSpace(); i++)
+            {
+                if (string.IsNullOrEmpty(Plant[i]) == true)
+                {
+                    Console.Write(i);
+                    MessegeLn("Field", "freeSpace", ". ");
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.WriteLine(i + ". " + Plant[i]);
+                    Messege("Field", "growthStage", "  ");
+                    if (PlantGrow[i, 0] == day && PlantGrow[i, 1] == month && PlantGrow[i, 2] == year)
+                    {
+                        MessegeLn("Field", "hasGrown", " ");
+                        Messege("Field", "stageOfRipeness", "  ");
+                        if (PlantRipe[i, 0] == day && PlantRipe[i, 1] == month && PlantRipe[i, 2] == year)
+                            MessegeLn("Field", "ripe", " ");
+                        else
+                            MessegeLn("Field", "notRipe", " ");
+                    }
+                    else
+                        Messege("Field", "grows", " ");
+                    Console.WriteLine();
+                }
+            }
         }
 
         public static void AddToField(string plant)
@@ -35,11 +66,11 @@ namespace Console_farm_reborn
                         switch (PlantAtr.Name)
                         {
                             case "coast":
-                                if (MinusMoney(Convert.ToInt32(PlantAtr.InnerText)) == 0)
+                                if (MinusMoney(Convert.ToInt32(PlantAtr.InnerText)) == -1)
                                     goto case "Not enough money";
                                 break;
                             case "growDay":
-                                for (int i = 0; i <= FieldSpace() - 1; i++)
+                                for (int i = 0; i < FieldSpace(); i++)
                                 {
                                     if (PlantGrow[i, 0] == 0)
                                     {
@@ -114,6 +145,7 @@ namespace Console_farm_reborn
                         if (string.IsNullOrEmpty(Plant[i]) == true)
                         {
                             Plant[i] = PlantNode.Name;
+                            Count++;
                             break;
                         }
                     }

@@ -137,13 +137,13 @@ namespace Console_farm_reborn
                     }
                 }
             }
-            Messege("Setings", "invalid", "");
+            MessegeLn("Setings", "invalid", "");
             Console.ReadKey();
             Console.Clear();
             SelectLang();
         }
 
-        public static void Messege(string node, string type, string attribute)
+        public static void MessegeLn(string node, string type, string attribute)
         {
             XmlNode MessegeNode = null;
             foreach (XmlNode SomeNode in xlanguage.ChildNodes) if (SomeNode.Name == node) MessegeNode = SomeNode;
@@ -151,11 +151,43 @@ namespace Console_farm_reborn
             Console.WriteLine("Unknown messege");
         }
 
-        public static void Messege(string node, string type, string attribute, string postattribute)
+        public static void MessegeLn(string node, string type, string attribute, string postattribute)
         {
             XmlNode MessegeNode = null;
             foreach (XmlNode SomeNode in xlanguage.ChildNodes) if (SomeNode.Name == node) MessegeNode = SomeNode;
             foreach (XmlNode SomeNode in MessegeNode.ChildNodes) if (SomeNode.Name == type) { Console.WriteLine(attribute + SomeNode.InnerText + " " + postattribute); return; }
+            Console.WriteLine("Unknown messege");
+        }
+
+        public static void MessegeLn(string node, string type, string attribute, int postattribute)
+        {
+            XmlNode MessegeNode = null;
+            foreach (XmlNode SomeNode in xlanguage.ChildNodes) if (SomeNode.Name == node) MessegeNode = SomeNode;
+            foreach (XmlNode SomeNode in MessegeNode.ChildNodes) if (SomeNode.Name == type) { Console.WriteLine(attribute + SomeNode.InnerText + " " + postattribute); return; }
+            Console.WriteLine("Unknown messege");
+        }
+
+        public static void MessegeLn(string node, string type, string attribute, int number, int postattribute)
+        {
+            XmlNode MessegeNode = null;
+            foreach (XmlNode SomeNode in xlanguage.ChildNodes) if (SomeNode.Name == node) MessegeNode = SomeNode;
+            foreach (XmlNode SomeNode in MessegeNode.ChildNodes) if (SomeNode.Name == type) { Console.WriteLine(attribute + number + " " + SomeNode.InnerText + " " + postattribute); return; }
+            Console.WriteLine("Unknown messege");
+        }
+
+        public static void Messege(string node, string type, string attribute)
+        {
+            XmlNode MessegeNode = null;
+            foreach (XmlNode SomeNode in xlanguage.ChildNodes) if (SomeNode.Name == node) MessegeNode = SomeNode;
+            foreach (XmlNode SomeNode in MessegeNode.ChildNodes) if (SomeNode.Name == type) { Console.Write(attribute + SomeNode.InnerText); return; }
+            Console.WriteLine("Unknown messege");
+        }
+
+        public static void Messege(string node, string type, string attribute, string postattribute)
+        {
+            XmlNode MessegeNode = null;
+            foreach (XmlNode SomeNode in xlanguage.ChildNodes) if (SomeNode.Name == node) MessegeNode = SomeNode;
+            foreach (XmlNode SomeNode in MessegeNode.ChildNodes) if (SomeNode.Name == type) { Console.Write(attribute + SomeNode.InnerText + " " + postattribute); return; }
             Console.WriteLine("Unknown messege");
         }
 
@@ -163,7 +195,7 @@ namespace Console_farm_reborn
         {
             XmlNode MessegeNode = null;
             foreach (XmlNode SomeNode in xlanguage.ChildNodes) if (SomeNode.Name == node) MessegeNode = SomeNode;
-            foreach (XmlNode SomeNode in MessegeNode.ChildNodes) if (SomeNode.Name == type) { Console.WriteLine(attribute + SomeNode.InnerText + " " + postattribute); return; }
+            foreach (XmlNode SomeNode in MessegeNode.ChildNodes) if (SomeNode.Name == type) { Console.Write(attribute + SomeNode.InnerText + " " + postattribute); return; }
             Console.WriteLine("Unknown messege");
         }
 
@@ -171,7 +203,7 @@ namespace Console_farm_reborn
         {
             XmlNode MessegeNode = null;
             foreach (XmlNode SomeNode in xlanguage.ChildNodes) if (SomeNode.Name == node) MessegeNode = SomeNode;
-            foreach (XmlNode SomeNode in MessegeNode.ChildNodes) if (SomeNode.Name == type) { Console.WriteLine(attribute + number + " " + SomeNode.InnerText + " " + postattribute); return; }
+            foreach (XmlNode SomeNode in MessegeNode.ChildNodes) if (SomeNode.Name == type) { Console.Write(attribute + number + " " + SomeNode.InnerText + " " + postattribute); return; }
             Console.WriteLine("Unknown messege");
         }
     }

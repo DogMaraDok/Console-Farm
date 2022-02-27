@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using static Console_farm_reborn.language;
-using static Console_farm_reborn.Settings;
-using static Console_farm_reborn.MainMenu;
 
 namespace Console_farm_reborn
 {
     internal class Money
     {
-        public static int money;
+        public static int money = 100;
 
         public static int AddMoney(int number)
         {
@@ -27,9 +23,9 @@ namespace Console_farm_reborn
             }
             else
             {
-                Messege("Money","notEnough","");
+                MessegeLn("Money", "notEnough", "");
                 Console.ReadKey();
-                return 0;
+                return -1;
             }
         }
     }

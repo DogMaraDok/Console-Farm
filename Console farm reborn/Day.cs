@@ -16,8 +16,8 @@ namespace Console_farm_reborn
         {
             Console.Clear();
             Console.WriteLine("\tCONSOLE FARM");
-            Console.WriteLine(day + " " + MonthDay[month, 0] + " " + year);
-            Messege("Day", "money", "", money);
+            Console.WriteLine("  "+day + " " + MonthDay[month, 0] + " " + year);
+            MessegeLn("Day", "money", "  ", money);
             DayCommand();
         }
 
@@ -32,8 +32,15 @@ namespace Console_farm_reborn
                     switch (CommandNode.Name)
                     {
                         case "sleep":
-                            AddToField("carrot");
                             NextDay();
+                            DayInfo();
+                            break;
+                        case "field":
+                            FieldInf();
+                            DayCommand();
+                            break;
+                        case "plantCarrot":
+                            AddToField("carrot");
                             DayInfo();
                             break;
                         case "money-10":
@@ -47,7 +54,7 @@ namespace Console_farm_reborn
                     }
                 }
             }
-            Messege("Menu", "invalid", "");
+            MessegeLn("Menu", "invalid", "");
             DayInfo();
         }
 

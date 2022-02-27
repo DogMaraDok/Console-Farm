@@ -10,13 +10,13 @@ namespace Console_farm_reborn
     {
         public static void Main()
         {
-            Console.Title = "ConsoleFarm Reborn v0.1.0.bild 260222";
+            Console.Title = "ConsoleFarm Reborn v0.1.0.bild 270222";
             LoadLang();
             Console.WriteLine("\tCONSOLE FARM");
-            Messege("Menu", "newGame", "  ");
-            Messege("Menu", "loadSave", "  ");
-            Messege("Menu", "setings", "  ");
-            Messege("Menu", "leave", "  ");
+            MessegeLn("Menu", "newGame", "  ");
+            MessegeLn("Menu", "loadSave", "  ");
+            MessegeLn("Menu", "setings", "  ");
+            MessegeLn("Menu", "leave", "  ");
             MenuCommand();
         }
 
@@ -35,7 +35,7 @@ namespace Console_farm_reborn
                             break;
                         case "loadSave":
                             Console.Clear();
-                            Messege("Menu", "dontwork","");
+                            MessegeLn("Menu", "dontwork","");
                             Console.ReadKey();
                             Console.Clear();
                             Main();
@@ -51,7 +51,7 @@ namespace Console_farm_reborn
 
                 }
             }
-            Messege("Menu", "invalid", "");
+            MessegeLn("Menu", "invalid", "");
             MenuCommand();
         }
     }

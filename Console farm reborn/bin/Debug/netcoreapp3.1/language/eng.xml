@@ -31,6 +31,18 @@
 	<Money>
 		<notEnough>not enough money</notEnough>
 	</Money>
+	<Field>
+		<field>Field</field>
+		<lvl>Lvl</lvl>
+		<space>Space</space>
+		<freeSpace>Free space</freeSpace>
+		<growthStage>growth stage</growthStage>
+		<hasGrown>has grown</hasGrown>
+		<grows>grows</grows>
+		<stageOfRipeness>stage of ripeness</stageOfRipeness>
+		<ripe>ripe</ripe>
+		<notRipe>not ripe</notRipe>
+	</Field>
 	<Plants>
 		<carrot>Carrot</carrot>
 		<wheat>Wheat</wheat>
@@ -45,6 +57,8 @@
 		<lang>language</lang>
 		<back>back</back>
 		<sleep>sleep</sleep>
+		<field>field</field>
+		<plantCarrot>plant carrot</plantCarrot>
 		<money10>money10</money10>
 		<money-10>money-10</money-10>
 	</Command>

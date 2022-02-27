@@ -9,9 +9,9 @@ namespace Console_farm_reborn
     {
         public static void GameSetings()
         {
-            Messege("Menu", "setings", "\t");
-            Messege("Setings", "lang", "  ");
-            Messege("Menu", "back", "<-");
+            MessegeLn("Menu", "setings", "\t");
+            MessegeLn("Setings", "lang", "  ");
+            MessegeLn("Menu", "back", "<-");
             SetingsCommand();
         }
 
@@ -36,7 +36,7 @@ namespace Console_farm_reborn
                     }
                 }
             }
-            Messege("Menu", "invalid", "");
+            MessegeLn("Menu", "invalid", "");
             SetingsCommand();
         }
     }
