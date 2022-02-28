@@ -6,13 +6,54 @@
 		<setings>Настройки</setings>
 		<leave>Выйти</leave>
 		<back>назад</back>
-		<invalid>НЕправильная комманда</invalid>
+		<invalid>Неверная комманда</invalid>
 		<dontwork>Не работает</dontwork>
 	</Menu>
 	<Setings>
 		<lang>Язык</lang>
-		<invalid>Неправильный язык</invalid>
+		<invalid>Неверный язык</invalid>
 	</Setings>
+	<Day>
+		<money>Деньги:</money>
+		<january>Январь</january>
+		<february>Февраль</february>
+		<march>Март</march>
+		<april>Апрель</april>
+		<may>Май</may>
+		<june>Июнь</june>
+		<july>Июль</july>
+		<august>Август</august>
+		<september>Сентябрь</september>
+		<october>Октябрь</october>
+		<november>Ноябрь</november>
+		<december>Декабрь</december>
+	</Day>
+	<Money>
+		<notEnough>Недостаточно денег</notEnough>
+	</Money>
+	<Field>
+		<field>Поле</field>
+		<lvl>Уровень</lvl>
+		<space>Места</space>
+		<freeSpace>Свободное место</freeSpace>
+		<growthStage>Стадия роста</growthStage>
+		<hasGrown>выросло</hasGrown>
+		<grows>растет</grows>
+		<stageOfRipeness>Стадия созревания</stageOfRipeness>
+		<ripe>созрело</ripe>
+		<notRipe>не созрело</notRipe>
+	</Field>
+	<Plants>
+		<carrot>Морковка</carrot>
+		<wheat>Пшеница</wheat>
+		<tomatoes>Томаты</tomatoes>
+		<cucumbers>Огурцы</cucumbers>
+	</Plants>
+	<Shop>
+		<shop>Магазин</shop>
+		<carrotSeed>Семена морковки</carrotSeed>
+		<fieldUpgrade>Улучшить поле</fieldUpgrade>
+	</Shop>
 	<Command>
 		<newGame>новая игра</newGame>
 		<loadSave>загрузить сохранение</loadSave>
@@ -20,5 +61,11 @@
 		<leave>выйти</leave>
 		<lang>язык</lang>
 		<back>назад</back>
+		<sleep>спать</sleep>
+		<field>поле</field>
+		<plantCarrot>посадить морковку</plantCarrot>
+		<shop>магазин</shop>
+		<money10>money10</money10>
+		<money-10>money-10</money-10>
 	</Command>
 </language>

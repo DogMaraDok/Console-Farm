@@ -2,7 +2,6 @@
 using System.Xml;
 using static Console_farm_reborn.Day;
 using static Console_farm_reborn.language;
-using static Console_farm_reborn.Money;
 
 namespace Console_farm_reborn
 {
@@ -10,13 +9,13 @@ namespace Console_farm_reborn
     {
         public static int FieldLvl = 1;
         public static int Count;
-        public static string[] Plant = new string[50];
-        public static int[,] PlantGrow = new int[50, 3];//0 = день 1 = месяц 2 = год
-        public static int[,] PlantRipe = new int[50, 3];//0 = день 1 = месяц 2 = год
+        public static string[] Plant = new string[100];
+        public static int[,] PlantGrow = new int[100, 3];//0 = день 1 = месяц 2 = год
+        public static int[,] PlantRipe = new int[100, 3];//0 = день 1 = месяц 2 = год
 
         public static int FieldSpace()
         {
-            int fieldSpace = 5 * FieldLvl;
+            int fieldSpace = 10 * FieldLvl;
             return fieldSpace;
         }
 
@@ -39,11 +38,11 @@ namespace Console_farm_reborn
                 {
                     Console.WriteLine(i + ". " + Plant[i]);
                     Messege("Field", "growthStage", "  ");
-                    if (PlantGrow[i, 0] == day && PlantGrow[i, 1] == month && PlantGrow[i, 2] == year)
+                    if (PlantGrow[i, 0] <= day && PlantGrow[i, 1] <= month && PlantGrow[i, 2] <= year)
                     {
                         MessegeLn("Field", "hasGrown", " ");
                         Messege("Field", "stageOfRipeness", "  ");
-                        if (PlantRipe[i, 0] == day && PlantRipe[i, 1] == month && PlantRipe[i, 2] == year)
+                        if (PlantRipe[i, 0] <= day & PlantRipe[i, 1] <= month & PlantRipe[i, 2] <= year)
                             MessegeLn("Field", "ripe", " ");
                         else
                             MessegeLn("Field", "notRipe", " ");
@@ -53,6 +52,30 @@ namespace Console_farm_reborn
                     Console.WriteLine();
                 }
             }
+            MessegeLn("Menu", "back", "<-");
+            FieldCom();
+        }
+
+        public static void FieldCom()
+        {
+            string comm = Console.ReadLine();
+            comm = comm.ToLower();
+            foreach (XmlNode CommandNode in xCommand)
+            {
+                if (CommandNode.InnerText == comm)
+                {
+                    switch (CommandNode.Name)
+                    {
+                        case "back":
+                            Console.Clear();
+                            DayInfo();
+                            break;
+                    }
+                }
+            }
+            MessegeLn("Menu", "invalid", "");
+            Console.ReadKey();
+            FieldCom();
         }
 
         public static void AddToField(string plant)
@@ -65,10 +88,6 @@ namespace Console_farm_reborn
                     {
                         switch (PlantAtr.Name)
                         {
-                            case "coast":
-                                if (MinusMoney(Convert.ToInt32(PlantAtr.InnerText)) == -1)
-                                    goto case "Not enough money";
-                                break;
                             case "growDay":
                                 for (int i = 0; i < FieldSpace(); i++)
                                 {
@@ -135,23 +154,45 @@ namespace Console_farm_reborn
                                     }
                                 }
                                 break;
-                            case "Not enough money":
-                                DayInfo();
-                                break;
                         }
                     }
-                    for (int i = 0; i <= FieldSpace() - 1; i++)
+                    foreach (XmlNode PlantNameNode in xLangPlants.ChildNodes)
                     {
-                        if (string.IsNullOrEmpty(Plant[i]) == true)
+                        if (PlantNameNode.Name == PlantNode.Name)
                         {
-                            Plant[i] = PlantNode.Name;
-                            Count++;
-                            break;
+                            for (int i = 0; i <= FieldSpace() - 1; i++)
+                            {
+                                if (string.IsNullOrEmpty(Plant[i]) == true)
+                                {
+                                    Plant[i] = PlantNameNode.InnerText;
+                                    Count++;
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
             }
         }
+
+        public static void PlantRipeOrGrown()
+        {
+            Console.Write("\n");
+            for (int i = 0; i < FieldSpace(); i++)
+            {
+                if (PlantGrow[i, 0] == day && PlantGrow[i, 1] == month && PlantGrow[i, 2] == year)
+                {
+                    Console.Write(Plant[i] + " " + i);
+                    MessegeLn("Field", "hasGrown", " ");
+                }
+                if (PlantRipe[i, 0] == day & PlantRipe[i, 1] == month & PlantRipe[i, 2] == year)
+                {
+                    Console.Write(Plant[i] + " " + i);
+                    MessegeLn("Field", "ripe", " ");
+                }
+            }
+        }
     }
 }
+
 

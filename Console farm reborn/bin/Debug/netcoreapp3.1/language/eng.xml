@@ -49,6 +49,11 @@
 		<tomatoes>Tomatoes</tomatoes>
 		<cucumbers>Cucumbers</cucumbers>
 	</Plants>
+	<Shop>
+		<shop>Shop</shop>
+		<carrotSeed>Carrot seed</carrotSeed>
+		<fieldUpgrade>Upgrade field</fieldUpgrade>
+	</Shop>
 	<Command>
 		<newGame>new game</newGame>
 		<loadSave>load save</loadSave>
@@ -59,6 +64,7 @@
 		<sleep>sleep</sleep>
 		<field>field</field>
 		<plantCarrot>plant carrot</plantCarrot>
+		<shop>shop</shop>
 		<money10>money10</money10>
 		<money-10>money-10</money-10>
 	</Command>

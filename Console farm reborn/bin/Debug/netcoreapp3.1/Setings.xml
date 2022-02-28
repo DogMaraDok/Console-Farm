@@ -1,14 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Setings>
   <GameSetings>
-    <lang>eng.xml</lang>
-	<Plants>
-		<carrot>
-			<coast>10</coast>
-			<growDay>10</growDay>
-			<ripeDay>5</ripeDay>
-			<fruitingSeveralTimes>false</fruitingSeveralTimes>
-		</carrot>
-	</Plants>
+    <lang>rus.xml</lang>
+    <Plants>
+      <carrot>
+        <growDay>10</growDay>
+        <ripeDay>5</ripeDay>
+        <fruitingSeveralTimes>false</fruitingSeveralTimes>
+      </carrot>
+    </Plants>
+    <Shop>
+      <carrotSeed>
+        <coast>10</coast>
+      </carrotSeed>
+      <fieldUpgrade>
+        <coast>100</coast>
+      </fieldUpgrade>
+    </Shop>
   </GameSetings>
 </Setings>
