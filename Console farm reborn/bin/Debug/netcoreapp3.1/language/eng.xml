@@ -6,7 +6,6 @@
 		<setings>Setings</setings>
 		<leave>Leave</leave>
 		<back>back</back>
-		<invalid>Invalid command</invalid>
 		<dontwork>Don't work</dontwork>
 	</Menu>
 	<Setings>
@@ -42,7 +41,14 @@
 		<stageOfRipeness>stage of ripeness</stageOfRipeness>
 		<ripe>ripe</ripe>
 		<notRipe>not ripe</notRipe>
+		<uproot>Uproot plant</uproot>
+		<full>Field full</full>
 	</Field>
+	<Error>
+		<errorCom>Invalid command</errorCom>
+		<errorPlantdontexist>Plant don't exist</errorPlantdontexist>
+		<errorNum>Not a number</errorNum>
+	</Error>
 	<Plants>
 		<carrot>Carrot</carrot>
 		<wheat>Wheat</wheat>
@@ -63,7 +69,8 @@
 		<back>back</back>
 		<sleep>sleep</sleep>
 		<field>field</field>
-		<plantCarrot>plant carrot</plantCarrot>
+		<plant>plant</plant>
+		<uprootPlant>uproot</uprootPlant>
 		<shop>shop</shop>
 		<money10>money10</money10>
 		<money-10>money-10</money-10>

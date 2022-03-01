@@ -19,6 +19,7 @@ namespace Console_farm_reborn
             Console.WriteLine("\tCONSOLE FARM");
             Console.WriteLine("  " + day + " " + MonthDay[month, 0] + " " + year);
             MessegeLn("Day", "money", "  ", money);
+            Console.Write("\n");
             PlantRipeOrGrown();
             DayCommand();
         }
@@ -40,10 +41,6 @@ namespace Console_farm_reborn
                         case "field":
                             FieldInf();
                             break;
-                        case "plantCarrot":
-                            AddToField("carrot");
-                            DayInfo();
-                            break;
                         case "shop":
                             ShopInf();
                             break;
@@ -58,7 +55,7 @@ namespace Console_farm_reborn
                     }
                 }
             }
-            MessegeLn("Menu", "invalid", "");
+            MessegeLn("Error", "errorCom", "");
             Console.ReadKey();
             DayInfo();
         }

@@ -6,6 +6,7 @@
       <carrot>
         <growDay>10</growDay>
         <ripeDay>5</ripeDay>
+		<name></name>
         <fruitingSeveralTimes>false</fruitingSeveralTimes>
       </carrot>
     </Plants>

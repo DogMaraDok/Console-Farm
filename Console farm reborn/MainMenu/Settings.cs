@@ -36,7 +36,7 @@ namespace Console_farm_reborn
                     }
                 }
             }
-            MessegeLn("Menu", "invalid", "");
+            MessegeLn("Error", "errorCom", "");
             SetingsCommand();
         }
     }

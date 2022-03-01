@@ -6,7 +6,6 @@
 		<setings>Настройки</setings>
 		<leave>Выйти</leave>
 		<back>назад</back>
-		<invalid>Неверная комманда</invalid>
 		<dontwork>Не работает</dontwork>
 	</Menu>
 	<Setings>
@@ -42,7 +41,14 @@
 		<stageOfRipeness>Стадия созревания</stageOfRipeness>
 		<ripe>созрело</ripe>
 		<notRipe>не созрело</notRipe>
+		<uproot>Выкорчевано растение</uproot>
+		<full>Поле заполнено</full>
 	</Field>
+	<Error>
+		<errorCom>Неверная комманда</errorCom>
+		<errorPlantdontexist>Растение не существует</errorPlantdontexist>
+		<errorNum>Не число</errorNum>
+	</Error>
 	<Plants>
 		<carrot>Морковка</carrot>
 		<wheat>Пшеница</wheat>
@@ -63,7 +69,8 @@
 		<back>назад</back>
 		<sleep>спать</sleep>
 		<field>поле</field>
-		<plantCarrot>посадить морковку</plantCarrot>
+		<plant>посадить</plant>
+		<uprootPlant>выкорчевать</uprootPlant>
 		<shop>магазин</shop>
 		<money10>money10</money10>
 		<money-10>money-10</money-10>
