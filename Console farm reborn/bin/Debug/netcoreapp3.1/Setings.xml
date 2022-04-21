@@ -1,19 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Setings>
   <GameSetings>
-    <lang>rus.xml</lang>
+    <lang>eng.xml</lang>
     <Plants>
       <carrot>
         <growDay>10</growDay>
         <ripeDay>5</ripeDay>
-		<name></name>
-        <fruitingSeveralTimes>false</fruitingSeveralTimes>
+        <name>carrot</name>
+		<product>carrot</product>
+		<productCount>3</productCount> 
+		<seed>carrot seed</seed>
+		<fruitingSeveralTimes>false</fruitingSeveralTimes>
       </carrot>
+      <wheat>
+        <growDay>15</growDay>
+        <ripeDay>5</ripeDay>
+        <name></name>
+        <fruitingSeveralTimes>false</fruitingSeveralTimes>
+      </wheat>
+      <tomatoes>
+        <growDay>17</growDay>
+        <ripeDay>10</ripeDay>
+        <name></name>
+        <fruitingSeveralTimes>true</fruitingSeveralTimes>
+      </tomatoes>
+      <cucumbers>
+        <growDay>15</growDay>
+        <ripeDay>12</ripeDay>
+        <name></name>
+        <fruitingSeveralTimes>true</fruitingSeveralTimes>
+      </cucumbers>
     </Plants>
-    <Shop>
+    <Items>
       <carrotSeed>
+		<name>carrot seed</name>
         <coast>10</coast>
       </carrotSeed>
+      <carrot>
+		  <name>carrot</name>
+		  <coast>10</coast>
+      </carrot>
+      <wheat>
+      </wheat>
+      <tomatoes>
+      </tomatoes>
+      <cucumbers>
+      </cucumbers>
+    </Items>
+    <Shop>
       <fieldUpgrade>
         <coast>100</coast>
       </fieldUpgrade>

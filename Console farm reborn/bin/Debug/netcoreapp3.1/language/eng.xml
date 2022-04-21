@@ -55,12 +55,24 @@
 		<tomatoes>Tomatoes</tomatoes>
 		<cucumbers>Cucumbers</cucumbers>
 	</Plants>
+	<Inventory>
+		<inventory>Inventory</inventory>
+		<empty>empty</empty>
+	</Inventory>
+	<Items>
+		<carrot>Carrot</carrot>
+		<wheat>Wheat</wheat>
+		<tomatoes>Tomatoes</tomatoes>
+		<cucumbers>Cucumbers</cucumbers>
+		<carrotSeed>Carrot seed</carrotSeed>
+	</Items>
 	<Shop>
 		<shop>Shop</shop>
-		<carrotSeed>Carrot seed</carrotSeed>
+		<items>Items</items>
 		<fieldUpgrade>Upgrade field</fieldUpgrade>
 	</Shop>
 	<Command>
+		<inventory>inventory</inventory>
 		<newGame>new game</newGame>
 		<loadSave>load save</loadSave>
 		<setings>setings</setings>
@@ -74,5 +86,6 @@
 		<shop>shop</shop>
 		<money10>money10</money10>
 		<money-10>money-10</money-10>
+		<add>add</add>
 	</Command>
 </language>

@@ -55,12 +55,23 @@
 		<tomatoes>Томаты</tomatoes>
 		<cucumbers>Огурцы</cucumbers>
 	</Plants>
+	<Inventory>
+		<inventory>Инвентарь</inventory>
+		<empty>пусто</empty>
+	</Inventory>
+	<Items>
+		<carrot>Морковка</carrot>
+		<wheat>Пшеница</wheat>
+		<tomatoes>Томат</tomatoes>
+		<cucumbers>Огурец</cucumbers>
+		<carrotSeed>Семена морковки</carrotSeed>
+	</Items>
 	<Shop>
 		<shop>Магазин</shop>
-		<carrotSeed>Семена морковки</carrotSeed>
 		<fieldUpgrade>Улучшить поле</fieldUpgrade>
 	</Shop>
 	<Command>
+		<invetory>инвентарь</invetory>
 		<newGame>новая игра</newGame>
 		<loadSave>загрузить сохранение</loadSave>
 		<setings>настройки</setings>
@@ -74,5 +85,6 @@
 		<shop>магазин</shop>
 		<money10>money10</money10>
 		<money-10>money-10</money-10>
+		<add>add</add>
 	</Command>
 </language>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Xml;
 using static Console_farm_reborn.Field;
+using static Console_farm_reborn.Inventory;
 using static Console_farm_reborn.language;
 using static Console_farm_reborn.Money;
 using static Console_farm_reborn.Shop;
@@ -9,7 +10,7 @@ namespace Console_farm_reborn
 {
     internal class Day
     {
-        public static int day = 1;
+        public static int day = 29;
         public static int month = 0;
         public static int year = 2022;
 
@@ -36,7 +37,6 @@ namespace Console_farm_reborn
                     {
                         case "sleep":
                             NextDay();
-                            DayInfo();
                             break;
                         case "field":
                             FieldInf();
@@ -44,15 +44,21 @@ namespace Console_farm_reborn
                         case "shop":
                             ShopInf();
                             break;
+                        case "inventory":
+                            InventoriInfo();
+                            break;
                         case "money-10":
                             MinusMoney(10);
-                            DayInfo();
                             break;
                         case "money10":
                             AddMoney(10);
-                            DayInfo();
+                            break;
+                        case "add":
+                            AddTooInventory("carrot", 2);
                             break;
                     }
+                    DayInfo();
+                    break;
                 }
             }
             MessegeLn("Error", "errorCom", "");
@@ -72,20 +78,9 @@ namespace Console_farm_reborn
                     month = 0;
                     year++;
                     if (year % 4 == 0)
-                    {
-                        foreach (XmlNode Node in xlanguage.ChildNodes)
-                        {
-                            if (Node.Name == "Day")
-                            {
-                                foreach (XmlNode SomeNode in Node.ChildNodes)
-                                {
-                                    if (SomeNode.Name == "february")
-                                        MonthDay[0, 1] = "29";
-
-                                }
-                            }
-                        }
-                    }
+                        MonthDay[0, 1] = "29";
+                    else
+                        MonthDay[0, 1] = "28";
                 }
             }
         }

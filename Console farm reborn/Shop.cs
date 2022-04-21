@@ -11,9 +11,10 @@ namespace Console_farm_reborn
         {
             Console.Clear();
             MessegeLn("Shop", "shop", "\t");
-            foreach (XmlNode ShopNode in xShop)
+            MessegeLn("Shop","items"," ");
+            foreach (XmlNode ShopNode in xItems)
             {
-                foreach (XmlNode ShopNameNode in xLangShop.ChildNodes)
+                foreach (XmlNode ShopNameNode in xLangItems.ChildNodes)
                 {
                     if (ShopNameNode.Name == ShopNode.Name)
                     {
