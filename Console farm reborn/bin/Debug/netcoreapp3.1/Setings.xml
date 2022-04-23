@@ -9,7 +9,7 @@
         <name>carrot</name>
 		<product>carrot</product>
 		<productCount>3</productCount> 
-		<seed>carrot seed</seed>
+		<seed>carrotSeed</seed>
 		<fruitingSeveralTimes>false</fruitingSeveralTimes>
       </carrot>
       <wheat>
@@ -33,7 +33,7 @@
     </Plants>
     <Items>
       <carrotSeed>
-		<name>carrot seed</name>
+		<name>carrotSeed</name>
         <coast>10</coast>
       </carrotSeed>
       <carrot>

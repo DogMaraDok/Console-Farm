@@ -47,7 +47,10 @@
 	<Error>
 		<errorCom>Неверная комманда</errorCom>
 		<errorPlantdontexist>Растение не существует</errorPlantdontexist>
+		<errorItemdontexist>Предмета не существует</errorItemdontexist>
 		<errorNum>Не число</errorNum>
+		<errorSeed>У тебя нету семян</errorSeed>
+		<errorItem>у тебя нету либо мало этого предмета</errorItem>
 	</Error>
 	<Plants>
 		<carrot>Морковка</carrot>

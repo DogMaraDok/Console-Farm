@@ -47,7 +47,10 @@
 	<Error>
 		<errorCom>Invalid command</errorCom>
 		<errorPlantdontexist>Plant don't exist</errorPlantdontexist>
+		<errorItemdontexist>Item don't exist</errorItemdontexist>
 		<errorNum>Not a number</errorNum>
+		<errorSeed>You don't have seeds</errorSeed>
+		<errorItem>you don't have or don't have enough of this item </errorItem>
 	</Error>
 	<Plants>
 		<carrot>Carrot</carrot>

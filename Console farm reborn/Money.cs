@@ -5,7 +5,7 @@ namespace Console_farm_reborn
 {
     internal class Money
     {
-        public static int money = 100;
+        public static int money = 111;
 
         public static int AddMoney(int number)
         {

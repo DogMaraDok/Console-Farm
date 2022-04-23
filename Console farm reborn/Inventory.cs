@@ -50,13 +50,12 @@ namespace Console_farm_reborn
         {
             Item.LoadItem(item);
 
-            int i = 0;
+            int i = 1;
             foreach (string inventoryItem in inventory)
             {
-                i++;
                 if (inventoryItem == item)
                 {
-                    inventoryCount[i] =+ count;
+                    inventoryCount[i] += count;
                     break;
                 }
                 else if (i == inventory.Count)
@@ -66,6 +65,45 @@ namespace Console_farm_reborn
                     break;
                 }
             }
+            i++;
+        }
+
+        public static void DelFromInventory(string item, int count)
+        {
+             int i = 0;
+            foreach (string inventoryItem in inventory)
+            {
+                if (inventoryItem == item)
+                {
+                    if(inventoryCount[i] > count)
+                    inventoryCount[i] -= count;
+                    else if (inventoryCount[i] == count)
+                    {
+                        inventoryCount.RemoveAt(i);
+                        inventory.RemoveAt(i);
+                    }
+                    else
+                    {
+                        MessegeLn("Error", "errorItem", "");
+                    }
+                    break;
+                }
+                else if (i == inventory.Count)
+                {
+                    MessegeLn("Error", "errorItemdontexist", "");
+                }
+                i++;
+            }
+        }
+
+        public static Boolean CheckInInventory(string Item)
+        {
+            foreach (string inventoryItem in inventory)
+            {
+                if(inventoryItem == Item)
+                    return true;
+            }
+            return false;
         }
 
         public static void InventoriInfo()

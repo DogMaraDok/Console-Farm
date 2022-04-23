@@ -11,17 +11,18 @@ namespace Console_farm_reborn
         {
             Console.Clear();
             MessegeLn("Shop", "shop", "\t");
-            MessegeLn("Shop","items"," ");
-            foreach (XmlNode ShopNode in xItems)
-            {
-                foreach (XmlNode ShopNameNode in xLangItems.ChildNodes)
-                {
-                    if (ShopNameNode.Name == ShopNode.Name)
-                    {
-                        Console.WriteLine(ShopNameNode.InnerText);
-                    }
-                }
-            }
+            Console.WriteLine("Close");
+            //MessegeLn("Shop","items"," ");
+            //foreach (XmlNode ShopNode in xItems)
+            //{
+            //    foreach (XmlNode ShopNameNode in xLangItems.ChildNodes)
+            //    {
+            //        if (ShopNameNode.Name == ShopNode.Name)
+            //        {
+            //            Console.WriteLine(ShopNameNode.InnerText);
+            //        }
+            //    }
+            //}
             MessegeLn("Menu", "back", "<-");
             DayCommand();
         }

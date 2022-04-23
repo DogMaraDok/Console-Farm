@@ -10,7 +10,7 @@ namespace Console_farm_reborn
     {
         public static void Main()
         {
-            Console.Title = "ConsoleFarm Reborn v0.1.0.bild 210421";
+            Console.Title = "ConsoleFarm Reborn v0.1.0.bild 240421";
             LoadLang();
             Console.WriteLine("\tCONSOLE FARM");
             MessegeLn("Menu", "newGame", "  ");

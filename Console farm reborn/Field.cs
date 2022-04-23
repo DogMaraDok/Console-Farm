@@ -4,7 +4,6 @@ using System.Xml;
 using static Console_farm_reborn.Day;
 using static Console_farm_reborn.Inventory;
 using static Console_farm_reborn.language;
-using static Console_farm_reborn.plants;
 namespace Console_farm_reborn
 {
     internal class Field
@@ -108,15 +107,12 @@ namespace Console_farm_reborn
                         case "plant":
                             try
                             {
-                                strs[1].ToLower();
+                                AddToField(strs[1].ToLower());
                             }
                             catch
                             {
                                 MessegeLn("Error", "errorPlantdontexist", "");
-                            }
-                            finally
-                            {
-                                AddToField(strs[1].ToLower());
+                                Console.ReadKey();
                             }
                             break;
                         case "back":
@@ -140,55 +136,64 @@ namespace Console_farm_reborn
                 {
                     plants.LoadPlant(PlantNameNode.Name);
 
-                    for (int i = 0; i < FieldSpace(); i++)
+                    if (CheckInInventory(plants.Seed) == true)
                     {
-                        if (string.IsNullOrEmpty(Plant[i]) == true)
+                        for (int i = 0; i < FieldSpace(); i++)
                         {
-                            PlantGrow[i, 0] = day + plants.GrowDay;
-                            PlantRipe[i, 0] = PlantGrow[i, 0] + plants.RipeDay;
-                            Plant[i] = plants.Name;
+                            if (string.IsNullOrEmpty(Plant[i]) == true)
+                            {
+                                PlantGrow[i, 0] = day + plants.GrowDay;
+                                PlantRipe[i, 0] = PlantGrow[i, 0] + plants.RipeDay;
+                                Plant[i] = plants.Name;
 
-                            if (PlantGrow[i, 0] > Convert.ToInt32(MonthDay[month, 1]))
-                            {
-                                for (; PlantGrow[i, 0] > Convert.ToInt32(MonthDay[month, 1]); PlantGrow[i, 0] = PlantGrow[i, 0] - Convert.ToInt32(MonthDay[month, 1]))
+                                if (PlantGrow[i, 0] > Convert.ToInt32(MonthDay[month, 1]))
                                 {
-                                    PlantGrow[i, 1] = month + 1;
-                                    if (PlantGrow[i, 1] > 11)
-                                        PlantGrow[i, 2] = year + 1;
-                                    else
-                                        PlantGrow[i, 2] = year;
+                                    for (; PlantGrow[i, 0] > Convert.ToInt32(MonthDay[month, 1]); PlantGrow[i, 0] = PlantGrow[i, 0] - Convert.ToInt32(MonthDay[month, 1]))
+                                    {
+                                        PlantGrow[i, 1] = month + 1;
+                                        if (PlantGrow[i, 1] > 11)
+                                            PlantGrow[i, 2] = year + 1;
+                                        else
+                                            PlantGrow[i, 2] = year;
+                                    }
                                 }
-                            }
-                            else
-                            {
-                                PlantGrow[i, 1] = month;
-                                PlantGrow[i, 2] = year;
-                            }
+                                else
+                                {
+                                    PlantGrow[i, 1] = month;
+                                    PlantGrow[i, 2] = year;
+                                }
 
-                            if (PlantRipe[i, 0] > Convert.ToInt32(MonthDay[month, 1]))
-                            {
-                                for (; PlantRipe[i, 0] > Convert.ToInt32(MonthDay[month, 1]); PlantRipe[i, 0] = PlantRipe[i, 0] - Convert.ToInt32(MonthDay[month, 1]))
+                                if (PlantRipe[i, 0] > Convert.ToInt32(MonthDay[month, 1]))
                                 {
-                                    PlantRipe[i, 1] = PlantGrow[i, 1] + 1;
-                                    if (PlantRipe[i, 1] > 11)
-                                        PlantRipe[i, 2] = PlantGrow[i, 2] + 1;
-                                    else
-                                        PlantRipe[i, 2] = PlantGrow[i, 2];
+                                    for (; PlantRipe[i, 0] > Convert.ToInt32(MonthDay[month, 1]); PlantRipe[i, 0] = PlantRipe[i, 0] - Convert.ToInt32(MonthDay[month, 1]))
+                                    {
+                                        PlantRipe[i, 1] = PlantGrow[i, 1] + 1;
+                                        if (PlantRipe[i, 1] > 11)
+                                            PlantRipe[i, 2] = PlantGrow[i, 2] + 1;
+                                        else
+                                            PlantRipe[i, 2] = PlantGrow[i, 2];
+                                    }
                                 }
+                                else
+                                {
+                                    PlantRipe[i, 1] = PlantGrow[i, 1];
+                                    PlantRipe[i, 2] = PlantGrow[i, 2];
+                                }
+                                Count++;
+                                DelFromInventory(plants.Seed, 1);
+                                FieldInf();
                             }
-                            else
+                            else if (i == FieldSpace() - 1)
                             {
-                                PlantRipe[i, 1] = PlantGrow[i, 1];
-                                PlantRipe[i, 2] = PlantGrow[i, 2];
+                                MessegeLn("Field", "full", "");
+                                FieldCom();
                             }
-                            Count++;
-                            FieldInf();
                         }
-                        else if (i == FieldSpace() - 1)
-                        {
-                            MessegeLn("Field", "full", "");
-                            FieldCom();
-                        }
+                    }
+                    else
+                    {
+                        MessegeLn("Error", "errorSeed", "");
+                        FieldCom();
                     }
                 }
             }

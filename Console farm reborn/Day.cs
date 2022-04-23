@@ -10,8 +10,43 @@ namespace Console_farm_reborn
 {
     internal class Day
     {
-        public static int day = 29;
-        public static int month = 0;
+        static int dayS = 28;
+        public static int day
+        {
+            get { return dayS; }
+            set
+            {
+                if (value > Convert.ToInt32(MonthDay[month, 1]) || value == 0)
+                {
+                    dayS = 1;
+                    month++;
+                }
+                else
+                {
+
+                    dayS = value;
+                }
+            }
+        }
+        static int monthS = 0;
+        public static int month
+        {
+            get { return monthS; }
+            set 
+            { 
+                if (value > 11)
+                {
+                    monthS = 0;
+                    year++;
+                    if (year % 4 == 0)
+                        MonthDay[0, 1] = "29";
+                    else
+                        MonthDay[0, 1] = "28";
+                }
+                else
+                    monthS = value; 
+            }
+        }
         public static int year = 2022;
 
         public static void DayInfo()
@@ -36,7 +71,7 @@ namespace Console_farm_reborn
                     switch (CommandNode.Name)
                     {
                         case "sleep":
-                            NextDay();
+                            day++;
                             break;
                         case "field":
                             FieldInf();
@@ -54,35 +89,15 @@ namespace Console_farm_reborn
                             AddMoney(10);
                             break;
                         case "add":
-                            AddTooInventory("carrot", 2);
+                            AddTooInventory("carrotSeed", 2);
                             break;
                     }
                     DayInfo();
-                    break;
                 }
             }
             MessegeLn("Error", "errorCom", "");
             Console.ReadKey();
             DayInfo();
-        }
-
-        public static void NextDay()
-        {
-            day++;
-            if (day > Convert.ToInt32(MonthDay[month, 1]))
-            {
-                day = 1;
-                month++;
-                if (month > 11)
-                {
-                    month = 0;
-                    year++;
-                    if (year % 4 == 0)
-                        MonthDay[0, 1] = "29";
-                    else
-                        MonthDay[0, 1] = "28";
-                }
-            }
         }
     }
 }
