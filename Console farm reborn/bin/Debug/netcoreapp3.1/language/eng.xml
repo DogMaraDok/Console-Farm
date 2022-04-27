@@ -10,7 +10,11 @@
 	</Menu>
 	<Setings>
 		<lang>Language</lang>
+		<winSize>Window size</winSize>
 		<invalid>Invalid language</invalid>
+		<height>Height</height>
+		<width>Width</width>
+		<max>max</max>
 	</Setings>
 	<Day>
 		<money>Money:</money>
@@ -68,6 +72,7 @@
 		<tomatoes>Tomatoes</tomatoes>
 		<cucumbers>Cucumbers</cucumbers>
 		<carrotSeed>Carrot seed</carrotSeed>
+		<wheatSeed>Wheat seed</wheatSeed>
 	</Items>
 	<Shop>
 		<shop>Shop</shop>
@@ -89,6 +94,7 @@
 		<shop>shop</shop>
 		<money10>money10</money10>
 		<money-10>money-10</money-10>
-		<add>add</add>
+		<winSize>window size</winSize>
+		<buy>buy</buy>
 	</Command>
 </language>

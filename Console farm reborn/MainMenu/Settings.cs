@@ -10,6 +10,7 @@ namespace Console_farm_reborn
         public static void GameSetings()
         {
             MessegeLn("Menu", "setings", "\t");
+            MessegeLn("Setings", "winSize", "  ");
             MessegeLn("Setings", "lang", "  ");
             MessegeLn("Menu", "back", "<-");
             SetingsCommand();
@@ -25,6 +26,9 @@ namespace Console_farm_reborn
                 {
                     switch (CommandNode.Name)
                     {
+                        case "winSize":
+                            SetSize();
+                            break;
                         case "lang":
                             Console.Clear();
                             SelectLang();
@@ -38,6 +42,31 @@ namespace Console_farm_reborn
             }
             MessegeLn("Error", "errorCom", "");
             SetingsCommand();
+        }
+
+        public static void SetSize()
+        {
+            try
+            {
+                Console.Clear();
+                int MaxHeight = Console.LargestWindowHeight;
+                int MaxWidth = Console.LargestWindowWidth;
+                Messege("Setings", "height", "");
+                MessegeLn("Setings", "max", " ", MaxHeight);
+                int Height = Convert.ToInt32(Console.ReadLine());
+                Messege("Setings", "width", "");
+                MessegeLn("Setings", "max", " ", MaxWidth);
+                int Width = Convert.ToInt32(Console.ReadLine());
+                Console.WindowHeight = Height;
+                Console.WindowWidth = Width;
+                Console.Clear();
+                Main();
+            }
+            catch
+            {
+                MessegeLn("Error", "errorNum", "");
+                SetSize();
+            }
         }
     }
 }

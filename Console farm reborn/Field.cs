@@ -124,7 +124,6 @@ namespace Console_farm_reborn
                 }
             }
             MessegeLn("Error", "errorCom", "");
-            Console.ReadKey();
             FieldCom();
         }
 

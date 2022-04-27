@@ -15,8 +15,10 @@ namespace Console_farm_reborn
         public class InventoryItem
         {
             public string Name;
-            //public static string Description;
-            public int Coast;
+            public bool buy;
+            public int buyCoast;
+            public bool sell;
+            public int sellCoast;
 
             public void LoadItem(string item)
             {
@@ -31,11 +33,17 @@ namespace Console_farm_reborn
                                 case "name":
                                     Name = ItemAtr.InnerText;
                                     break;
-                                //case "Description":
-
-                                //    break;
-                                case "Coast":
-                                    Coast = Convert.ToInt32(ItemAtr.InnerText);
+                                case "buy":
+                                    buy = Convert.ToBoolean(ItemAtr.InnerText);
+                                    break;
+                                case "buyCoast":
+                                    buyCoast = Convert.ToInt32(ItemAtr.InnerText);
+                                    break;
+                                case "sell":
+                                    sell = Convert.ToBoolean(ItemAtr.InnerText);
+                                    break;
+                                case "sellCoast":
+                                    sellCoast = Convert.ToInt32(ItemAtr.InnerText);
                                     break;
                             }
                         }

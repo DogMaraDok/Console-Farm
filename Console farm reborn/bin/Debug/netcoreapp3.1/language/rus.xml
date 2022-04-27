@@ -10,7 +10,11 @@
 	</Menu>
 	<Setings>
 		<lang>Язык</lang>
+		<winSize>Размер окна</winSize>
 		<invalid>Неверный язык</invalid>
+		<height>Высота</height>
+		<width>Ширина</width>
+		<max>Макс.</max>
 	</Setings>
 	<Day>
 		<money>Деньги:</money>
@@ -68,9 +72,11 @@
 		<tomatoes>Томат</tomatoes>
 		<cucumbers>Огурец</cucumbers>
 		<carrotSeed>Семена морковки</carrotSeed>
+		<wheatSeed>Семена пшеницы</wheatSeed>
 	</Items>
 	<Shop>
 		<shop>Магазин</shop>
+		<items>Предметы</items>
 		<fieldUpgrade>Улучшить поле</fieldUpgrade>
 	</Shop>
 	<Command>
@@ -88,6 +94,7 @@
 		<shop>магазин</shop>
 		<money10>money10</money10>
 		<money-10>money-10</money-10>
-		<add>add</add>
+		<winSize>размер окна</winSize>
+		<buy>купить</buy>
 	</Command>
 </language>

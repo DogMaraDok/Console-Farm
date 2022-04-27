@@ -55,7 +55,7 @@ namespace Console_farm_reborn
             Console.WriteLine("\tCONSOLE FARM");
             Console.WriteLine("  " + day + " " + MonthDay[month, 0] + " " + year);
             MessegeLn("Day", "money", "  ", money);
-            Console.Write("\n");
+            Console.WriteLine("\n");
             PlantRipeOrGrown();
             DayCommand();
         }
@@ -87,9 +87,6 @@ namespace Console_farm_reborn
                             break;
                         case "money10":
                             AddMoney(10);
-                            break;
-                        case "add":
-                            AddTooInventory("carrotSeed", 2);
                             break;
                     }
                     DayInfo();

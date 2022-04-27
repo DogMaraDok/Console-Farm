@@ -13,10 +13,13 @@
 		<fruitingSeveralTimes>false</fruitingSeveralTimes>
       </carrot>
       <wheat>
-        <growDay>15</growDay>
-        <ripeDay>5</ripeDay>
-        <name></name>
-        <fruitingSeveralTimes>false</fruitingSeveralTimes>
+		  <growDay>15</growDay>
+		  <ripeDay>5</ripeDay>
+		  <name>wheat</name>
+		  <product>wheat</product>
+		  <productCount>5</productCount>
+		  <seed>wheatSeed</seed>
+		  <fruitingSeveralTimes>false</fruitingSeveralTimes>
       </wheat>
       <tomatoes>
         <growDay>17</growDay>
@@ -34,17 +37,36 @@
     <Items>
       <carrotSeed>
 		<name>carrotSeed</name>
-        <coast>10</coast>
+		<buy>true</buy>
+        <buyCoast>3</buyCoast>
+		<sell>false</sell>
       </carrotSeed>
+	  <wheatSeed>
+		<name>wheatSeed</name>
+		<buy>true</buy>
+		<buyCoast>5</buyCoast>
+		<sell>false</sell>
+	  </wheatSeed>
       <carrot>
 		  <name>carrot</name>
-		  <coast>10</coast>
+		  <buy>false</buy>
+		  <sell>true</sell>
+		  <sellCoast>5</sellCoast>
       </carrot>
       <wheat>
+		  <name>wheat</name>
+		  <buy>false</buy>
+		  <sell>true</sell>
       </wheat>
       <tomatoes>
+		  <name>tomatoes</name>
+		  <buy>false</buy>
+		  <sell>true</sell>
       </tomatoes>
       <cucumbers>
+		  <name>cucumbers</name>
+		  <buy>false</buy>
+		  <sell>true</sell>
       </cucumbers>
     </Items>
     <Shop>
