@@ -1,0 +1,14 @@
+C:\Users\VNov0\source\CFR\CFR\bin\Release\net6.0\CFR.exe
+C:\Users\VNov0\source\CFR\CFR\bin\Release\net6.0\CFR.deps.json
+C:\Users\VNov0\source\CFR\CFR\bin\Release\net6.0\CFR.runtimeconfig.json
+C:\Users\VNov0\source\CFR\CFR\bin\Release\net6.0\CFR.dll
+C:\Users\VNov0\source\CFR\CFR\bin\Release\net6.0\CFR.pdb
+C:\Users\VNov0\source\CFR\CFR\obj\Release\net6.0\CFR.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VNov0\source\CFR\CFR\obj\Release\net6.0\CFR.AssemblyInfoInputs.cache
+C:\Users\VNov0\source\CFR\CFR\obj\Release\net6.0\CFR.AssemblyInfo.cs
+C:\Users\VNov0\source\CFR\CFR\obj\Release\net6.0\CFR.csproj.CoreCompileInputs.cache
+C:\Users\VNov0\source\CFR\CFR\obj\Release\net6.0\CFR.dll
+C:\Users\VNov0\source\CFR\CFR\obj\Release\net6.0\refint\CFR.dll
+C:\Users\VNov0\source\CFR\CFR\obj\Release\net6.0\CFR.pdb
+C:\Users\VNov0\source\CFR\CFR\obj\Release\net6.0\CFR.genruntimeconfig.cache
+C:\Users\VNov0\source\CFR\CFR\obj\Release\net6.0\ref\CFR.dll
