@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<language name="eng"> 
+	<Menu>
+		<newGame>New game</newGame>
+		<loadSave>Load save</loadSave>
+		<setings>Setings</setings>
+		<leave>Leave</leave>
+		<back>back</back>
+		<dontwork>Don't work</dontwork>
+	</Menu>
+	<Setings>
+		<lang>Language</lang>
+		<winSize>Window size</winSize>
+		<invalid>Invalid language</invalid>
+		<height>Height</height>
+		<width>Width</width>
+		<max>max</max>
+	</Setings>
+	<Day>
+		<money>Money:</money>
+		<january>January</january>
+		<february>February</february>
+		<march>March</march>
+		<april>April</april>
+		<may>May</may>
+		<june>June</june>
+		<july>July</july>
+		<august>August</august>
+		<september>September</september>
+		<october>October</october>
+		<november>November</november>
+		<december>December</december>
+	</Day>
+	<Money>
+		<notEnough>not enough money</notEnough>
+	</Money>
+	<Field>
+		<field>Field</field>
+		<lvl>Lvl</lvl>
+		<space>Space</space>
+		<freeSpace>Free space</freeSpace>
+		<growthStage>growth stage</growthStage>
+		<hasGrown>has grown</hasGrown>
+		<grows>grows</grows>
+		<stageOfRipeness>stage of ripeness</stageOfRipeness>
+		<ripe>ripe</ripe>
+		<notRipe>not ripe</notRipe>
+		<uproot>Uproot plant</uproot>
+		<full>Field full</full>
+	</Field>
+	<Error>
+		<errorCom>Invalid command</errorCom>
+		<errorPlantdontexist>Plant don't exist</errorPlantdontexist>
+		<errorItemdontexist>Item don't exist</errorItemdontexist>
+		<errorNum>Not a number</errorNum>
+		<errorSeed>You don't have seeds</errorSeed>
+		<errorItem>you don't have or don't have enough of this item </errorItem>
+	</Error>
+	<Plants>
+		<carrot>Carrot</carrot>
+		<wheat>Wheat</wheat>
+		<tomatoes>Tomatoes</tomatoes>
+		<cucumbers>Cucumbers</cucumbers>
+	</Plants>
+	<Inventory>
+		<inventory>Inventory</inventory>
+		<empty>empty</empty>
+	</Inventory>
+	<Items>
+		<carrot>Carrot</carrot>
+		<wheat>Wheat</wheat>
+		<tomatoes>Tomatoes</tomatoes>
+		<cucumbers>Cucumbers</cucumbers>
+		<carrotSeed>Carrot seed</carrotSeed>
+		<wheatSeed>Wheat seed</wheatSeed>
+	</Items>
+	<Shop>
+		<shop>Shop</shop>
+		<items>Items</items>
+		<fieldUpgrade>Upgrade field</fieldUpgrade>
+	</Shop>
+	<Command>
+		<inventory>inventory</inventory>
+		<newGame>new game</newGame>
+		<loadSave>load save</loadSave>
+		<setings>setings</setings>
+		<leave>leave</leave>
+		<lang>language</lang>
+		<back>back</back>
+		<sleep>sleep</sleep>
+		<field>field</field>
+		<plant>plant</plant>
+		<uprootPlant>uproot</uprootPlant>
+		<shop>shop</shop>
+		<money10>money10</money10>
+		<money-10>money-10</money-10>
+		<winSize>window size</winSize>
+		<buy>buy</buy>
+	</Command>
+</language>
