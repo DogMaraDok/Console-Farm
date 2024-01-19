@@ -15,7 +15,6 @@
 
         public void CommandComplit(string[] comm, CommandsLists CLists)
         {
-            MainMenu mainMenu = new MainMenu();
             switch (CLists)
             {
                 //    case :

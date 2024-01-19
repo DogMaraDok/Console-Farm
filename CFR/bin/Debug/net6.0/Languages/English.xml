@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<localization>
+	<localInfo>
+		<language>English</language>
+		<version>0.2</version>
+		<GameVersion>0.1 190124</GameVersion>
+	</localInfo>
+	<NewGame name ="0">New Game</NewGame>
+	<LoadSave name ="1">Load Save</LoadSave>
+	<Language name ="2">Language</Language>
+	<Exit name ="3">Exit</Exit>
+	
+</localization>

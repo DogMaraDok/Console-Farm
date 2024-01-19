@@ -21,16 +21,13 @@
         }
 
         //рисует меню впервый раз
-        static public void StartMenu()
+        static public void Start()
         {
-            Row = Console.CursorTop;
-            Col = Console.CursorLeft;
-
-            WriteAt("Console Farm Reborn", 1, ConRow);
-            WriteAt("New game (notWork)", TxtCol, NewRow);
-            WriteAt("Load (notWork)", TxtCol, LoadRow);
-            WriteAt("Language", TxtCol, LangRow);
-            WriteAt("Exit", TxtCol, ExitRow);
+            Print.PrintAt("Console Farm Reborn", 1, ConRow);
+            Print.PrintAt(Language.Messeg.GetMesseg(0), TxtCol, NewRow);
+            Print.PrintAt(Language.Messeg.GetMesseg(1), TxtCol, LoadRow);
+            Print.PrintAt(Language.Messeg.GetMesseg(2), TxtCol, LangRow);
+            Print.PrintAt(Language.Messeg.GetMesseg(3), TxtCol, ExitRow);
 
             Select(MenuSelect.NewGame);
         }
@@ -41,33 +38,33 @@
             switch (menuSel)
             {
                 case MenuSelect.ConsoleInfo:
-                    WriteAt(">", 0, ConRow);
+                    Print.PrintAt(">", 0, ConRow);
                     key = Console.ReadKey();
                     switch (key.Key)
                     {
                         case ConsoleKey.DownArrow:
                             menuSel = MenuSelect.NewGame;
-                            WriteAt(" ", 0, ConRow);
+                            Print.PrintAt(" ", 0, ConRow);
                             break;
                         case ConsoleKey.Enter:
                             Console.Clear();
-                            StartInfo();
+                            Info.Start();
                             break;
                     }
                     break;
 
                 case MenuSelect.NewGame:
-                    WriteAt(">", TxtCol - 1, NewRow);
+                    Print.PrintAt(">", TxtCol - 1, NewRow);
                     key = Console.ReadKey();
                     switch (key.Key)
                     {
                         case ConsoleKey.DownArrow:
                             menuSel = MenuSelect.LoadSave;
-                            WriteAt(" ", TxtCol - 1, NewRow);
+                            Print.PrintAt(" ", TxtCol - 1, NewRow);
                             break;
                         case ConsoleKey.UpArrow:
                             menuSel = MenuSelect.ConsoleInfo;
-                            WriteAt(" ", TxtCol - 1, NewRow);
+                            Print.PrintAt(" ", TxtCol - 1, NewRow);
                             break;
                         //case ConsoleKey.Enter:
                         //    Console.Clear();
@@ -76,17 +73,17 @@
                     }
                     break;
                 case MenuSelect.LoadSave:
-                    WriteAt(">", TxtCol - 1, LoadRow);
+                    Print.PrintAt(">", TxtCol - 1, LoadRow);
                     key = Console.ReadKey();
                     switch (key.Key)
                     {
                         case ConsoleKey.DownArrow:
                             menuSel = MenuSelect.Language;
-                            WriteAt(" ", TxtCol - 1, LoadRow);
+                            Print.PrintAt(" ", TxtCol - 1, LoadRow);
                             break;
                         case ConsoleKey.UpArrow:
                             menuSel = MenuSelect.NewGame;
-                            WriteAt(" ", TxtCol - 1, LoadRow);
+                            Print.PrintAt(" ", TxtCol - 1, LoadRow);
                             break;
                         //case ConsoleKey.Enter:
                         //    Console.Clear();
@@ -95,17 +92,17 @@
                     }
                     break;
                 case MenuSelect.Language:
-                    WriteAt(">", TxtCol - 1, LangRow);
+                    Print.PrintAt(">", TxtCol - 1, LangRow);
                     key = Console.ReadKey();
                     switch (key.Key)
                     {
                         case ConsoleKey.DownArrow:
                             menuSel = MenuSelect.Exit;
-                            WriteAt(" ", TxtCol - 1, LangRow);
+                            Print.PrintAt(" ", TxtCol - 1, LangRow);
                             break;
                         case ConsoleKey.UpArrow:
                             menuSel = MenuSelect.LoadSave;
-                            WriteAt(" ", TxtCol - 1, LangRow);
+                            Print.PrintAt(" ", TxtCol - 1, LangRow);
                             break;
                         case ConsoleKey.Enter:
                             Console.Clear();
@@ -114,13 +111,13 @@
                     }
                     break;
                 case MenuSelect.Exit:
-                    WriteAt(">", TxtCol - 1, ExitRow);
+                    Print.PrintAt(">", TxtCol - 1, ExitRow);
                     key = Console.ReadKey();
                     switch (key.Key)
                     {
                         case ConsoleKey.UpArrow:
                             menuSel = MenuSelect.Language;
-                            WriteAt(" ", TxtCol - 1, ExitRow);
+                            Print.PrintAt(" ", TxtCol - 1, ExitRow);
                             break;
                         case ConsoleKey.Enter:
                             Environment.Exit(-1);
