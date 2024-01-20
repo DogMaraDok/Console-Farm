@@ -26,3 +26,4 @@ C:\Users\VNov0\source\repos\CFR\CFR\bin\Debug\net6.0\CFR.dll
 C:\Users\VNov0\source\repos\CFR\CFR\bin\Debug\net6.0\CFR.pdb
 C:\Users\VNov0\source\repos\CFR\CFR\obj\Debug\net6.0\CFR.genruntimeconfig.cache
 C:\Users\VNov0\source\repos\CFR\CFR\obj\Debug\net6.0\ref\CFR.dll
+C:\Users\VNov0\source\repos\CFR\CFR\obj\Debug\net6.0\CFR.sourcelink.json

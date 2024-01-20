@@ -106,7 +106,7 @@
                             break;
                         case ConsoleKey.Enter:
                             Console.Clear();
-                            Console.WriteLine("Setings");
+                            Language.Start();
                             break;
                     }
                     break;

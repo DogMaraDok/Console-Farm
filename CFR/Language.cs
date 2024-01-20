@@ -1,4 +1,6 @@
-﻿namespace CFR
+﻿using System.Diagnostics;
+
+namespace CFR
 {
     internal class Language
     {
@@ -23,19 +25,41 @@
 
         internal class Messeg
         {
-            public string Text { get; }
-            public int Id { get; }
+            string Text { get; }
+            int Id { get; }
 
-            static List<Messeg> Messeges = new List<Messeg>();
+            static Messeg[] Messeges = new Messeg[256];
 
             public static void AddToMesseges(string text, int id)
             {
-                Messeges.Add(new Messeg(text, id));
+                try
+                {
+                    Messeges[id] = new Messeg(text, id);
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    Console.Clear();
+                    Console.WriteLine($"file is corrupted in {id} ID whit text {text} max ID 255");
+                    Console.ReadKey();
+                    Environment.Exit(1);
+                }
             }
 
             public static string GetMesseg(int id)
             {
-                return Messeges[id].Text;
+                try
+                {
+                    return Messeges[id].Text;
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    return $"{id} ID out of range";
+                }
+                catch (NullReferenceException)
+                {
+                    return $"{id} ID null";
+                }
+
             }
 
             public Messeg(string text, int id)
@@ -45,17 +69,68 @@
             }
         }
 
+        public static void Start()
+        {
+            Print.PrintAt(Messeg.GetMesseg(5), 0, 0);
+            int x = 0;
+            for (; x < langueges.Count; x++)
+            {
+                Print.PrintAt(langueges[x].Language, 1, x + 1);
+                Print.PrintAt("v", 2 + langueges[0].Language.Length, x + 1);
+                Print.PrintAt(langueges[x].Version, 3 + langueges[0].Language.Length, x + 1);
+                Print.PrintAt("for", 4 + langueges[0].Version.Length + langueges[0].Language.Length, x + 1);
+                Print.PrintAt(langueges[x].GameVersion, 8 + langueges[0].Version.Length + langueges[0].Language.Length, x + 1);
+            }
+            Print.PrintAt(Messeg.GetMesseg(4), 1, x + 1);
+            x = 1;
+            while (true)
+            {
+                x = Math.Clamp(x, 1, langueges.Count + 1);
+                Print.PrintAt(">", 0, x);
+                switch (Console.ReadKey().Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        Print.PrintAt(" ", 0, x);
+                        x--;
+                        break;
+                    case ConsoleKey.DownArrow:
+                        Print.PrintAt(" ", 0, x);
+                        x++;
+                        break;
+                    case ConsoleKey.Enter:
+                        if (x == langueges.Count + 1)
+                        {
+                            Console.Clear();
+                            MainMenu.Start();
+                        }
+                        else
+                        {
+                            LoadLang(langueges[x - 1].Language);
+                            Console.Clear();
+                            MainMenu.Start();
+                        }
+                        break;
+                }
+            }
+        }
+
         static public void InitLang()
         {
             if (Directory.Exists("Languages"))
             {
-                string[] fiels = Directory.GetFiles("Languages");
-                foreach (var s in fiels)
+                string[] files = Directory.GetFiles("Languages");
+                if (files.Length == 0)
                 {
-                    FileInfo fileInfo = new FileInfo(s);
+                    Console.WriteLine("Files not exist");
+                    Console.ReadKey();
+                    Environment.Exit(3);
+                }
+                foreach (string file in files)
+                {
+                    FileInfo fileInfo = new FileInfo(file);
                     if (fileInfo.Extension == ".xml")
                     {
-                        LangXML.Load(s);
+                        LangXML.Load(file);
                         XmlElement? Root = LangXML.DocumentElement;
                         if (Root != null)
                         {
@@ -79,9 +154,22 @@
                                             case "GameVersion":
                                                 verG = node2.InnerText;
                                                 break;
+                                            default:
+                                                Console.WriteLine($"File {file} corrupted");
+                                                Console.ReadKey();
+                                                Environment.Exit(4);
+                                                return;
                                         }
                                     }
-                                    langueges.Add(new Langueges(lang, ver, verG));
+                                    if (lang == "" || ver == "" || verG == "")
+                                    {
+                                        Console.WriteLine($"File {file} corrupted");
+                                        Console.ReadKey();
+                                        Environment.Exit(4);
+                                    }
+                                    else
+                                        langueges.Add(new Langueges(lang, ver, verG));
+                                    break;
                                 }
                             }
                         }
@@ -90,7 +178,10 @@
             }
             else
             {
-                Console.WriteLine("fuck");
+                Console.WriteLine("Directory not exist");
+                Console.ReadKey();
+                Environment.Exit(2);
+
             }
         }
 
@@ -106,12 +197,13 @@
                     {
                         foreach (XmlElement node in Root)
                         {
-                            if(node.Attributes.GetNamedItem("name") != null)
+                            if (node.Attributes.GetNamedItem("name") != null)
                             {
                                 Messeg.AddToMesseges(node.InnerText, Convert.ToInt32(node.Attributes.GetNamedItem("name").Value));
                             }
                         }
                     }
+                    break;
                 }
             }
         }

@@ -9,5 +9,6 @@
 	<LoadSave name ="1">Загрузить сохранение</LoadSave>
 	<Language name ="2">Язык</Language>
 	<Exit name ="3">Выход</Exit>
-	
+	<Back name ="4">Назад</Back>
+	<SelectLang name ="5">Выбирите язык</SelectLang>
 </localization>

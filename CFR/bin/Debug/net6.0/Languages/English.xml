@@ -9,5 +9,6 @@
 	<LoadSave name ="1">Load Save</LoadSave>
 	<Language name ="2">Language</Language>
 	<Exit name ="3">Exit</Exit>
-	
+	<Back name ="4">Back</Back>
+	<SelectLang name ="5">Select language</SelectLang>
 </localization>
