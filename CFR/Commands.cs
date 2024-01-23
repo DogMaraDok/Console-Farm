@@ -1,26 +1,54 @@
-﻿namespace CFR
+﻿using static CFR.Language;
+
+namespace CFR
 {
     internal class Commands
     {
-        public enum CommandsLists
-        {
+        static string Command = "";
+        static string seterr = "";
 
-        }
-        public string[] ReadCommand(string comm)
-        {
-            comm = comm.ToLower();
-            string[] Command = comm.Split(' ');
-            return Command;
-        }
+        public static List<comm> CommandsList = new List<comm>();
 
-        public void CommandComplit(string[] comm, CommandsLists CLists)
+        internal class comm
         {
-            switch (CLists)
+            public string Command; 
+            public  string Id;
+
+            public comm(string command , string id) 
             {
-                //    case :
-
-                //        break;
+                Command = command;
+                Id = id;
             }
+        }
+
+        static public string ReadCommand(string comm)
+        {
+            comm = comm.Trim();
+            string[] strings = comm.Split(' ');
+            if (strings.Length > 1) 
+            {
+                seterr = "";
+                for (int x = 1; x < strings.Length; x++)
+                {
+                    seterr += strings[x];
+                }
+            }
+            if (strings[0] == "")
+            {
+                return "";
+            }
+            for (int x = 0; x < CommandsList.Count; x++)
+            {
+                if (CommandsList[x].Command == strings[0])
+                {
+                    return CommandsList[x].Id;
+                }
+            }
+            return "wrong";
+        }
+        static public string GetSeterr() 
+        {
+            return seterr;
         }
     }
 }

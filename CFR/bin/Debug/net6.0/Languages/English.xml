@@ -2,13 +2,22 @@
 <localization>
 	<localInfo>
 		<language>English</language>
-		<version>0.2</version>
-		<GameVersion>0.1 190124</GameVersion>
+		<version>0.4</version>
+		<GameVersion>0.1 230124</GameVersion>
 	</localInfo>
+	<Commands>
+		<exit>exit</exit>
+		<givemoney>givemoney</givemoney>
+		<sleep>sleep</sleep>
+		<menu>menu</menu>
+	</Commands>
 	<NewGame name ="0">New Game</NewGame>
 	<LoadSave name ="1">Load Save</LoadSave>
 	<Language name ="2">Language</Language>
 	<Exit name ="3">Exit</Exit>
 	<Back name ="4">Back</Back>
 	<SelectLang name ="5">Select language</SelectLang>
+	<Date name ="6">Date</Date>
+	<Money name ="7">Money</Money>
+	<сontinue name ="8">Continue</сontinue>
 </localization>

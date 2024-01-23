@@ -20,11 +20,8 @@
             Print.PrintAt(">", 0, 4 + x);
             while (true)
             {
-                if (Console.ReadKey().Key == ConsoleKey.Enter)
-                {
-                    Console.Clear();
+                if (Console.ReadKey(true).Key == ConsoleKey.Enter)
                     MainMenu.Start();
-                }
             }
         }
     }

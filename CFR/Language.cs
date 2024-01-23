@@ -1,12 +1,10 @@
-﻿using System.Diagnostics;
-
-namespace CFR
+﻿namespace CFR
 {
     internal class Language
     {
         static XmlDocument LangXML = new XmlDocument();
 
-        static public List<Langueges> langueges = new List<Langueges>();
+        public static List<Langueges> langueges = new List<Langueges>();
 
 
         internal class Langueges
@@ -26,15 +24,14 @@ namespace CFR
         internal class Messeg
         {
             string Text { get; }
-            int Id { get; }
 
             static Messeg[] Messeges = new Messeg[256];
 
-            public static void AddToMesseges(string text, int id)
+            public static void AddToMesseges(string text, double id)
             {
                 try
                 {
-                    Messeges[id] = new Messeg(text, id);
+                    Messeges[(int)id] = new Messeg(text);
                 }
                 catch (IndexOutOfRangeException)
                 {
@@ -45,11 +42,11 @@ namespace CFR
                 }
             }
 
-            public static string GetMesseg(int id)
+            public static string GetMesseg(double id)
             {
                 try
                 {
-                    return Messeges[id].Text;
+                    return Messeges[(int)id].Text;
                 }
                 catch (IndexOutOfRangeException)
                 {
@@ -62,10 +59,9 @@ namespace CFR
 
             }
 
-            public Messeg(string text, int id)
+            public Messeg(string text)
             {
                 Text = text;
-                Id = id;
             }
         }
 
@@ -87,7 +83,7 @@ namespace CFR
             {
                 x = Math.Clamp(x, 1, langueges.Count + 1);
                 Print.PrintAt(">", 0, x);
-                switch (Console.ReadKey().Key)
+                switch (Console.ReadKey(true).Key)
                 {
                     case ConsoleKey.UpArrow:
                         Print.PrintAt(" ", 0, x);
@@ -99,14 +95,10 @@ namespace CFR
                         break;
                     case ConsoleKey.Enter:
                         if (x == langueges.Count + 1)
-                        {
-                            Console.Clear();
                             MainMenu.Start();
-                        }
                         else
                         {
                             LoadLang(langueges[x - 1].Language);
-                            Console.Clear();
                             MainMenu.Start();
                         }
                         break;
@@ -201,11 +193,25 @@ namespace CFR
                             {
                                 Messeg.AddToMesseges(node.InnerText, Convert.ToInt32(node.Attributes.GetNamedItem("name").Value));
                             }
+                            else if (node.Name == "Commands")
+                            {
+                                foreach (XmlElement node2 in node)
+                                {
+                                    Commands.CommandsList.Add(new Commands.comm(node2.InnerText, node2.Name));
+                                }
+                            }
                         }
+                        break;
                     }
-                    break;
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine($"File {Lang}.xml corrupted");
+                        Environment.Exit(2);
+                    }
                 }
             }
         }
     }
 }
+
