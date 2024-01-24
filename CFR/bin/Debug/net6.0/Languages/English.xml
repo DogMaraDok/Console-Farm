@@ -3,11 +3,12 @@
 	<localInfo>
 		<language>English</language>
 		<version>0.4</version>
-		<GameVersion>0.1 230124</GameVersion>
+		<GameVersion>0.1 240124</GameVersion>
 	</localInfo>
 	<Commands>
 		<exit>exit</exit>
 		<givemoney>givemoney</givemoney>
+		<minusmoney>minusmoney</minusmoney>
 		<sleep>sleep</sleep>
 		<menu>menu</menu>
 	</Commands>

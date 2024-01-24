@@ -27,11 +27,11 @@
 
             static Messeg[] Messeges = new Messeg[256];
 
-            public static void AddToMesseges(string text, double id)
+            public static void AddToMesseges(string text, byte id)
             {
                 try
                 {
-                    Messeges[(int)id] = new Messeg(text);
+                    Messeges[id] = new Messeg(text);
                 }
                 catch (IndexOutOfRangeException)
                 {
@@ -42,11 +42,11 @@
                 }
             }
 
-            public static string GetMesseg(double id)
+            public static string GetMesseg(byte id)
             {
                 try
                 {
-                    return Messeges[(int)id].Text;
+                    return Messeges[id].Text;
                 }
                 catch (IndexOutOfRangeException)
                 {
@@ -191,13 +191,13 @@
                         {
                             if (node.Attributes.GetNamedItem("name") != null)
                             {
-                                Messeg.AddToMesseges(node.InnerText, Convert.ToInt32(node.Attributes.GetNamedItem("name").Value));
+                                Messeg.AddToMesseges(node.InnerText, Convert.ToByte(node.Attributes.GetNamedItem("name").Value));
                             }
                             else if (node.Name == "Commands")
                             {
                                 foreach (XmlElement node2 in node)
                                 {
-                                    Commands.CommandsList.Add(new Commands.comm(node2.InnerText, node2.Name));
+                                    Commands.AddToList(node2.InnerText, node2.Name);
                                 }
                             }
                         }

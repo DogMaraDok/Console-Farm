@@ -4,16 +4,19 @@
     {
         static int money;
 
-        public static int PlusMoney(int m) { return money +=m; }
+        public static int PlusMoney(int m) => money +=m;
 
         public static int MinusMoney(int m) 
         {
-            if(money - m <= 0)
-                return money -= m;
-            else
-                return -1;
+            m = money > m ? money -= m : -1;
+            if (m == -1)
+            {
+                Console.Write("not enough money");
+                Console.ReadKey();
+            }
+            return m;
         }
 
-        public static string GetMoney()  { return $"{money} $"; }
+        public static string GetMoney() => $"{money} $";
     }
 }

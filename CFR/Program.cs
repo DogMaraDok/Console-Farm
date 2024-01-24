@@ -6,7 +6,7 @@ namespace CFR
     internal class Program
     {
         static public double Version = 0.1;
-        static public int Build = 230124;
+        static public int Build = 240124;
 
         static void Main()
         {

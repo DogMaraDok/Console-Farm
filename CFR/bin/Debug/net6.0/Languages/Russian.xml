@@ -3,12 +3,14 @@
 	<localInfo>
 		<language>Russian</language>
 		<version>0.3</version>
-		<GameVersion>0.1 230124</GameVersion>
+		<GameVersion>0.1 240124</GameVersion>
 	</localInfo>
 	<Commands>
 		<exit>выход</exit>
 		<givemoney>givemoney</givemoney>
+		<minusmoney>minusmoney</minusmoney>
 		<sleep>спать</sleep>
+		<menu>меню</menu>
 	</Commands>
 	<NewGame name ="0">Новая игра</NewGame>
 	<LoadSave name ="1">Загрузить сохранение</LoadSave>

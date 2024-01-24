@@ -1,4 +1,6 @@
-﻿namespace CFR
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace CFR
 {
     internal class Game
     {
@@ -28,21 +30,29 @@
             Print.PrintAt("Console farm", 1, 0);
             Print.PrintAt(Language.Messeg.GetMesseg(6) + ": " + Day.GetDate(), 2, 1);
             Print.PrintAt(Language.Messeg.GetMesseg(7) + ": " + Money.GetMoney(), 2, 2);
-            Print.PrintAt(">",1 ,3);
+            Print.PrintAt(">", 1, 3);
             Select();
         }
 
         static void Select()
         {
             switch (Commands.ReadCommand(Console.ReadLine()))
-            { 
+            {
                 case "exit":
                     Environment.Exit(-1);
                     break;
                 case "givemoney":
-                    if(int.TryParse(Commands.GetSeterr(), out var x))
+                    if (int.TryParse(Commands.GetSeterr(), out var x))
                     {
                         Money.PlusMoney(x);
+                    }
+                    else
+                        Console.WriteLine("Uncorect seter");
+                    break;
+                case "minusmoney":
+                    if (int.TryParse(Commands.GetSeterr(), out x))
+                    {
+                        Money.MinusMoney(x);
                     }
                     else
                         Console.WriteLine("Uncorect seter");

@@ -1,13 +1,16 @@
-﻿using static CFR.Language;
-
-namespace CFR
+﻿namespace CFR
 {
     internal class Commands
     {
         static string Command = "";
         static string seterr = "";
 
-        public static List<comm> CommandsList = new List<comm>();
+        static List<comm> CommandsList = new List<comm>();
+
+        public static void AddToList(string command, string id)
+        {
+            CommandsList.Add(new comm(command, id));
+        }
 
         internal class comm
         {
