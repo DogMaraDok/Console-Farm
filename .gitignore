@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/.vs/CFR/v17/.suo
+/.vs/CFR/DesignTimeBuild/.dtbcache.v2
+/.vs/CFR/v17/.futdcache.v2
+/.vs/ProjectEvaluation/cfr.metadata.v7.bin
+/.vs/ProjectEvaluation/cfr.projects.v7.bin
